@@ -1112,22 +1112,22 @@
     
     
     <entry>
-      <title>books</title>
-      <link href="/books/index.html"/>
-      <url>/books/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1>🧿个人碎碎念</h1><p>我是一名大二在读本科生，在了解到<code>hexo &amp; butterfly</code>后，搭建了本博客。搭建本站的主要是为了整理个人学习笔记，归纳日常感想、随笔。我也正在将过去的文章收纳进博客里，希望我的博客能作为自己的人生记录与见证。</p><p>网站的搭建参考了众多大佬的教程，为方便日后修改学习，大部分收纳于更新手账内。</p><h1>📊本站统计</h1><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><div class="note warning flat"><p>台湾是我国密不可分的一部分，本人对此访客地球部件上的错误标识表示严厉谴责</p></div><script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5w15y78qsxh&amp;m=6&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=0" async="async"></script><div class="note info flat"><p>统计图可能在黑夜模式下看不清看不全，请在右下角切换明暗模式哦~</p></div><!-- 文章发布时间统计图 --><div id="posts-chart" data-start="2022-09" style="border-radius: 8px; height: 300px; padding: 10px;"></div><!-- 文章标签统计图 --><div id="tags-chart" data-length="10" style="border-radius: 8px; height: 300px; padding: 10px;"></div><!-- 文章分类统计图 --><div id="categories-chart" data-parent="true" style="border-radius: 8px; height: 300px; padding: 10px;"></div><hr><h1>📃基本资料</h1><ul><li>昵称：🪄Prong<ul><li>(尖头叉子)</li></ul></li><li>性别：👨🏻‍🎓</li><li>生日：2002年5月10日</li><li>身份：南理工金融学、计算机双学位在读本科生</li><li>爱好：<ul><li>健身</li><li>篮球</li><li>书法</li></ul></li><li>技能：<ul><li>💹金融学：<ul><li>🌏宏观经济学</li><li>💸微观经济学</li><li>📈财务管理</li></ul></li><li>🖥️计算机<ul><li>👨‍💻C语言基础（初学）</li><li>🐍Python（初学）</li></ul></li><li>日常<ul><li>🎞️Pr</li></ul></li></ul></li></ul><h1>📖学业</h1><div class="note primary flat"><p>大二下学期学业压力分布</p></div><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301120002919.svg" alt></p><div class="note primary flat"><p>炮专校历</p></div><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301112123972.webp" alt></p><h1>🗺️诗与远方的足迹</h1><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301111547300.webp" alt></p><div class="timeline color"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2023待出发</p></div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>title</p></div></div><div class="timeline-item-content"><p>xxxxx</p></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>title</p></div></div><div class="timeline-item-content"><p>xxxxx</p></div></div></div><div class="timeline color"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2022</p></div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>title</p></div></div><div class="timeline-item-content"><p>云南，怒江，老姆登</p></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2022-2-8</p></div></div><div class="timeline-item-content"><p>云南，大理，剑川</p></div></div></div><div class="timeline blue"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2021</p></div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-25</p></div></div><div class="timeline-item-content"><p>辽宁，大连</p></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2021-9-16 上学记</p></div></div><div class="timeline-item-content"><p>江苏，南京</p></div></div></div><div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2020</p></div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2020-8-20 珠海夏令营</p></div></div><div class="timeline-item-content"><p>广东，珠海</p></div></div></div>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>charts</title>
+      <link href="/charts/index.html"/>
+      <url>/charts/index.html</url>
       
-        <content type="html"><![CDATA[<h1>🧿个人碎碎念</h1><p>我是一名大二在读本科生，在了解到<code>hexo &amp; butterfly</code>后，搭建了本博客。搭建本站的主要是为了整理个人学习笔记，归纳日常感想、随笔。我也正在将过去的文章收纳进博客里，希望我的博客能作为自己的人生记录与见证。</p><p>网站的搭建参考了众多大佬的教程，为方便日后修改学习，大部分收纳于更新手账内。</p><h1>📊本站统计</h1><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><div class="note warning flat"><p>台湾是我国密不可分的一部分，本人对此访客地球部件上的错误标识表示严厉谴责</p></div><script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5w15y78qsxh&amp;m=6&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=0" async="async"></script><div class="note info flat"><p>统计图可能在黑夜模式下看不清看不全，请在右下角切换明暗模式哦~</p></div><!-- 文章发布时间统计图 --><div id="posts-chart" data-start="2022-09" style="border-radius: 8px; height: 300px; padding: 10px;"></div><!-- 文章标签统计图 --><div id="tags-chart" data-length="10" style="border-radius: 8px; height: 300px; padding: 10px;"></div><!-- 文章分类统计图 --><div id="categories-chart" data-parent="true" style="border-radius: 8px; height: 300px; padding: 10px;"></div><hr><h1>📃基本资料</h1><ul><li>昵称：🪄Prong<ul><li>(尖头叉子)</li></ul></li><li>性别：👨🏻‍🎓</li><li>生日：2002年5月10日</li><li>身份：南理工金融学、计算机双学位在读本科生</li><li>爱好：<ul><li>健身</li><li>篮球</li><li>书法</li></ul></li><li>技能：<ul><li>💹金融学：<ul><li>🌏宏观经济学</li><li>💸微观经济学</li><li>📈财务管理</li></ul></li><li>🖥️计算机<ul><li>👨‍💻C语言基础（初学）</li><li>🐍Python（初学）</li></ul></li><li>日常<ul><li>🎞️Pr</li></ul></li></ul></li></ul><h1>📖学业</h1><div class="note primary flat"><p>大二下学期学业压力分布</p></div><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301120002919.svg" alt></p><div class="note primary flat"><p>炮专校历</p></div><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301112123972.webp" alt></p><h1>🗺️诗与远方的足迹</h1><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301111547300.webp" alt></p><div class="timeline color"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2023待出发</p></div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>title</p></div></div><div class="timeline-item-content"><p>xxxxx</p></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>title</p></div></div><div class="timeline-item-content"><p>xxxxx</p></div></div></div><div class="timeline color"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2022</p></div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>title</p></div></div><div class="timeline-item-content"><p>云南，怒江，老姆登</p></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2022-2-8</p></div></div><div class="timeline-item-content"><p>云南，大理，剑川</p></div></div></div><div class="timeline blue"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2021</p></div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-25</p></div></div><div class="timeline-item-content"><p>辽宁，大连</p></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2021-9-16 上学记</p></div></div><div class="timeline-item-content"><p>江苏，南京</p></div></div></div><div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2020</p></div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2020-8-20 珠海夏令营</p></div></div><div class="timeline-item-content"><p>广东，珠海</p></div></div></div>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -1145,9 +1145,9 @@
     
     
     <entry>
-      <title>目录</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>books</title>
+      <link href="/books/index.html"/>
+      <url>/books/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1156,9 +1156,9 @@
     
     
     <entry>
-      <title>charts</title>
-      <link href="/charts/index.html"/>
-      <url>/charts/index.html</url>
+      <title>目录</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1189,6 +1189,17 @@
     
     
     <entry>
+      <title>games</title>
+      <link href="/games/index.html"/>
+      <url>/games/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>友链</title>
       <link href="/link/index.html"/>
       <url>/link/index.html</url>
@@ -1211,17 +1222,6 @@
     
     
     <entry>
-      <title>games</title>
-      <link href="/games/index.html"/>
-      <url>/games/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>myself</title>
       <link href="/myself/index.html"/>
       <url>/myself/index.html</url>
@@ -1233,9 +1233,9 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>movies</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1244,9 +1244,9 @@
     
     
     <entry>
-      <title>movies</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
