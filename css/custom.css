@@ -1,0 +1,49 @@
+/* 生肖 */
+svg.icon {
+    /* 这里定义svg.icon，避免和Butterfly自带的note标签冲突 */
+     width: 1em; height: 1em;
+     /* width和height定义图标的默认宽度和高度*/
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+  }
+
+#aside-content > .card-widget.card-info {
+  background: linear-gradient(-45deg, var(--HiPeach-main), #ef7e51, #b53e1d, #67044d);
+  background-size: 400%;
+  box-shadow: var(--HiPeach-shadow-black);
+  animation: gradient 15s ease infinite;
+  position: relative;
+  color: var(--HiPeach-white);
+}
+.site-data > a .headline,
+.site-data > a .length-num {
+  color: var(--HiPeach-white);
+}
+
+#post-info .post-title {
+    font-weight: 600; /*字体粗细*/
+    font-size: 2.5em; /*字体大小*/
+    line-height: 2.2; /*元素高度*/
+    letter-spacing: 1px; /*字体间距*/
+  }
+  
+  /*信息栏高度调整*/
+  #page-header.post-bg {
+    height: 26rem;
+  }
+  
+  /*Web端信息栏适配*/
+  @media screen and (min-width: 421px){
+    #page-header #post-info {
+      bottom: 8rem;
+  }
+  }
+  
+  /*Wap端信息栏适配*/
+  @media screen and (max-width: 420px){
+    #page-header #post-info {
+      bottom: 2rem;
+  }
+  }
+
