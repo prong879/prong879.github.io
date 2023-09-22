@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>用VSCode开发QT</title>
+      <link href="/posts/32b8ef20.html"/>
+      <url>/posts/32b8ef20.html</url>
+      
+        <content type="html"><![CDATA[<p>最近开始实际做课设，使用QT进行开发。习惯使用VSCode的我也开始研究如何在VSCode中正常编写修改Qt项目。虽然Qt使用C++语法，但要让VSCode正确找到Qt对应的头文件和各种类仍需要进行一番配置。下面记录配置所需要的步骤。</p><h1>问题记录和思路分析</h1><ul><li>VSCode本体对C++的支持</li><li>Qt的安装</li><li>在VSCode中正确预览、编辑Qt工程</li></ul><h1>C++基础配置</h1><p>VSCode原生对C++的支持并不完善。总的来说，需要在本地安装mingw64相关组件以支持C++的运行，然后在VSCode中添加各类插件让C++在VSCode中能够较完美地显示、编辑、补全、更正。</p><h2 id="下载并配置VSCode">下载并配置VSCode</h2><p>此部分已经有很多教程，本文不再详细叙述 VSCode 的相关安装。仅列出对我帮助较大的教程</p><blockquote><p>content</p><footer><strong>[╰つ羁绊づ[</strong><cite>CSDN]] [https://blog.csdn.net/qq_44002418/article/details/131724795] [VsCode+QT5.14.2安装部署详细教程]</cite></footer></blockquote><blockquote><p>content</p><footer><strong>[OrangeX's Blog[</strong><cite>方程式的博客]] [https://orangex4.cool/categories/Lesson/] [计算机学生的第零课]</cite></footer></blockquote><h2 id="下载并配置mingw64环境变量">下载并配置mingw64环境变量</h2><p>下载mingw64可按网上教程进行，安装完毕可输入查看版本</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -v</span><br></pre></td></tr></table></figure><p><strong>环境变量的设置</strong></p><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202309230013796.webp" alt></p><p>按照此图即可</p><h2 id="VSCode">VSCode</h2><ul><li>Cmake相关<ul><li>CMake</li><li>CMake Highlight</li><li>CMake Language Support</li><li>CMake Tools</li></ul></li><li>C++相关<ul><li>C/C++</li><li>C/C++ Extension Pack</li><li>C/C++ Themes</li></ul></li></ul><h1>Qt相关配置</h1><h2 id="下载并安装Qt">下载并安装Qt</h2><p>需要注意，<code>Qt 5.15</code> 起就不再开源，因此如果需要安装符合网上大部分的教程的Qt版本，可安装 <code>Qt 5.14</code> 。下载可在此网站下载 <a href="https://download.qt.io/archive/qt/5.14">Qt Downloads</a> 。</p><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202309230009725.webp" alt></p><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202309230009253.webp" alt></p><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202309230011509.webp" alt></p><p>其中安装的组件没必要所有的安装，可根据网上其他教程选择。</p><h2 id="VSCode中QT的相关设置">VSCode中QT的相关设置</h2><h3 id="安装插件">安装插件</h3><ul><li>QT相关<ul><li>QML</li><li>QML Snippets</li><li>Qt Configure</li><li>Qt Tools</li></ul></li></ul><h3 id="配置路径">配置路径</h3><p>当我们导入了Qt工程文件，极有可能出现报错。<br><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202309230024093.webp" alt></p><p>需要在 <code>includePath</code> 中新加两种语句：</p><ul><li>Qt目录 <code>C:/QT/Qt5.14.2/5.14.2/mingw73_32/**</code></li><li>工程目录 <code>C:/TankBattle/**</code></li></ul><p>实现对 <strong>Qt相关功能</strong> 和对 <strong>工程内部文件</strong> 的支持。</p><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202309230017389.webp" alt></p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;configurations&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;Win32&quot;,</span><br><span class="line">            &quot;includePath&quot;: [</span><br><span class="line">                &quot;$&#123;workspaceFolder&#125;/**&quot;,</span><br><span class="line"><span class="addition">+               &quot;C:/QT/Qt5.14.2/5.14.2/mingw73_32/**&quot;,</span></span><br><span class="line"><span class="addition">+               &quot;C:/TankBattle/**&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            &quot;defines&quot;: [</span><br><span class="line">                &quot;_DEBUG&quot;,</span><br><span class="line">                &quot;UNICODE&quot;,</span><br><span class="line">                &quot;_UNICODE&quot;</span><br><span class="line">            ],</span><br><span class="line">            &quot;windowsSdkVersion&quot;: &quot;10.0.22000.0&quot;,</span><br><span class="line">            &quot;compilerPath&quot;: &quot;cl.exe&quot;,</span><br><span class="line">            &quot;cStandard&quot;: &quot;c17&quot;,</span><br><span class="line">            &quot;cppStandard&quot;: &quot;c++17&quot;,</span><br><span class="line">            &quot;intelliSenseMode&quot;: &quot;windows-msvc-x64&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;version&quot;: 4</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><div class="note warning flat"><p>网上有的教程会让我们在VSCode中的C/C++插件里设置目录、路径，实测此方法并没有作用，反而会导致无法正确显示各类 C++文件</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 📓学习笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于遵义高粱种植的社会调查</title>
       <link href="/posts/f90abe80.html"/>
       <url>/posts/f90abe80.html</url>
@@ -715,9 +740,9 @@
             
             <tag> 教程 </tag>
             
-            <tag> 🦋butterfly </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> 🦋butterfly </tag>
             
         </tags>
       
@@ -742,9 +767,9 @@
       
         <tags>
             
-            <tag> 🦋butterfly </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> 🦋butterfly </tag>
             
             <tag> 魔改 </tag>
             
@@ -775,9 +800,9 @@
             
             <tag> 教程 </tag>
             
-            <tag> 🦋butterfly </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> 🦋butterfly </tag>
             
             <tag> 魔改 </tag>
             
@@ -893,9 +918,9 @@
       
         <tags>
             
-            <tag> 📓学习笔记 </tag>
-            
             <tag> C语言 </tag>
+            
+            <tag> 📓学习笔记 </tag>
             
         </tags>
       
@@ -922,9 +947,9 @@
       
         <tags>
             
-            <tag> 📓学习笔记 </tag>
-            
             <tag> C语言 </tag>
+            
+            <tag> 📓学习笔记 </tag>
             
         </tags>
       
@@ -951,9 +976,9 @@
       
         <tags>
             
-            <tag> 📓学习笔记 </tag>
-            
             <tag> C语言 </tag>
+            
+            <tag> 📓学习笔记 </tag>
             
         </tags>
       
@@ -1210,9 +1235,9 @@
       
         <tags>
             
-            <tag> 📓学习笔记 </tag>
-            
             <tag> C语言 </tag>
+            
+            <tag> 📓学习笔记 </tag>
             
         </tags>
       
@@ -1239,9 +1264,9 @@
       
         <tags>
             
-            <tag> 📓学习笔记 </tag>
-            
             <tag> C语言 </tag>
+            
+            <tag> 📓学习笔记 </tag>
             
         </tags>
       
@@ -1513,9 +1538,9 @@
     
     
     <entry>
-      <title>charts</title>
-      <link href="/charts/index.html"/>
-      <url>/charts/index.html</url>
+      <title>books</title>
+      <link href="/books/index.html"/>
+      <url>/books/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1535,64 +1560,9 @@
     
     
     <entry>
-      <title>books</title>
-      <link href="/books/index.html"/>
-      <url>/books/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>目录</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/css/progress_bar.css"/>
-      <url>/css/progress_bar.css</url>
-      
-        <content type="html"><![CDATA[.pace {    -webkit-pointer-events: none;    pointer-events: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    z-index: 2000;    position: fixed;    margin: auto;    top: 4px;    left: 0;    right: 0;    height: 8px;    border-radius: 8px;    width: 7rem;    background: #eaecf2;    border: 1px #e3e8f7;    overflow: hidden}.pace-inactive .pace-progress {    opacity: 0;    transition: .3s ease-in}.pace .pace-progress {    -webkit-box-sizing: border-box;    -moz-box-sizing: border-box;    -ms-box-sizing: border-box;    -o-box-sizing: border-box;    box-sizing: border-box;    -webkit-transform: translate3d(0, 0, 0);    -moz-transform: translate3d(0, 0, 0);    -ms-transform: translate3d(0, 0, 0);    -o-transform: translate3d(0, 0, 0);    transform: translate3d(0, 0, 0);    max-width: 200px;    position: absolute;    z-index: 2000;    display: block;    top: 0;    right: 100%;    height: 100%;    width: 100%;    /* linear-gradient(to right, #3494e6, #ec6ead) */    background: linear-gradient(to right, #43cea2, #3866ca);    animation: gradient 2s ease infinite;    background-size: 200%}.pace.pace-inactive {    opacity: 0;    transition: .3s;    top: -8px}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>messageboard</title>
-      <link href="/messageboard/index.html"/>
-      <url>/messageboard/index.html</url>
-      
-        <content type="html"><![CDATA[<h1>可以在这里细嗦细嗦捏~</h1>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>友链</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>games</title>
-      <link href="/games/index.html"/>
-      <url>/games/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1612,6 +1582,39 @@
     
     
     <entry>
+      <title>charts</title>
+      <link href="/charts/index.html"/>
+      <url>/charts/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/progress_bar.css"/>
+      <url>/css/progress_bar.css</url>
+      
+        <content type="html"><![CDATA[.pace {    -webkit-pointer-events: none;    pointer-events: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    z-index: 2000;    position: fixed;    margin: auto;    top: 4px;    left: 0;    right: 0;    height: 8px;    border-radius: 8px;    width: 7rem;    background: #eaecf2;    border: 1px #e3e8f7;    overflow: hidden}.pace-inactive .pace-progress {    opacity: 0;    transition: .3s ease-in}.pace .pace-progress {    -webkit-box-sizing: border-box;    -moz-box-sizing: border-box;    -ms-box-sizing: border-box;    -o-box-sizing: border-box;    box-sizing: border-box;    -webkit-transform: translate3d(0, 0, 0);    -moz-transform: translate3d(0, 0, 0);    -ms-transform: translate3d(0, 0, 0);    -o-transform: translate3d(0, 0, 0);    transform: translate3d(0, 0, 0);    max-width: 200px;    position: absolute;    z-index: 2000;    display: block;    top: 0;    right: 100%;    height: 100%;    width: 100%;    /* linear-gradient(to right, #3494e6, #ec6ead) */    background: linear-gradient(to right, #43cea2, #3866ca);    animation: gradient 2s ease infinite;    background-size: 200%}.pace.pace-inactive {    opacity: 0;    transition: .3s;    top: -8px}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>games</title>
+      <link href="/games/index.html"/>
+      <url>/games/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>movies</title>
       <link href="/movies/index.html"/>
       <url>/movies/index.html</url>
@@ -1623,11 +1626,33 @@
     
     
     <entry>
+      <title>messageboard</title>
+      <link href="/messageboard/index.html"/>
+      <url>/messageboard/index.html</url>
+      
+        <content type="html"><![CDATA[<h1>可以在这里细嗦细嗦捏~</h1>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>myself</title>
       <link href="/myself/index.html"/>
       <url>/myself/index.html</url>
       
         <content type="html"><![CDATA[<h1>🧿个人碎碎念</h1><p>我是一名大二在读本科生，在了解到<code>hexo &amp; butterfly</code>后，搭建了本博客。搭建本站的主要是为了整理个人学习笔记，归纳日常感想、随笔。我也正在将过去的文章收纳进博客里，希望我的博客能作为自己的人生记录与见证。</p><p>网站的搭建参考了众多大佬的教程，为方便日后修改学习，大部分收纳于更新手账内。</p><h1>📊本站统计</h1><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><div class="note warning flat"><p>台湾是我国密不可分的一部分，本人对此访客地球部件上的错误标识表示严厉谴责</p></div><script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5w15y78qsxh&amp;m=6&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=0" async="async"></script><div class="note info flat"><p>统计图可能在黑夜模式下看不清看不全，请在右下角切换明暗模式哦~</p></div><!-- 文章发布时间统计图 --><div id="posts-chart" data-start="2022-09" style="border-radius: 8px; height: 300px; padding: 10px;"></div><!-- 文章标签统计图 --><div id="tags-chart" data-length="10" style="border-radius: 8px; height: 300px; padding: 10px;"></div><!-- 文章分类统计图 --><div id="categories-chart" data-parent="true" style="border-radius: 8px; height: 300px; padding: 10px;"></div><hr><h1>📃基本资料</h1><ul><li>昵称：🪄Prong<ul><li>(尖头叉子)</li></ul></li><li>性别：👨🏻‍🎓</li><li>生日：2002年5月10日</li><li>身份：南理工金融学、计算机双学位在读本科生</li><li>爱好：<ul><li>健身</li><li>篮球</li><li>书法</li></ul></li><li>技能：<ul><li>💹金融学：<ul><li>🌏宏观经济学</li><li>💸微观经济学</li><li>📈财务管理</li></ul></li><li>🖥️计算机<ul><li>👨‍💻C语言基础（初学）</li><li>🐍Python（初学）</li></ul></li><li>日常<ul><li>🎞️Pr</li></ul></li></ul></li></ul><h1>📖学业</h1><div class="note primary flat"><p>大二下学期学业压力分布</p></div><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301120002919.svg" alt></p><div class="note primary flat"><p>炮专校历</p></div><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301112123972.webp" alt></p><h1>🗺️诗与远方的足迹</h1><p><img src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301111547300.webp" alt></p><div class="timeline color"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2023待出发</p></div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>title</p></div></div><div class="timeline-item-content"><p>xxxxx</p></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>title</p></div></div><div class="timeline-item-content"><p>xxxxx</p></div></div></div><div class="timeline color"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2022</p></div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>title</p></div></div><div class="timeline-item-content"><p>云南，怒江，老姆登</p></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2022-2-8</p></div></div><div class="timeline-item-content"><p>云南，大理，剑川</p></div></div></div><div class="timeline blue"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2021</p></div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-25</p></div></div><div class="timeline-item-content"><p>辽宁，大连</p></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2021-9-16 上学记</p></div></div><div class="timeline-item-content"><p>江苏，南京</p></div></div></div><div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2020</p></div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2020-8-20 珠海夏令营</p></div></div><div class="timeline-item-content"><p>广东，珠海</p></div></div></div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>友链</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
