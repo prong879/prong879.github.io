@@ -70,10 +70,10 @@
     </summary>
     
     
-      <category term="✒️随笔" scheme="https://prong879.ltd/categories/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://prong879.ltd/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="https://prong879.ltd/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="✒️随笔" scheme="https://prong879.ltd/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/"/>
     
       <category term="金融" scheme="https://prong879.ltd/tags/%E9%87%91%E8%9E%8D/"/>
     
@@ -431,9 +431,9 @@
     
       <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="C++" scheme="https://prong879.ltd/tags/C/"/>
-    
       <category term="编程题" scheme="https://prong879.ltd/tags/%E7%BC%96%E7%A8%8B%E9%A2%98/"/>
+    
+      <category term="C++" scheme="https://prong879.ltd/tags/C/"/>
     
   </entry>
   
