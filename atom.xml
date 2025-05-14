@@ -6,7 +6,7 @@
   <link href="https://prong879.ltd/atom.xml" rel="self"/>
   
   <link href="https://prong879.ltd/"/>
-  <updated>2024-12-30T08:43:18.000Z</updated>
+  <updated>2025-05-14T13:19:41.000Z</updated>
   <id>https://prong879.ltd/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【2025最新】WSL+LaTex+VSCode安装教程</title>
+    <link href="https://prong879.ltd/posts/b3d2fee7.html"/>
+    <id>https://prong879.ltd/posts/b3d2fee7.html</id>
+    <published>2025-05-14T13:19:41.000Z</published>
+    <updated>2025-05-14T13:19:41.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;【2025最新】WSL+LaTex+VSCode安装教程&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;假定你已经在Win里装了TexLive2025，配置了VSCode（实际上没有也无所谓），能正常编译，但苦于编译速度慢，需要利用WSL的Ubuntu的编译速度。&lt;/p&gt;
+&lt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>【Bug】PPT出现“抱歉出现问题可能导致ppt不稳定”</title>
@@ -865,36 +895,6 @@
   </entry>
   
   <entry>
-    <title>读后感 | 荣辱二十年</title>
-    <link href="https://prong879.ltd/posts/4c5553eb.html"/>
-    <id>https://prong879.ltd/posts/4c5553eb.html</id>
-    <published>2023-05-30T13:10:40.000Z</published>
-    <updated>2024-11-09T13:10:40.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本学期我阅读的第三本书是阚治东的《荣辱二十年》。二十年的光阴蹉跎，中国第一代证券先锋阚治东的人生起起落落，看过山巅的风景，也感受过谷底的滋味。阚治东的人生之路，也是中国证券市场发展的一个缩影与见证。&lt;/p&gt;
-&lt;p&gt;泰戈尔曾言：人的记忆力是有限的，不是所有经历过的人和事都能永
-        
-      
-    
-    </summary>
-    
-    
-      <category term="读后感" scheme="https://prong879.ltd/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
-    
-    
-      <category term="📚读后感" scheme="https://prong879.ltd/tags/%F0%9F%93%9A%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
-    
-      <category term="荣辱二十年" scheme="https://prong879.ltd/tags/%E8%8D%A3%E8%BE%B1%E4%BA%8C%E5%8D%81%E5%B9%B4/"/>
-    
-  </entry>
-  
-  <entry>
     <title>读后感 | 穷人的银行家</title>
     <link href="https://prong879.ltd/posts/9619cbaf.html"/>
     <id>https://prong879.ltd/posts/9619cbaf.html</id>
@@ -923,6 +923,36 @@
       <category term="📚读后感" scheme="https://prong879.ltd/tags/%F0%9F%93%9A%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
       <category term="穷人的银行家" scheme="https://prong879.ltd/tags/%E7%A9%B7%E4%BA%BA%E7%9A%84%E9%93%B6%E8%A1%8C%E5%AE%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读后感 | 荣辱二十年</title>
+    <link href="https://prong879.ltd/posts/4c5553eb.html"/>
+    <id>https://prong879.ltd/posts/4c5553eb.html</id>
+    <published>2023-05-30T13:10:40.000Z</published>
+    <updated>2024-11-09T13:10:40.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本学期我阅读的第三本书是阚治东的《荣辱二十年》。二十年的光阴蹉跎，中国第一代证券先锋阚治东的人生起起落落，看过山巅的风景，也感受过谷底的滋味。阚治东的人生之路，也是中国证券市场发展的一个缩影与见证。&lt;/p&gt;
+&lt;p&gt;泰戈尔曾言：人的记忆力是有限的，不是所有经历过的人和事都能永
+        
+      
+    
+    </summary>
+    
+    
+      <category term="读后感" scheme="https://prong879.ltd/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+    
+      <category term="📚读后感" scheme="https://prong879.ltd/tags/%F0%9F%93%9A%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+      <category term="荣辱二十年" scheme="https://prong879.ltd/tags/%E8%8D%A3%E8%BE%B1%E4%BA%8C%E5%8D%81%E5%B9%B4/"/>
     
   </entry>
   
@@ -1474,9 +1504,9 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
     
       <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
-    
       <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
+    
+      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
     
   </entry>
   
@@ -1497,9 +1527,9 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
       <category term="教程" scheme="https://prong879.ltd/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
-    
       <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
+    
+      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
     
       <category term="魔改" scheme="https://prong879.ltd/tags/%E9%AD%94%E6%94%B9/"/>
     
@@ -1535,9 +1565,9 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
     
       <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
-    
       <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
+    
+      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
     
       <category term="魔改" scheme="https://prong879.ltd/tags/%E9%AD%94%E6%94%B9/"/>
     
@@ -1750,31 +1780,6 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
       <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
       <category term="🖥️计算机基础" scheme="https://prong879.ltd/tags/%F0%9F%96%A5%EF%B8%8F%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>随笔 | 东北之夏</title>
-    <link href="https://prong879.ltd/posts/a60e631.html"/>
-    <id>https://prong879.ltd/posts/a60e631.html</id>
-    <published>2023-01-12T15:07:22.000Z</published>
-    <updated>2023-01-12T15:07:22.000Z</updated>
-    
-    <summary type="html">
-    
-      一脚踢出那个盛夏
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="https://prong879.ltd/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="✒️随笔" scheme="https://prong879.ltd/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="东北往事" scheme="https://prong879.ltd/tags/%E4%B8%9C%E5%8C%97%E5%BE%80%E4%BA%8B/"/>
-    
-      <category term="🎮游戏" scheme="https://prong879.ltd/tags/%F0%9F%8E%AE%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
