@@ -1,0 +1,959 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>计算机基础 | 4. 网络协议 | prong的魔法地下室</title><meta name="keywords" content="📓学习笔记,🖥️计算机基础,🌐网络协议"><meta name="author" content="Prong,prongzmy@outlook.com"><meta name="copyright" content="Prong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="计算机基础 | 4. 网络协议"><meta name="application-name" content="计算机基础 | 4. 网络协议"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="计算机基础 | 4. 网络协议"><meta property="og:url" content="https://prong879.ltd/posts/25150293.html"><meta property="og:site_name" content="prong的魔法地下室"><meta property="og:description" content="介绍了网络通信原理以及网络通信的实现以及网络通信的流程，包括osi七层协议、tcp&amp;#x2F;ip五层模型、DNS域名解析等内容"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301082014777.webp"><meta property="article:author" content="Prong"><meta property="article:tag" content="prong的地下室"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301082014777.webp"><meta name="description" content="介绍了网络通信原理以及网络通信的实现以及网络通信的流程，包括osi七层协议、tcp&amp;#x2F;ip五层模型、DNS域名解析等内容"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://prong879.ltd/posts/25150293.html"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: {"enable":true,"title":"与数众多博主无限进步","addFriendPlaceholder":"昵称：\n链接：\n头像：\n描述：\n站点截图：\n"},
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: undefined,
+  LA51: {"enable":true,"ck":"KcXfHrLj94HMK7QD","LingQueMonitorID":"KcXftMDgWoPfFk7O"},
+  greetingBox: undefined,
+  twikooEnvId: 'https://twikoo-snowy-two.vercel.app/',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: undefined,
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: {"mode":"both","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  authorStatus: {"skills":null},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Prong","link":"链接: ","source":"来源: prong的魔法地下室","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'prong的魔法地下室',
+  title: '计算机基础 | 4. 网络协议',
+  postAI: '',
+  pageFillDescription: '操作系统基础, 网络通信原理, 互联网的本质就是一系列的网络协议, osi七层协议, tcp/ip五层模型讲解, 物理层, 数据链路层, 以太网协议：, mac地址：, 广播：, 网络层, IP协议：, 子网掩码, ip数据包, ARP协议, 传输层, 应用层, socket, 小结, 网络通信实现, DNS域名解析, DNS, dns的两种查询方式, 递归, 迭代, DNS解析流程举例, DNS缓存, DNS缓存分类, 浏览器DNS查找顺序, 清除DNS缓存, 清除浏览器缓存, 其他了解, 13台根dns：, 域名定义, 网络通信流程, 网络设备及架构操作系统基础操作系统简称是管理和控制计算机硬件与软件资源的计算机程序是直接运行在裸机上的最基本的系统软件任何其他软件都必须在操作系统的支持下才能运行注计算机硬件应用软件网络通信原理互联网的本质就是一系列的网络协议一台硬设有了操作系统然后装上软件你就可以正常使用了然而你也只能自己使用像这样每个人都拥有一台自己的机器然而彼此孤立结论英语成为世界上所有人通信的统一标准如果把计算机看成分布于世界各地的人那么连接两台计算机之间的实际上就是一系列统一的标准这些标准称之为互联网协议互联网的本质就是一系列的协议总称为互联网协议互联网协议的功能定义计算机如何接入以及接入的计算机通信的标准七层协议互联网协议按照功能不同分为七层或五层或四层每层运行常见物理设备七层协议数据传输的封包与解包过程五层模型讲解我们将应用层表示层会话层并作应用层从五层协议的角度来阐述每层的由来与功能搞清楚了每层的主要协议就理解了整个互联网通信的原理首先用户感知到的只是最上面一层应用层自上而下每层都依赖于下一层所以我们从最下一层开始切入比较好理解每层都运行特定的协议越往上越靠近用户越往下越靠近硬件物理层基于电器特性发送高低电压电信号数据链路层定义了电信号的分组方式网络层引入一套新的地址用来区分不同的广播域子网这套地址即网络地址传输层建立端口到端口的通信应用层规定应用程序的数据格式物理层物理层由来上面提到孤立的计算机之间要想一起玩就必须接入言外之意就是计算机之间必须完成组网物理层功能主要是基于电器特性发送高低电压电信号高电压对应数字低电压对应数字光缆电缆双绞线无线电波数据链路层数据链路层由来单纯的电信号和没有任何意义必须规定电信号多少位一组每组什么意思数据链路层的功能定义了电信号的分组方式以太网协议早期的时候各个公司都有自己的分组方式后来形成了统一的标准即以太网协议规定一组电信号构成一个数据包叫做帧每一数据帧分成报头和数据两部分包含固定个字节发送者源地址个字节接收者目标地址个字节数据类型个字节包含最短字节最长字节数据包的具体内容长度长度数据包长度最短字节最长字节超过最大限制就分片发送地址中包含的源和目标地址由来规定接入的设备都必须具备网卡发送端和接收端的地址便是指网卡的地址即地址地址每块网卡出厂时都被烧制上一个世界唯一的地址长度为位进制通常由位进制数表示前六位是厂商编号后六位是流水线号广播有了地址同一网络内的两台主机就可以通信了一台主机通过协议获取另外一台主机的地址采用最原始的方式广播的方式进行通信即计算机通信基本靠吼网络层网络层由来有了地址广播的发送方式世界上的计算机就可以彼此通信了问题是世界范围的互联网是由一个个彼此隔离的小的局域网组成的那么如果所有的通信都采用以太网的广播方式那么一台机器发送的包全世界都会收到这就不仅仅是效率低的问题了这会是一种灾难上图结论必须找出一种方法来区分哪些计算机属于同一广播域哪些不是如果是就采用广播的方式发送如果不是就采用路由的方式向不同广播域子网分发数据包地址是无法区分的它只跟厂商有关网络层功能引入一套新的地址用来区分不同的广播域子网这套地址即网络地址协议规定网络地址的协议叫协议它定义的地址称之为地址广泛采用的版本即它规定网络地址由位进制表示范围一个地址通常写成四段十进制数例地址分成两部分网络部分标识子网主机部分标识主机注意单纯的地址段只是标识了地址的种类从网络部分或主机部分都无法辨识一个所处的子网例与并不能确定二者处于同一子网子网掩码所谓子网掩码就是表示子网络特征的一个参数它在形式上等同于地址也是一个位二进制数字它的网络部分全部为主机部分全部为比如地址如果已知网络部分是前位主机部分是后位那么子网络掩码就是写成十进制就是知道子网掩码我们就能判断任意两个地址是否处在同一个子网络方法是将两个地址与子网掩码分别进行运算两个数位都为运算结果为否则为然后比较结果是否相同如果是的话就表明它们在同一个子网络中否则就不是比如已知地址和的子网掩码都是请问它们是否在同一个子网络两者与子网掩码分别进行运算运算得网络地址结果运算得网络地址结果结果都是因此它们在同一个子网络总结一下协议的作用主要有两个为每一台计算机分配地址确定哪些地址在同一个子网络数据包数据包也分为和部分无须为包定义单独的栏位直接放入以太网包的部分长度为到字节最长为字节而以太网数据包的数据部分最长只有字节因此如果数据包超过了字节它就需要分割成几个以太网数据包分开发送了以太网头头数据协议协议由来计算机通信基本靠吼即广播的方式所有上层的包到最后都要封装上以太网头然后通过以太网协议发送在谈及以太网协议时候我门了解到通信是基于的广播方式实现计算机在发包时获取自身的是容易的如何获取目标主机的就需要通过协议协议功能广播的方式发送数据包获取目标主机的地址协议工作方式每台主机都是已知的例如主机访问一首先通过地址和子网掩码区分出自己所处的子网场景数据包地址同一子网目标主机目标主机不同子网网关目标主机二分析与处于同一网络如果不是同一网络那么下表中目标为通过获取的是网关的源目标源目标数据部分发送端主机发送端数据三这个包会以广播的方式在发送端所处的自网内传输所有主机接收后拆开包发现目标为自己的就响应返回自己的传输层传输层的由来网络层的帮我们区分子网以太网层的帮我们找到主机然后大家使用的都是应用程序你的电脑上可能同时开启暴风影音等多个应用程序那么我们通过和找到了一台特定的主机如何标识这台主机上的应用程序答案就是端口端口即应用程序与网卡关联的编号传输层功能建立端口到端口的通信补充端口范围为系统占用端口协议可靠传输数据包没有长度限制理论上可以无限长但是为了保证网络的效率通常数据包的长度不会超过数据包的长度以确保单个数据包不必再分割以太网头头头数据协议不可靠传输报头部分一共只有个字节总长度不超过字节正好放进一个数据包以太网头头头数据报文三次握手和四次挥手应用层应用层由来用户使用的都是应用程序均工作于应用层互联网是开发的大家都可以开发自己的应用程序数据多种多样必须规定好数据的组织形式应用层功能规定应用程序的数据格式例协议可以为各种各样的程序传递数据比如等等那么必须有不同协议规定电子邮件网页数据的格式这些应用程序协议就构成了应用层我们知道两个进程如果需要进行通讯最基本的一个前提能够唯一的标示一个进程在本地进程通讯中我们可以使用来唯一标示一个进程但只在本地唯一网络中的两个进程冲突几率很大这时候我们需要另辟它径了我们知道层的地址可以唯一标示主机而层协议和端口号可以唯一标示主机的一个进程这样我们可以利用地址协议端口号唯一标示网络中的一个进程能够唯一标示网络中的进程后它们就可以利用进行通信了什么是呢我们经常把翻译为套接字是在应用层和传输层之间的一个抽象层它把层复杂的操作抽象为几个简单的接口供应用层调用已实现进程在网络中通信起源于在一切皆文件哲学的思想下是一种打开读写关闭模式的实现服务器和客户端各自维护一个文件在建立连接打开后可以向自己文件写入内容供对方读取或者读取对方内容通讯结束时关闭文件小结总结图如下数据传输动图如下网络通信实现想实现网络通信每台主机需具备四要素本机的地址子网掩码网关的地址的地址获取这四要素分两种方式静态获取即手动配置动态获取通过获取以太网头头头数据包最前面的以太网标头设置发出方本机的地址和接收方服务器的地址前者就是本机网卡的地址后者这时不知道就填入一个广播地址后面的标头设置发出方的地址和接收方的地址这时对于这两者本机都不知道于是发出方的地址就设为接收方的地址设为最后的标头设置发出方的端口和接收方的端口这一部分是协议规定好的发出方是端口接收方是端口这个数据包构造完成后就可以发出了以太网是广播发送同一个子网络的每台计算机都收到了这个包因为接收方的地址是看不出是发给谁的所以每台收到这个包的计算机还必须分析这个包的地址才能确定是不是发给自己的当看到发出方地址是接收方是于是服务器知道这个包是发给我的而其他计算机就可以丢弃这个包接下来服务器读出这个包的数据内容分配好地址发送回去一个响应数据包这个响应包的结构也是类似的以太网标头的地址是双方的网卡地址标头的地址是服务器的地址发出方和接收方标头的端口是发出方和接收方分配给请求端的地址和本网络的具体参数则包含在部分新加入的计算机收到这个响应包于是就知道了自己的地址子网掩码网关地址服务器等等参数域名解析的作用在互联网中其实没有类似于这种域名方式而替代的是以地址如那我们在地址栏中应当输入才能打开网站但我们细想一下互联网上的网站成千上万如果每个网站登陆都需要记住一大串数字那是不是特别不方便对于记忆力不强的人根本无法记住这么烦琐的数字这个时候就出现了它的作用就是将解析为那么我们登陆的时候就直接输入域名就可以了为什么一定要设置才能上网有些朋友可能会发现为什么我可能登陆但却打不开网页呢其实大部分原因都是因为服务器故障造成的服务器地址是唯一的是运营商提供给终端用户用来解析地址及域名的关系而如果不设定服务器地址那么就无法查询地址的去向自然也就打不开网页而等即时聊天软件采用的是传输协议即不可靠传输协议无需提供服务器地址也同样可以登陆的两种查询方式递归主机向本地域名服务器的查询一般都是采用递归查询所谓递归查询就是如果主机所询问的本地域名服务器不知道被查询的域名的地址那么本地域名服务器就以客户的身份向其它根域名服务器继续发出查询请求报文即替主机继续查询而不是让主机自己进行下一步查询因此递归查询返回的查询结果或者是所要查询的地址或者是报错表示无法查询到所需的地址迭代本地域名服务器向根域名服务器的查询的迭代查询迭代查询的特点当根域名服务器收到本地域名服务器发出的迭代查询请求报文时要么给出所要查询的地址要么告诉本地服务器你下一步应当向哪一个域名服务器进行查询然后让本地服务器进行后续的查询根域名服务器通常是把自己知道的顶级域名服务器的地址告诉本地域名服务器让本地域名服务器再向顶级域名服务器查询顶级域名服务器在收到本地域名服务器的查询请求后要么给出所要查询的地址要么告诉本地服务器下一步应当向哪一个权限域名服务器进行查询最后知道了所要解析的地址或报错然后把这个结果返回给发起查询的主机复制代码下图给出了这两种查询的差别下面举一个例子演示整个查询过程假定域名为的主机想知道另一个主机的地址例如主机打算发送邮件给这时就必须知道主机的地址下面是图的几个查询步骤主机先向本地服务器进行递归查询本地服务器采用迭代查询它先向一个根域名服务器查询根域名服务器告诉本地服务器下一次应查询的顶级域名服务器的地址本地域名服务器向顶级域名服务器进行查询顶级域名服务器告诉本地域名服务器下一步应查询的权限服务器的地址本地域名服务器向权限域名服务器进行查询权限域名服务器告诉本地域名服务器所查询的主机的地址本地域名服务器最后把查询结果告诉整个查询过程共用到了个报文为了提高查询效率并减轻服务器的负荷和减少因特网上的查询报文数量在域名服务器中广泛使用了高速缓存用来存放最近查询过的域名以及从何处获得域名映射信息的记录例如在上面的查询过程中如果在的主机上不久前已经有用户查询过的地址那么本地域名服务器就不必向根域名服务器重新查询的地址而是直接把告诉缓存中存放的上次查询结果即的地址告诉用户由于名字到地址的绑定并不经常改变为保持告诉缓存中的内容正确域名服务器应为每项内容设置计时器并处理超过合理时间的项例如每个项目两天当域名服务器已从缓存中删去某项信息后又被请求查询该项信息就必须重新到授权管理该项的域名服务器绑定信息当权限服务器回答一个查询请求时在响应中都指明绑定有效存在的时间值增加此时间值可减少网络开销而减少此时间值可提高域名解析的正确性不仅在本地域名服务器中需要高速缓存在主机中也需要许多主机在启动时从本地服务器下载名字和地址的全部数据库维护存放自己最近使用的域名的高速缓存并且只在从缓存中找不到名字时才使用域名服务器维护本地域名服务器数据库的主机应当定期地检查域名服务器以获取新的映射信息而且主机必须从缓存中删除无效的项由于域名改动并不频繁大多数网点不需花精力就能维护数据库的一致性解析流程举例如上图所示我们将详细阐述解析流程首先客户端位置是一台电脑或手机在打开浏览器以后比如输入的域名它首先是由浏览器发起一个解析请求如果本地缓存服务器中找不到结果则首先会向根服务器查询根服务器里面记录的都是各个顶级域所在的服务器的位置当向根请求的时候根服务器就会返回服务器的位置信息递归服务器拿到的权威服务器地址以后就会寻问的权威服务器知不知道的位置这个时候权威服务器查找并返回服务器的地址继续向的权威服务器去查询这个地址由的服务器给出了地址最终才能进行的链接顺利访问网站这里补充说明一旦递归服务器拿到解析记录以后就会在本地进行缓存如果下次客户端再请求本地的递归域名服务器相同域名的时候就不会再这样一层一层查了因为本地服务器里面已经有缓存了这个时候就直接把的记录返回给客户端就可以了的查询类型有种比较常用的查询类型有有等五种类型以下分别介绍五种类型由域名到地址的查询即正向查询编程中由函数实现由到域名的查询即逆向查询编程中由函数查询解析的名字服务器查询的别名邮箱服务器查询资源记录记录一条域名信息映射关系称之为资源记录当我们查询域名的时候查询结果得到的资源记录结构体中有如下数据就是生存周期是递归服务器会在缓存中保存该资源记录的时长网络协议类型它的代表的标识是就是目前系统主要支持的协议是就是资源记录类型一般的网站都是都是记录的主机地址是资源记录数据就是域名关联的信息数据缓存缓存指返回了正确的之后系统就会将这个结果临时储存起来并且它会为缓存设定一个失效时间例如小时在这小时之内当你再次访问这个网站时系统就会直接从你电脑本地的缓存中把结果交还给你而不必再去询问服务器变相加速了网址的解析当然在超过小时之后系统会自动再次去询问服务器获得新的结果所以当你修改了服务器并且不希望电脑继续使用之前的缓存时就需要手动去清除本地的缓存了缓存分类浏览器缓存内存中浏览器会按照一定频率缓存记录本地操作系统缓存内存中如果浏览器缓存中找不到需要的记录那就去操作系统找本地文件硬盘中系统中位于路由器指定的远程路由器自动获取地址也可以手动修改登录后台设置服务器地址路由器被篡改会造成域名劫持你访问的网址都会被定位到同一个位置但是直接可以访问的服务器远程互联网服务提供商如联通电信移动有专门的服务器应对查询请求根服务器远程跨国的服务器还找不到的话它就会向根服务器发出查询请求调用系统缓存需要跨进程消耗大因此为了解析速度的方便就有了一系列缓存来加快查找速度浏览器查找顺序浏览器缓存本地系统缓存本地计算机文件缓存递归迭代搜索期间如果查询到了也就直接访问地址了这个就像三级缓存原理一样例如能够在文件中找到就不会再去查其他的清除缓存打开执行命令全国通用地址国内用户推荐使用速度较快首先服务器地址添位于北京人民英雄纪念碑备用服务器地址添全球通用地址此地址为谷歌服务器的首选服务器地址添备用服务器地址添查看本地缓存命令清除本地缓存命令清除浏览器缓存我们在开发的时候有时候会给某个域名绑用于本地开发测试但是绑了之后用谷歌浏览器访问会发现并没有生效按会发现访问的还是线上的说明浏览器是有该域名的缓存的那么如何清除浏览器的缓存呢针对谷歌浏览器谷歌浏览器清除方法如下打开浏览器访问如下地址点击就清楚了浏览器的缓存再访问绑的域名就会发现变啦针对火狐浏览器如果是火狐浏览器的话可以按照以下方式在地址栏中并回车可能会出现一个警告信息直接点击按钮进入会出现的所有配置信息通过搜索进行过滤可以看到一项名为项它对应的值就是缓存的时间双击此项会出现修改的提示框填入不缓存即可其他了解台根美国美国另支持法国美国美国美国另支持美国美国另支持瑞典美国英国另支持美国日本另支持域名定义顶级域名以等等属于国际顶级域名根据目前的国际互联网域名体系国际顶级域名分为两类类别顶级域名和地理顶级域名两种类别顶级域名是以等结尾的域名均由国外公司负责管理地理顶级域名是以国家或地区代码为结尾的域名如代表中国代表英国地理顶级域名一般由各个国家或地区负责管理二级域名二级域名是以顶级域名为基础的地理域名比喻中国的二级域有等子域名是其父域名的子域名比喻父域名是子域名就是或者一般来说二级域名是域名的一条记录比如是一个域名是其中比较常用的记录一般默认是用这个但是类似的域名全部称作是的二级网络通信流程本机获取本机的地址子网掩码网关的地址的地址打开浏览器想要访问在地址栏输入了网址协议基于协议部分的内容类似于下面这样我们假定这个部分的长度为字节它会被嵌在数据包之中协议数据包需要设置端口接收方的端口默认是发送方本机的端口是一个随机生成的之间的整数假定为数据包的标头长度为字节加上嵌入的数据包总长度变为字节协议然后数据包再嵌入数据包数据包需要设置双方的地址这是已知的发送方是本机接收方是数据包的标头长度为字节加上嵌入的数据包总长度变为字节以太网协议最后数据包嵌入以太网数据包以太网数据包需要设置双方的地址发送方为本机的网卡地址接收方为网关的地址通过协议得到以太网数据包的数据部分最大长度为字节而现在的数据包长度为字节因此数据包必须分割成四个包因为每个包都有自己的标头字节所以四个包的数据包的长度分别为服务器端响应经过多个网关的转发的服务器收到了这四个以太网数据包根据标头的序号将四个包拼起来取出完整的数据包然后读出里面的请求接着做出响应再用协议发回来本机收到响应以后就可以将网页显示出来完成一次网络通信网络设备及架构',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-15 07:37:38',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="prong的魔法地下室" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">prong的魔法地下室</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="fa-solid fa-timeline faa-tada"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="fas fa-tags faa-tada"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="fas fa-folder-open faa-tada"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/messageboard/"><i class="fa fa-comments faa-tada"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 修仙</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/books/"><i class="fa-solid fa-book-open-reader faa-tada"></i><span> 书单</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="fa-solid fa-film faa-tada"></i><span> 电影</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="fa-brands fa-xbox faa-tada"></i><span> 游戏</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="fa-brands fa-bilibili faa-tada"></i><span> 番剧</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/cinemas/"><i class="fa-brands fa-bilibili faa-tada"></i><span> B站追剧</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/update/"><i class="fa-solid fa-file-pen faa-tada"></i><span> 更新手账</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="fa-solid fa-person-through-window faa-tada"></i><span> 关于自己</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/mm_facetoface_collect_qrcode_1730547752845.webp" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/mm_facetoface_collect_qrcode_1730547752845.webp"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/1730547802675.webp" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/1730547802675.webp"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/ARCH%E6%A8%A1%E5%9E%8B/" style="font-size: 1.05rem;">ARCH模型<sup>1</sup></a><a href="/tags/C/" style="font-size: 1.05rem;">C++<sup>4</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">C语言<sup>5</sup></a><a href="/tags/MySQL/" style="font-size: 1.05rem;">MySQL<sup>1</sup></a><a href="/tags/PPT/" style="font-size: 1.05rem;">PPT<sup>1</sup></a><a href="/tags/Python/" style="font-size: 1.05rem;">Python<sup>2</sup></a><a href="/tags/Zerotier/" style="font-size: 1.05rem;">Zerotier<sup>1</sup></a><a href="/tags/hexo/" style="font-size: 1.05rem;">hexo<sup>3</sup></a><a href="/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/" style="font-size: 1.05rem;">✒️随笔<sup>13</sup></a><a href="/tags/%E4%B8%89%E4%B8%8B%E4%B9%A1/" style="font-size: 1.05rem;">三下乡<sup>1</sup></a><a href="/tags/%E4%BF%9D%E9%99%A9%E5%AD%A6/" style="font-size: 1.05rem;">保险学<sup>1</sup></a><a href="/tags/%E5%95%86%E4%B8%9A%E9%93%B6%E8%A1%8C/" style="font-size: 1.05rem;">商业银行<sup>1</sup></a><a href="/tags/%E5%9B%BD%E5%80%BA/" style="font-size: 1.05rem;">国债<sup>1</sup></a><a href="/tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 1.05rem;">国际贸易<sup>1</sup></a><a href="/tags/%E5%A4%A7%E7%BA%B2%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">大纲笔记<sup>1</sup></a><a href="/tags/%E5%AE%9E%E8%AF%81%E5%88%86%E6%9E%90/" style="font-size: 1.05rem;">实证分析<sup>1</sup></a><a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 1.05rem;">密码学<sup>1</sup></a><a href="/tags/%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 1.05rem;">微软输入法<sup>1</sup></a><a href="/tags/%E6%91%84%E5%BD%B1/" style="font-size: 1.05rem;">摄影<sup>1</sup></a><a href="/tags/%E6%94%AF%E6%95%99%E6%97%A5%E8%AE%B0/" style="font-size: 1.05rem;">支教日记<sup>4</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.05rem;">教程<sup>7</sup></a><a href="/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/" style="font-size: 1.05rem;">数字货币<sup>1</sup></a><a href="/tags/%E6%9E%81%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/" style="font-size: 1.05rem;">极分解定理<sup>1</sup></a><a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 1.05rem;">概率论与数理统计<sup>1</sup></a><a href="/tags/%E7%B2%AE%E9%A3%9F%E5%8D%B1%E6%9C%BA/" style="font-size: 1.05rem;">粮食危机<sup>1</sup></a><a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 1.05rem;">线性代数<sup>4</sup></a><a href="/tags/%E7%BE%8E%E5%8C%96/" style="font-size: 1.05rem;">美化<sup>1</sup></a><a href="/tags/%E8%8C%85%E5%8F%B0/" style="font-size: 1.05rem;">茅台<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7/" style="font-size: 1.05rem;">计算机二级<sup>1</sup></a><a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 1.05rem;">论文<sup>7</sup></a><a href="/tags/%E9%AB%98%E7%B2%B1/" style="font-size: 1.05rem;">高粱<sup>1</sup></a><a href="/tags/%E9%AD%94%E6%94%B9/" style="font-size: 1.05rem;">魔改<sup>2</sup></a><a href="/tags/%F0%9F%8C%90%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 1.05rem;">🌐网络协议<sup>1</sup></a><a href="/tags/%F0%9F%92%B0%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 1.05rem;">💰微观经济学<sup>1</sup></a><a href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">📓学习笔记<sup>45</sup></a><a href="/tags/%F0%9F%94%A0LaTeX/" style="font-size: 1.05rem;">🔠LaTeX<sup>1</sup></a><a href="/tags/%F0%9F%94%A0MarkDown/" style="font-size: 1.05rem;">🔠MarkDown<sup>1</sup></a><a href="/tags/%F0%9F%94%A0%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/" style="font-size: 1.05rem;">🔠英语语法<sup>4</sup></a><a href="/tags/%F0%9F%96%A5%EF%B8%8F%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 1.05rem;">🖥️计算机基础<sup>5</sup></a><a href="/tags/%F0%9F%A6%8Bbutterfly/" style="font-size: 1.05rem;">🦋butterfly<sup>3</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/11/"><span class="card-archive-list-date">十一月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">十月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">转载</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">学习笔记</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>📓学习笔记</span></a><a class="article-meta__tags" href="/tags/%F0%9F%96%A5%EF%B8%8F%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>🖥️计算机基础</span></a><a class="article-meta__tags" href="/tags/%F0%9F%8C%90%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>🌐网络协议</span></a></span></div></div><h1 class="post-title" itemprop="name headline">计算机基础 | 4. 网络协议</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2023-01-11T23:37:38.000Z" title="发表于 2023-01-12 07:37:38">2023-01-12</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2023-01-14T23:37:38.000Z" title="更新于 2023-01-15 07:37:38">2023-01-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">8.1k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>26分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="计算机基础 | 4. 网络协议"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为南京"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>南京</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301082014777.webp"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://www.cnblogs.com/linhaifeng/p/6523843.html"><header><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">学习笔记</a><a href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" tabindex="-1" itemprop="url">📓学习笔记</a><a href="/tags/%F0%9F%96%A5%EF%B8%8F%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" tabindex="-1" itemprop="url">🖥️计算机基础</a><a href="/tags/%F0%9F%8C%90%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" tabindex="-1" itemprop="url">🌐网络协议</a><h1 id="CrawlerTitle" itemprop="name headline">计算机基础 | 4. 网络协议</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">林海峰</span><time itemprop="dateCreated datePublished" datetime="2023-01-11T23:37:38.000Z" title="发表于 2023-01-12 07:37:38">2023-01-12</time><time itemprop="dateCreated datePublished" datetime="2023-01-14T23:37:38.000Z" title="更新于 2023-01-15 07:37:38">2023-01-15</time></header><h1>操作系统基础</h1>
+<p>操作系统:(Operating System，简称OS)是管理和控制计算机硬件与软件资源的计算机程序，是直接运行在“裸机”上的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。</p>
+<div class="note info flat"><p>注：计算机(硬件)－&gt;os－&gt;应用软件</p>
+</div>
+<h1>网络通信原理</h1>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301141430437.svg" alt></p>
+<h2 id="互联网的本质就是一系列的网络协议">互联网的本质就是一系列的网络协议</h2>
+<p>一台硬设有了操作系统，然后装上软件你就可以正常使用了，然而你也只能自己使用</p>
+<p>像这样，每个人都拥有一台自己的机器，然而彼此孤立</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301112345402.webp" alt></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301112344040.webp" alt></p>
+<div class="note primary flat"><p><strong>结论</strong>：英语成为世界上所有人通信的统一标准，如果把计算机看成分布于世界各地的人，那么连接两台计算机之间的internet实际上就是一系列统一的标准，这些标准称之为互联网协议，互联网的本质就是一系列的协议，总称为‘互联网协议’（Internet Protocol Suite).</p>
+</div>
+<p>互联网协议的<strong>功能</strong>：定义计算机如何接入internet，以及接入internet的计算机通信的标准。</p>
+<h2 id="osi七层协议">osi七层协议</h2>
+<p>互联网协议按照功能不同分为<code>osi七层</code>或<code>tcp/ip五层</code>或<code>tcp/ip四层</code><br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301112346106.webp" alt></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301112348593.webp" alt><br>
+每层运行常见物理设备</p>
+<p><code>OSI七层协议</code>数据传输的封包与解包过程<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301112348860.gif" alt></p>
+<h2 id="tcp-ip五层模型讲解">tcp/ip五层模型讲解</h2>
+<p>我们将应用层，表示层，会话层并作应用层，从tcp／ip五层协议的角度来阐述每层的由来与功能，搞清楚了每层的主要协议,就理解了整个互联网通信的原理。</p>
+<p>首先，用户感知到的只是最上面一层应用层，自上而下每层都依赖于下一层，所以我们从最下一层开始切入，比较好理解</p>
+<p>每层都运行特定的协议，越往上越靠近用户，越往下越靠近硬件</p>
+<ul>
+<li>物理层：基于电器特性发送高低电压(电信号)</li>
+<li>数据链路层：定义了电信号的分组方式</li>
+<li>网络层：引入一套新的地址用来区分不同的广播域／子网，这套地址即网络地址</li>
+<li>传输层：建立端口到端口的通信</li>
+<li>应用层：规定应用程序的数据格式</li>
+</ul>
+<h3 id="物理层">物理层</h3>
+<p>物理层由来：上面提到，孤立的计算机之间要想一起玩，就必须接入internet，言外之意就是计算机之间必须完成组网</p>
+<p>物理层功能：主要是<strong>基于电器特性发送高低电压(电信号)</strong>，高电压对应数字1，低电压对应数字0</p>
+<blockquote>
+<p>光缆、电缆、双绞线、无线电波</p>
+</blockquote>
+<h3 id="数据链路层">数据链路层</h3>
+<p>数据链路层由来：单纯的电信号0和1没有任何意义，必须规定电信号多少位一组，每组什么意思</p>
+<p>数据链路层的功能：<strong>定义了电信号的分组方式</strong></p>
+<h4 id="以太网协议："><strong>以太网协议：</strong></h4>
+<p>早期的时候各个公司都有自己的分组方式，后来形成了统一的标准，即以太网协议<code>ethernet</code></p>
+<p><code>ethernet</code>规定</p>
+<ul>
+<li>一组电信号构成一个数据包，叫做‘帧’</li>
+<li>每一数据帧分成：报头<code>head</code>和数据<code>data</code>两部分</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>head</th>
+<th>data</th>
+</tr>
+</thead>
+</table>
+<p><code>head</code>包含：(固定18个字节)</p>
+<ul>
+<li>发送者／源地址，6个字节</li>
+<li>接收者／目标地址，6个字节</li>
+<li>数据类型，6个字节</li>
+</ul>
+<p><code>data</code>包含：(最短46字节，最长1500字节)</p>
+<ul>
+<li>数据包的具体内容</li>
+</ul>
+<p><code>head长度＋data长度＝数据包长度</code></p>
+<p>最短64字节，最长1518字节，超过最大限制就分片发送</p>
+<h4 id="mac地址：">mac地址：</h4>
+<p>head中包含的源和目标地址由来：<code>ethernet</code>规定接入internet的设备都必须具备网卡，发送端和接收端的地址便是指网卡的地址，即<code>mac地址</code></p>
+<p><code>mac地址</code>：每块网卡出厂时都被烧制上一个世界唯一的mac地址，长度为48位2进制，通常由12位16进制数表示（前六位是厂商编号，后六位是流水线号）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301122338547.webp" alt></p>
+<h4 id="广播：">广播：</h4>
+<p>有了mac地址，同一网络内的两台主机就可以通信了（一台主机通过arp协议获取另外一台主机的mac地址）</p>
+<p><code>ethernet</code>采用最原始的方式，广播的方式进行通信，即计算机通信基本靠吼</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301122338745.webp" alt></p>
+<h3 id="网络层">网络层</h3>
+<p>网络层由来：有了ethernet、mac地址、广播的发送方式，世界上的计算机就可以彼此通信了，问题是世界范围的互联网是由</p>
+<p>一个个彼此隔离的小的局域网组成的，那么如果所有的通信都采用以太网的广播方式，那么一台机器发送的包全世界都会收到，</p>
+<p>这就不仅仅是效率低的问题了，这会是一种灾难</p>
+<p>上图结论：必须找出一种方法来区分哪些计算机属于同一广播域，哪些不是，如果是就采用广播的方式发送，如果不是，</p>
+<p>就采用<code>路由</code>的方式  <mark class="hl-label orange">（向不同广播域／子网分发数据包）</mark>  ，mac地址是无法区分的，它只跟厂商有关</p>
+<p>网络层功能：<strong>引入一套新的地址用来区分不同的广播域／子网，这套地址即网络地址</strong></p>
+<h4 id="IP协议："><strong>IP协议</strong>：</h4>
+<p>规定网络地址的协议叫<code>ip协议</code>，它定义的地址称之为<code>ip地址</code>，广泛采用的v4版本即<code>ipv4</code>，它规定网络地址由<strong>32位2进制表示</strong></p>
+<p>范围<code>0.0.0.0</code>-<code>255.255.255.255</code></p>
+<p>一个ip地址通常写成四段十进制数，例：<code>172.16.10.1</code></p>
+<p>ip地址分成两部分</p>
+<ul>
+<li>网络部分：标识子网</li>
+<li>主机部分：标识主机</li>
+</ul>
+<div class="note warning flat"><p>注意：单纯的ip地址段只是标识了ip地址的==种类==，从网络部分或主机部分都无法辨识一个ip所处的子网</p>
+</div>
+<p>例：172.16.10.1与172.16.10.2并不能确定二者处于同一子网</p>
+<h4 id="子网掩码">子网掩码</h4>
+<p>所谓”<code>子网掩码</code>”，就是表示子网络特征的一个参数。它在形式上等同于IP地址，也是一个32位二进制数字，它的网络部分全部为1，主机部分全部为0。比如，IP地址<code>172.16.10.1</code>，如果已知网络部分是前24位，主机部分是后8位，那么子网络掩码就是<code>11111111.11111111.11111111.00000000</code>，写成十进制就是<code>255.255.255.0</code>。</p>
+<p>知道”<code>子网掩码</code>”，我们就能判断，任意两个IP地址是否处在同一个子网络。方法是将两个IP地址与子网掩码分别进行AND运算（两个数位都为1，运算结果为1，否则为0），然后比较结果是否相同，如果是的话，就表明它们在同一个子网络中，否则就不是。</p>
+<p>比如，已知IP地址<code>172.16.10.1</code>和<code>172.16.10.2</code>的子网掩码都是255.255.255.0，请问它们是否在同一个子网络？两者与子网掩码分别进行AND运算，</p>
+<blockquote>
+<p><code>172.16.10.1</code>：<code>10101100.00010000.00001010.000000001</code><br>
+<code>255255.255.255.0</code>:<code>11111111.11111111.11111111.00000000</code><br>
+AND运算得网络地址结果：<code>10101100.00010000.00001010.000000001</code>-&gt;<code>172.16.10.0</code></p>
+<p><code>172.16.10.2</code>：<code>10101100.00010000.00001010.000000010</code><br>
+<code>255255.255.255.0</code>:<code>11111111.11111111.11111111.00000000</code><br>
+AND运算得网络地址结果：<code>10101100.00010000.00001010.000000001</code>-&gt;<code>172.16.10.0</code></p>
+<p>结果都是<code>172.16.10.0</code>，因此它们在同一个子网络。</p>
+<p>总结一下，IP协议的作用主要有两个</p>
+<ul>
+<li><strong>为每一台计算机分配IP地址</strong></li>
+<li><strong>确定哪些地址在同一个子网络</strong>。</li>
+</ul>
+</blockquote>
+<h4 id="ip数据包">ip数据包</h4>
+<p>ip数据包也分为head和data部分，无须为ip包定义单独的栏位，直接放入以太网包的data部分</p>
+<p>head：长度为20到60字节</p>
+<p>data：最长为65,515字节。</p>
+<p>而以太网数据包的”数据”部分，最长只有1500字节。因此，如果IP数据包超过了1500字节，它就需要分割成几个以太网数据包，分开发送了。</p>
+<table>
+<thead>
+<tr>
+<th>以太网头</th>
+<th>ip 头</th>
+<th>ip数据</th>
+</tr>
+</thead>
+</table>
+<h4 id="ARP协议">ARP协议</h4>
+<p><code>arp协议</code>由来：计算机通信基本靠吼，即广播的方式，所有上层的包到最后都要封装上<code>以太网头</code>，然后通过以太网协议发送，在谈及以太网协议时候，我门了解到</p>
+<blockquote>
+<p>通信是基于mac的广播方式实现，计算机在发包时，获取自身的mac是容易的，如何获取目标主机的mac，就需要通过<code>arp协议</code></p>
+</blockquote>
+<p>arp协议功能：<strong>广播的方式发送数据包，获取目标主机的mac地址</strong></p>
+<p>协议工作方式：每台主机ip都是已知的</p>
+<blockquote>
+<p>例如：主机172.16.10.10/24访问172.16.10.11/24</p>
+</blockquote>
+<p>一：首先通过<code>ip地址</code>和<code>子网掩码</code>区分出自己所处的子网</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>数据包地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同一子网</td>
+<td>目标主机mac，目标主机ip</td>
+</tr>
+<tr>
+<td>不同子网</td>
+<td>网关mac，目标主机ip</td>
+</tr>
+</tbody>
+</table>
+<p>二：分析172.16.10.10/24与172.16.10.11/24处于同一网络(如果不是同一网络，那么下表中目标ip为172.16.10.1,通过arp获取的是网关的mac)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>源mac</th>
+<th>目标mac</th>
+<th>源ip</th>
+<th>目标ip</th>
+<th>数据部分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发送端主机</td>
+<td>发送端mac</td>
+<td>FF:FF:FF:FF:FF:FF</td>
+<td>172.16.10.10/24</td>
+<td>172.16.10.11/24</td>
+<td>数据</td>
+</tr>
+</tbody>
+</table>
+<p>三：这个包会以广播的方式在发送端所处的自网内传输，所有主机接收后拆开包，发现目标ip为自己的，就响应，返回自己的mac</p>
+<h3 id="传输层">传输层</h3>
+<p>传输层的由来：<strong>网络层的ip帮我们区分子网</strong>，<strong>以太网层的mac帮我们找到主机</strong>，然后大家使用的都是应用程序，你的电脑上可能同时开启qq，暴风影音，等多个应用程序，</p>
+<p>那么我们通过ip和mac找到了一台特定的主机，如何标识这台主机上的应用程序，答案就是<strong>端口</strong>，端口即<strong>应用程序与网卡关联的编号</strong>。</p>
+<p>传输层功能：<strong>建立端口到端口的通信</strong></p>
+<div class="note info flat"><p>补充：端口范围0-65535，0-1023为系统占用端口</p>
+</div>
+<ul>
+<li>tcp协议：<br>
+可靠传输，TCP数据包没有长度限制，理论上可以无限长，但是为了保证网络的效率，通常TCP数据包的长度不会超过IP数据包的长度，以确保单个TCP数据包不必再分割。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>以太网头</th>
+<th>ip 头</th>
+<th>tcp头</th>
+<th>数据</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>udp协议：<br>
+不可靠传输，”报头”部分一共只有8个字节，总长度不超过65,535字节，正好放进一个IP数据包。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>以太网头</th>
+<th>ip头</th>
+<th>udp头</th>
+<th>数据</th>
+</tr>
+</thead>
+</table>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301131456890.webp" alt></p>
+<center> tcp报文 </center>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301131502993.webp" alt></p>
+<center> tcp三次握手和四次挥手 </center>
+<h3 id="应用层">应用层</h3>
+<p>应用层由来：用户使用的都是应用程序，均工作于应用层，互联网是开发的，大家都可以开发自己的应用程序，数据多种多样，必须规定好数据的组织形式</p>
+<p>应用层功能：<strong>规定应用程序的数据格式</strong>。</p>
+<div class="note info flat"><p>例：TCP协议可以为各种各样的程序传递数据，比如Email、WWW、FTP等等。那么，必须有不同协议规定电子邮件、网页、FTP数据的格式，这些应用程序协议就构成了”应用层”。</p>
+</div>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301131620993.webp" alt></p>
+<h3 id="socket">socket</h3>
+<p>我们知道两个进程如果需要进行通讯最基本的一个前提<code>能够唯一的标示一个进程</code>，在本地进程通讯中我们可以使用<code>PID</code>来唯一标示一个进程，但PID<strong>只在本地唯一</strong>，网络中的两个进程PID冲突几率很大，这时候我们需要另辟它径了，我们知道IP层的<code>ip地址</code>可以唯一标示主机，而TCP层协议和端口号可以唯一标示主机的一个进程，这样我们可以利用<code>ip地址＋协议＋端口号</code>唯一标示网络中的一个进程。</p>
+<p>能够唯一标示网络中的进程后，它们就可以利用socket进行通信了，什么是socket呢？我们经常把socket翻译为套接字，socket是在应用层和传输层之间的一个抽象层，它把TCP/IP层复杂的操作抽象为几个简单的接口供应用层调用已实现进程在网络中通信。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301131621096.webp" alt></p>
+<p>socket起源于UNIX，在Unix一切皆文件哲学的思想下，socket是一种&quot;打开—读/写—关闭&quot;模式的实现，服务器和客户端各自维护一个&quot;文件&quot;，在建立连接打开后，可以向自己文件写入内容供对方读取或者读取对方内容，通讯结束时关闭文件。</p>
+<h3 id="小结">小结</h3>
+<p>总结图如下：</p>
+<p>数据传输动图如下：<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301131810962.gif" alt></p>
+<h1>网络通信实现</h1>
+<p>想实现网络通信，每台主机需具备四要素</p>
+<ul>
+<li>本机的IP地址</li>
+<li>子网掩码</li>
+<li>网关的IP地址</li>
+<li>DNS的IP地址</li>
+</ul>
+<p>获取这四要素分两种方式</p>
+<ol>
+<li>
+<p>静态获取<br>
+即手动配置</p>
+</li>
+<li>
+<p>动态获取<br>
+通过dhcp获取</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>以太网头</th>
+<th>IP头</th>
+<th>UDP头</th>
+<th>DHCP数据包</th>
+</tr>
+</thead>
+</table>
+<p>（1）最前面的”<code>以太网标头</code>”，设置发出方（本机）的<code>MAC地址</code>和接收方（<code>DHCP服务器</code>）的<code>MAC地址</code>。前者就是本机网卡的MAC地址，后者这时不知道，就填入一个<code>广播地址：FF-FF-FF-FF-FF-FF</code>。<br>
+（2）后面的”<code>IP标头</code>”，设置<code>发出方的IP地址</code>和<code>接收方的IP地址</code>。这时，对于这两者，本机都不知道。于是，<code>发出方的IP地址</code>就设为<code>0.0.0.0</code>，<code>接收方的IP地址</code>设为<code>255.255.255.255</code>。<br>
+（3）最后的”<code>UDP标头</code>”，设置发出方的端口和接收方的端口。这一部分是<code>DHCP协议</code>规定好的，发出方是<code>68端口</code>，接收方是<code>67端口</code>。</p>
+<p>这个数据包构造完成后，就可以发出了。以太网是<strong>广播发送</strong>，同一个子网络的每台计算机都收到了这个包。因为接收方的MAC地址是<code>FF-FF-FF-FF-FF-FF</code>，看不出是发给谁的，所以每台收到这个包的计算机，还必须分析这个包的IP地址，才能确定是不是发给自己的。当看到发出方IP地址是<code>0.0.0.0</code>，接收方是<code>255.255.255.255</code>，于是DHCP服务器知道”这个包是发给我的”，而其他计算机就可以丢弃这个包。</p>
+<p>接下来，DHCP服务器读出这个包的数据内容，分配好IP地址，发送回去一个”<code>DHCP响应</code>”数据包。这个响应包的结构也是类似的，<code>以太网标头</code>的MAC地址是双方的网卡地址，<code>IP标头</code>的IP地址是DHCP服务器的IP地址（发出方）和255.255.255.255（接收方），UDP标头的端口是67（发出方）和68（接收方），分配给请求端的IP地址和本网络的具体参数则包含在Data部分。</p>
+<p>新加入的计算机收到这个<strong>响应包</strong>，于是就知道了自己的IP地址、子网掩码、网关地址、DNS服务器等等参数</p>
+<h1>DNS域名解析</h1>
+<h2 id="DNS">DNS</h2>
+<p>DNS的作用：在互联网中，其实没有类似于<code>www.xxx.com</code>这种域名方式，而替代的是以IP地址，如<code>222.222.222.222</code>，那我们在IE地址栏中应当输入<code>222.222.222.222</code>才能打开网站<code>www.xxx.com</code>，但我们细想一下，互联网上的网站成千上万，如果每个网站登陆都需要记住一大串数字，那是不是特别不方便，对于记忆力不强的人，根本无法记住这么烦琐的数字。这个时候DNS就出现了，它的作用就是将<code>222.222.222.222</code><strong>解析</strong>为<code>www.xxx.com</code>，那么我们登陆的时候就直接输入域名就可以了。</p>
+<p>为什么一定要设置DNS才能上网？有些朋友可能会发现，为什么我可能登陆QQ、MSN，但却打不开网页呢？其实大部分原因都是因为DNS服务器故障造成的，DNS服务器地址是唯一的，是运营商提供给终端用户用来解析IP地址及域名的关系，而如果不设定DNS服务器地址，那么就无法查询地址的去向，自然也就打不开网页，而QQ、MSN等即时聊天软件，采用的是<code>UDP传输协议</code>，即不可靠传输协议，无需提供DNS服务器地址，也同样可以登陆。</p>
+<h2 id="dns的两种查询方式">dns的两种查询方式</h2>
+<h3 id="递归">递归</h3>
+<p>主机向本地域名服务器的查询一般都是采用<strong>递归查询</strong>。所谓递归查询就是：如果主机所询问的本地域名服务器不知道被查询的域名的IP地址，那么本地域名服务器就以DNS客户的身份，向其它根域名服务器继续发出查询请求报文(即替主机继续查询)，而不是让主机自己进行下一步查询。</p>
+<p>因此，递归查询返回的查询结果或者是所要查询的IP地址，或者是报错，表示无法查询到所需的IP地址。</p>
+<h3 id="迭代">迭代</h3>
+<p>本地域名服务器向根域名服务器的查询的迭代查询。迭代查询的特点：当根域名服务器收到本地域名服务器发出的迭代查询请求报文时，要么给出所要查询的IP地址，<br>
+要么告诉本地服务器：“你下一步应当向哪一个域名服务器进行查询”。然后让本地服务器进行后续的查询。根域名服务器通常是把自己知道的顶级域名服务器的IP地址告诉本地域名服务器，<br>
+让本地域名服务器再向顶级域名服务器查询。顶级域名服务器在收到本地域名服务器的查询请求后，要么给出所要查询的IP地址，要么告诉本地服务器下一步应当向哪一个权限域名服务器进行查询。<br>
+最后，知道了所要解析的IP地址或报错，然后把这个结果返回给发起查询的主机。<br>
+复制代码<br>
+下图给出了这两种查询的差别</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301131826638.webp" alt></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301131826741.webp" alt></p>
+<div class="note primary flat"><p>下面举一个例子演示整个查询过程：</p>
+</div>
+<p>假定域名为m.xyz.com的主机想知道另一个主机y.abc.com的IP地址。例如，<a target="_blank" rel="noopener" href="http://xn--m-dr6av31f.xyz.xn--comy-s85f70x1n1ao08bseg2m0cntb.abc.com">主机m.xyz.com打算发送邮件给y.abc.com</a>。这时就必须知道主机y.abc.com的IP地址。下面是图2的几个查询步骤：</p>
+<ol>
+<li>主机<code>m.abc.com</code>先向本地服务器<code>dns.xyz.com</code>进行递归查询。</li>
+<li>本地服务器采用<strong>迭代查询</strong>。它先向一个根域名服务器查询。</li>
+<li>根域名服务器告诉本地服务器，下一次应查询的顶级域名服务器<code>dns.com</code>的IP地址。</li>
+<li>本地域名服务器向顶级域名服务器<code>dns.com</code>进行查询。</li>
+<li>顶级域名服务器<code>dns.com</code>告诉本地域名服务器，下一步应查询的权限服务器<code>dns.abc.com</code>的IP地址。</li>
+<li>本地域名服务器向权限域名服务器<code>dns.abc.com</code>进行查询。</li>
+<li>权限域名服务器<code>dns.abc.com</code>告诉本地域名服务器，所查询的主机的IP地址。</li>
+<li>本地域名服务器最后把查询结果告诉<code>m.xyz.com</code>。</li>
+</ol>
+<div class="note info flat"><p>整个查询过程共用到了8个UDP报文。</p>
+</div>        
+<p>为了提高DNS查询效率，并减轻服务器的负荷和减少因特网上的DNS查询报文数量，在域名服务器中广泛使用了<strong>高速缓存</strong>，用来存放最近查询过的域名以及从何处获得域名映射信息的记录。</p>
+<p>例如，在上面的查询过程中，如果在<code>m.xyz.com</code>的主机上不久前已经有用户查询过<code>y.abc.com</code>的IP地址，那么本地域名服务器就不必向根域名服务器重新查询<code>y.abc.com</code>的IP地址，而是直接把告诉缓存中存放的上次查询结果(即<code>y.abc.com</code>的IP地址)告诉用户。</p>
+<p>由于名字到地址的绑定并不经常改变，为保持告诉缓存中的内容正确，域名服务器应为每项内容设置计时器并处理超过合理时间的项(例如每个项目两天)。当域名服务器已从缓存中删去某项信息后又被请求查询该项信息，就必须重新到授权管理该项的域名服务器绑定信息。当权限服务器回答一个查询请求时，在响应中都指明绑定有效存在的时间值。增加此时间值可减少网络开销，而减少此时间值可提高域名解析的正确性。</p>
+<p>不仅在本地域名服务器中需要高速缓存，在主机中也需要。许多主机在启动时从本地服务器下载名字和地址的全部数据库，维护存放自己最近使用的域名的高速缓存，并且只在从缓存中找不到名字时才使用域名服务器。维护本地域名服务器数据库的主机应当定期地检查域名服务器以获取新的映射信息，而且主机必须从缓存中删除无效的项。由于域名改动并不频繁，大多数网点不需花精力就能维护数据库的一致性。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301132350090.webp" alt></p>
+<h2 id="DNS解析流程举例">DNS解析流程举例</h2>
+<p>如上图所示，我们将详细阐述DNS解析流程。</p>
+<ol>
+<li>首先客户端位置是一台电脑或手机，在打开浏览器以后，比如输入<code>http://www.zdns.cn</code>的域名，它首先是由浏览器发起一个DNS解析请求，如果本地缓存服务器中找不到结果，则首先会向<code>根服务器</code>查询，根服务器里面记录的都是各个顶级域所在的服务器的位置，当向根请求<code>http://www.zdns.cn</code>的时候，根服务器就会返回<code>.cn服务器</code>的位置信息。</li>
+<li><code>递归服务器</code>拿到.cn的权威服务器地址以后，就会寻问cn的<code>权威服务器</code>，知不知道<code>http://www.zdns.cn</code>的位置。这个时候cn权威服务器查找并返回<code>http://zdns.cn</code>服务器的地址。</li>
+<li>继续向<code>http://zdns.cn</code>的权威服务器去查询这个地址，由<code>http://zdns.cn</code>的服务器给出了地址：202.173.11.10</li>
+<li>最终才能进行http的链接，顺利访问网站。</li>
+<li>这里补充说明，一旦递归服务器拿到解析记录以后，就会在本地进行缓存，如果下次客户端再请求本地的递归域名服务器相同域名的时候，就不会再这样一层一层查了，因为本地服务器里面已经有缓存了，这个时候就直接把http://www.zdns.cn的A记录返回给客户端就可以了。</li>
+</ol>
+<div class="note info flat"><p>DNS的查询类型有20种，比较常用的查询类型有有A,NS,CNAME,PTR，MX等五种类型。以下分别介绍五种类型：</p>
+</div>
+<ul>
+<li>A:由DNS域名到IP地址的查询，即正向查询，编程中由函数gethostbyname实现。</li>
+<li>PTR：由IP到域名的查询，即逆向查询，编程中由函数gethostbyaddr。</li>
+<li>NS:查询解析的名字服务器（Name server）。</li>
+<li>CNAME：查询DNS的别名。</li>
+<li>MX:邮箱服务器查询。</li>
+</ul>
+<div class="note info flat"><p>DNS资源记录</p>
+</div>
+<p>记录一条<strong>域名信息映射关系</strong>，称之为<code>资源记录（RR）</code>。<br>
+当我们查询域名<code>http://www.zdns.cn</code>的时候，查询结果得到的资源记录结构体中有如下数据：</p>
+<ol>
+<li>TTL，就是生存周期，是递归服务器会在缓存中保存该资源记录的时长。</li>
+<li>网络/协议类型，它的代表的标识是IN，IN就是internet，目前DNS系统主要支持的协议是IN。</li>
+<li>type，就是资源记录类型，一般的网站都是都是A记录（IPv4的主机地址）。</li>
+<li>rdata是资源记录数据，就是域名关联的信息数据。</li>
+</ol>
+<h2 id="DNS缓存">DNS缓存</h2>
+<p>DNS缓存指DNS返回了正确的IP之后，系统就会将这个结果临时储存起来。并且它会为缓存设定一个失效时间 (例如N小时)，在这N小时之内，当你再次访问这个网站时，系统就会直接从你电脑本地的DNS缓存中把结果交还给你，而不必再去询问DNS服务器，变相“加速”了网址的解析。</p>
+<p>当然，在超过N小时之后，系统会自动再次去询问DNS服务器获得新的结果。所以，当你修改了 DNS 服务器，并且不希望电脑继续使用之前的DNS缓存时，就需要手动去清除本地的缓存了。</p>
+<h2 id="DNS缓存分类">DNS缓存分类</h2>
+<ol>
+<li>浏览器DNS缓存（内存中): 浏览器会按照一定频率缓存DNS记录</li>
+<li>本地操作系统DNS缓存(内存中): 如果浏览器缓存中找不到需要的DNS记录，那就去操作系统找。</li>
+<li>本地HOSTS文件（硬盘中）: Windows系统中位于C:\Windows\System32\drivers\etc</li>
+<li>路由器指定的DNS(远程): 路由器自动获取DNS地址，也可以手动修改-登录后台设置DNS服务器地址</li>
+</ol>
+<div class="note warning flat"><p>ps：路由器DNS被篡改会造成<strong>域名劫持</strong>，你访问的网址都会被定位到同一个位置，但是IP直接可以访问</p>
+</div>
+<ol start="5">
+<li>ISP的DNS服务器（远程）:  <code>ISP(Internet Service Provider</code>互联网服务提供商如联通电信移动)，ISP有专门的DNS服务器应 对DNS查询请求</li>
+<li>根服务器（远程，跨国）: ISP的DNS服务器还找不到的话，它就会向根服务器发出查询请求</li>
+</ol>
+<p>调用系统缓存需要跨进程，消耗大，因此为了解析速度的方便，就有了一系列缓存来加快IP查找速度。</p>
+<h2 id="浏览器DNS查找顺序">浏览器DNS查找顺序</h2>
+<p><code>浏览器DNS缓存-&gt;本地系统DNS缓存-&gt;本地计算机HOSTS文件-&gt;ISP DNS缓存-&gt;递归or迭代搜索</code></p>
+<p>期间如果查询到了，也就直接访问ip地址了，这个就像三级缓存原理一样，例如，能够在hosts文件中找到就不会再去查其他的</p>
+<h2 id="清除DNS缓存">清除DNS缓存</h2>
+<p>打开cmd执行命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ipconfig</span> /all</span><br></pre></td></tr></table></figure>
+<div class="note primary flat"><p>全国通用DNS地址（国内用户推荐使用，速度较快！）</p>
+</div>
+<p>首先DNS服务器地址添：<code>114.114.114.114</code>  (位于北京人民英雄纪念碑）<br>
+备用DNS服务器地址添：<code>114.114.115.115</code></p>
+<div class="note primary flat"><p>全球通用DNS地址（此DNS地址为谷歌服务器的）</p>
+</div>
+<p>首选DNS服务器地址添：<code>8.8.8.8</code><br>
+备用DNS服务器地址添：<code>8.8.4.4</code></p>
+<p>查看本地dns缓存命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ipconfig</span> /displaydns</span><br></pre></td></tr></table></figure>
+<p>清除本地dns缓存命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ipconfig</span> /flushdns</span><br></pre></td></tr></table></figure>
+<h2 id="清除浏览器缓存">清除浏览器缓存</h2>
+<p>我们在开发的时候，有时候会给某个域名绑hosts，用于本地开发测试，但是绑了之后，用谷歌浏览器访问会发现并没有生效，按F12会发现访问的还是线上的ip，说明浏览器是有该域名的dns缓存的，那么如何清除浏览器的dns缓存呢？</p>
+<ol>
+<li>
+<p>针对谷歌浏览器<br>
+谷歌浏览器清除方法如下：打开浏览器，访问如下地址<br>
+<code>chrome://net-internals/#dns</code><br>
+点击 <code>clear host cache</code>，就清楚了浏览器的dns缓存，再访问绑hosts的域名，就会发现ip变啦</p>
+</li>
+<li>
+<p>针对火狐浏览器<br>
+如果是firefox火狐浏览器的话，可以按照以下方式：<br>
+在地址栏中 <code>about:config</code> 并回车，可能会出现一个警告信息，直接点击按钮进入，会出现firefox的所有配置信息，通过搜索dns 进行过滤，可以看到一项名为 <code>network.dnsCacheExpirationGracePeriod</code> 项，它对应的值就是DNS缓存的时间，双击此项，会出现修改的提示框，填入 <code>0</code> （不缓存DNS）即可。</p>
+</li>
+</ol>
+<h2 id="其他了解">其他了解</h2>
+<h3 id="13台根dns：">13台根dns：</h3>
+<p>A.<code>root-servers.net198.41.0.4</code>美国<br>
+B.<code>root-servers.net192.228.79.201</code>美国（另支持IPv6）<br>
+C.<code>root-servers.net192.33.4.12</code>法国<br>
+D.<code>root-servers.net128.8.10.90</code>美国<br>
+E.<code>root-servers.net192.203.230.10</code>美国<br>
+F.<code>root-servers.net192.5.5.241</code>美国（另支持IPv6）<br>
+G.<code>root-servers.net192.112.36.4</code>美国<br>
+H.<code>root-servers.net128.63.2.53</code>美国（另支持IPv6）<br>
+I.<code>root-servers.net192.36.148.17</code>瑞典<br>
+J.<code>root-servers.net192.58.128.30</code>美国<br>
+K.<code>root-servers.net193.0.14.129</code>英国（另支持IPv6）<br>
+L.<code>root-servers.net198.32.64.12</code>美国<br>
+M.<code>root-servers.net202.12.27.33</code>日本（另支持IPv6）</p>
+<h3 id="域名定义">域名定义</h3>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://jingyan.baidu.com/article/1974b289a649daf4b1f774cb.html">http://jingyan.baidu.com/article/1974b289a649daf4b1f774cb.html</a></p>
+</blockquote>
+<p>顶级域名：以<code>.com</code>,<code>.net</code>,<code>.org</code>,<code>.cn</code>等等属于<strong>国际顶级域名</strong>，根据目前的国际互联网域名体系，国际顶级域名分为两类：<code>类别顶级域名(gTLD)</code>和<code>地理顶级域名(ccTLD)</code>两种。</p>
+<ul>
+<li>类别顶级域名是以&quot;<code>COM</code>&quot;、“<code>NET</code>”、“<code>ORG</code>”、“<code>BIZ</code>”、&quot;<code>INFO</code>&quot;等结尾的域名，均由国外公司负责管理。</li>
+<li>地理顶级域名是以国家或地区代码为结尾的域名，如&quot;CN&quot;代表中国，&quot;UK&quot;代表英国。地理顶级域名一般由各个国家或地区负责管理。</li>
+</ul>
+<p>二级域名：二级域名是以顶级域名为基础的地理域名，比喻中国的二级域有，<code>.com.cn</code>,<code>.net.cn</code>,<code>.org.cn</code>,<code>.gd.cn</code>等.子域名是其父域名的子域名，比喻父域名是<code>abc.com</code>,子域名就是<code>www.abc.com</code>或者<code>*.abc.com</code>.</p>
+<p>一般来说，二级域名是域名的一条记录，比如<code>alidiedie.com</code>是一个域名，<code>www.alidiedie.com</code>是其中比较常用的记录，一般默认是用这个，但是类似<code>*.alidiedie.com</code>的域名全部称作是<code>alidiedie.com</code>的二级</p>
+<h1>网络通信流程</h1>
+<ol>
+<li>本机获取</li>
+</ol>
+<div class="note info flat"><p>本机的IP地址：<code>192.168.1.100</code><br>
+子网掩码：<code>255.255.255.0</code><br>
+网关的IP地址：<code>192.168.1.1</code><br>
+DNS的IP地址：<code>8.8.8.8</code></p>
+</div>
+<ol start="2">
+<li>
+<p>打开浏览器，想要访问Google，在地址栏输入了网址：<a target="_blank" rel="noopener" href="http://www.google.com">www.google.com</a>。</p>
+</li>
+<li>
+<p>dns协议(基于udp协议)</p>
+</li>
+<li>
+<p>HTTP部分的内容，类似于下面这样：</p>
+</li>
+</ol>
+<div class="note info flat"><p>GET / HTTP/1.1<br>
+Host: <a target="_blank" rel="noopener" href="http://www.google.com">www.google.com</a><br>
+Connection: keep-alive<br>
+User-Agent: Mozilla/5.0 (Windows NT 6.1) ……<br>
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8<br>
+Accept-Encoding: gzip,deflate,sdch<br>
+Accept-Language: zh-CN,zh;q=0.8<br>
+Accept-Charset: GBK,utf-8;q=0.7,*;q=0.3<br>
+Cookie: … …</p>
+</div>
+<p>我们假定这个部分的长度为4960字节，它会被嵌在TCP数据包之中。</p>
+<ol start="5">
+<li>TCP协议<br>
+TCP数据包需要设置端口，接收方（Google）的HTTP端口默认是80，发送方（本机）的端口是一个随机生成的1024-65535之间的整数，假定为51775。</li>
+</ol>
+<p>TCP数据包的标头长度为20字节，加上嵌入HTTP的数据包，总长度变为4980字节。</p>
+<ol start="6">
+<li>IP协议<br>
+然后，TCP数据包再嵌入IP数据包。IP数据包需要设置双方的IP地址，这是已知的，发送方是192.168.1.100（本机），接收方是172.194.72.105（Google）。</li>
+</ol>
+<p>IP数据包的标头长度为20字节，加上嵌入的TCP数据包，总长度变为5000字节。</p>
+<ol start="7">
+<li>以太网协议<br>
+最后，IP数据包嵌入以太网数据包。以太网数据包需要设置双方的MAC地址，发送方为本机的网卡MAC地址，接收方为网关192.168.1.1的MAC地址（通过ARP协议得到）。</li>
+</ol>
+<p>以太网数据包的数据部分，最大长度为1500字节，而现在的IP数据包长度为5000字节。因此，IP数据包必须分割成四个包。因为每个包都有自己的IP标头（20字节），所以四个包的IP数据包的长度分别为1500、1500、1500、560。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301141352775.webp" alt></p>
+<ol start="8">
+<li>服务器端响应<br>
+经过多个网关的转发，Google的服务器172.194.72.105，收到了这四个以太网数据包。</li>
+</ol>
+<p>根据IP标头的序号，Google将四个包拼起来，取出完整的TCP数据包，然后读出里面的”HTTP请求”，接着做出”HTTP响应”，再用TCP协议发回来。</p>
+<p>本机收到HTTP响应以后，就可以将网页显示出来，完成一次网络通信。</p>
+<h1>网络设备及架构</h1>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301141432849.png" alt></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301242359645.webp" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301242359645.webp" title="头像" alt="头像"></a><div class="post-copyright__author_name">林海峰</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__reprint" title="该文章为转载文章，注意版权协议" target="_blank" rel="noopener" href="https://www.cnblogs.com/linhaifeng/p/6523843.html">转载</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://www.cnblogs.com/linhaifeng/p/6523843.html')">计算机基础 | 4. 网络协议</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/mm_facetoface_collect_qrcode_1730547752845.webp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/mm_facetoface_collect_qrcode_1730547752845.webp" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/1730547802675.webp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/1730547802675.webp" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.cnblogs.com/linhaifeng/p/6523843.html"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=计算机基础 | 4. 网络协议&amp;url=https://www.cnblogs.com/linhaifeng/p/6523843.html&amp;pic=https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301082014777.webp" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">转载</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>📓学习笔记<span class="tagsPageCount">45</span></a><a class="post-meta__box__tags" href="/tags/%F0%9F%96%A5%EF%B8%8F%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>🖥️计算机基础<span class="tagsPageCount">5</span></a><a class="post-meta__box__tags" href="/tags/%F0%9F%8C%90%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>🌐网络协议<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303112139249.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/728cd81a.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301082014777.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计算机基础 | 3. 操作系统</div></div></a></div><div class="next-post pull-right"><a href="/posts/a60e631.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301122257311.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">随笔 | 东北之夏</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/posts/a9cc61bb.html" title="计算机基础 | 1. 计算机硬件发展史"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301082014777.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-01-06</div><div class="title">计算机基础 | 1. 计算机硬件发展史</div></div></a></div><div><a href="/posts/10ad4e18.html" title="计算机基础 | 2. 计算机硬件组成"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301082014777.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-01-10</div><div class="title">计算机基础 | 2. 计算机硬件组成</div></div></a></div><div><a href="/posts/728cd81a.html" title="计算机基础 | 3. 操作系统"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301082014777.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-01-12</div><div class="title">计算机基础 | 3. 操作系统</div></div></a></div><div><a href="/posts/4fb638dd.html" title="计算机基础 | IP地址以及子网划分"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301082014777.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-01-14</div><div class="title">计算机基础 | IP地址以及子网划分</div></div></a></div><div><a href="/posts/e6868ecb.html" title="C++ | 奥赛一本通刷题笔记"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411071945448.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-12-18</div><div class="title">C++ | 奥赛一本通刷题笔记</div></div></a></div><div><a href="/posts/cea7d534.html" title="C++ | 机考参考资料和题目"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411071937360.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-12-18</div><div class="title">C++ | 机考参考资料和题目</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)" style="display: none">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301242359645.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://emotion.acs.pw/emotion/QQ/154.gif" alt="status"/></div></div><div class="author-info__description">这是尖头叉子在霍格沃茨的休息室~</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">Prong</h1><div class="author-info__desc"></div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/37924260/" target="_blank" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="social-icon faa-parent animated-hover" href="/atom.xml" target="_blank" title="RSS订阅"><i class="anzhiyufont anzhiyu-icon-rss"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">操作系统基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">网络通信原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%B0%B1%E6%98%AF%E4%B8%80%E7%B3%BB%E5%88%97%E7%9A%84%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.1.</span> <span class="toc-text">互联网的本质就是一系列的网络协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#osi%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.2.</span> <span class="toc-text">osi七层协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp-ip%E4%BA%94%E5%B1%82%E6%A8%A1%E5%9E%8B%E8%AE%B2%E8%A7%A3"><span class="toc-number">2.3.</span> <span class="toc-text">tcp&#x2F;ip五层模型讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-number">2.3.1.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-number">2.3.2.</span> <span class="toc-text">数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%8D%8F%E8%AE%AE%EF%BC%9A"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">以太网协议：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mac%E5%9C%B0%E5%9D%80%EF%BC%9A"><span class="toc-number">2.3.2.2.</span> <span class="toc-text">mac地址：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%BF%E6%92%AD%EF%BC%9A"><span class="toc-number">2.3.2.3.</span> <span class="toc-text">广播：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">2.3.3.</span> <span class="toc-text">网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IP%E5%8D%8F%E8%AE%AE%EF%BC%9A"><span class="toc-number">2.3.3.1.</span> <span class="toc-text">IP协议：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81"><span class="toc-number">2.3.3.2.</span> <span class="toc-text">子网掩码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ip%E6%95%B0%E6%8D%AE%E5%8C%85"><span class="toc-number">2.3.3.3.</span> <span class="toc-text">ip数据包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ARP%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.3.3.4.</span> <span class="toc-text">ARP协议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">2.3.4.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">2.3.5.</span> <span class="toc-text">应用层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket"><span class="toc-number">2.3.6.</span> <span class="toc-text">socket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">2.3.7.</span> <span class="toc-text">小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">网络通信实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">DNS域名解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS"><span class="toc-number">4.1.</span> <span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dns%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F"><span class="toc-number">4.2.</span> <span class="toc-text">dns的两种查询方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-number">4.2.1.</span> <span class="toc-text">递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3"><span class="toc-number">4.2.2.</span> <span class="toc-text">迭代</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS%E8%A7%A3%E6%9E%90%E6%B5%81%E7%A8%8B%E4%B8%BE%E4%BE%8B"><span class="toc-number">4.3.</span> <span class="toc-text">DNS解析流程举例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS%E7%BC%93%E5%AD%98"><span class="toc-number">4.4.</span> <span class="toc-text">DNS缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS%E7%BC%93%E5%AD%98%E5%88%86%E7%B1%BB"><span class="toc-number">4.5.</span> <span class="toc-text">DNS缓存分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8DNS%E6%9F%A5%E6%89%BE%E9%A1%BA%E5%BA%8F"><span class="toc-number">4.6.</span> <span class="toc-text">浏览器DNS查找顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E9%99%A4DNS%E7%BC%93%E5%AD%98"><span class="toc-number">4.7.</span> <span class="toc-text">清除DNS缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98"><span class="toc-number">4.8.</span> <span class="toc-text">清除浏览器缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%86%E8%A7%A3"><span class="toc-number">4.9.</span> <span class="toc-text">其他了解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#13%E5%8F%B0%E6%A0%B9dns%EF%BC%9A"><span class="toc-number">4.9.1.</span> <span class="toc-text">13台根dns：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D%E5%AE%9A%E4%B9%89"><span class="toc-number">4.9.2.</span> <span class="toc-text">域名定义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">网络通信流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">网络设备及架构</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/fa6ae62a.html" title="概率论与数理统计 | 数三概统知识点整理"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303112139249.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论与数理统计 | 数三概统知识点整理"/></a><div class="content"><a class="title" href="/posts/fa6ae62a.html" title="概率论与数理统计 | 数三概统知识点整理">概率论与数理统计 | 数三概统知识点整理</a><time datetime="2025-11-12T15:48:05.000Z" title="发表于 2025-11-12 23:48:05">2025-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d900e6d.html" title="线性代数 | 可逆矩阵的极分解定理"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg?_r_=a613699b-63ab-4a80-3216-3a5e11de6163" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数 | 可逆矩阵的极分解定理"/></a><div class="content"><a class="title" href="/posts/d900e6d.html" title="线性代数 | 可逆矩阵的极分解定理">线性代数 | 可逆矩阵的极分解定理</a><time datetime="2025-11-09T11:13:01.000Z" title="发表于 2025-11-09 19:13:01">2025-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ccef6234.html" title="高等数学 | 三函数乘积的积分：表格法推广"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg?_r_=8ea09cde-920b-11b2-e712-63df31e7ae73" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高等数学 | 三函数乘积的积分：表格法推广"/></a><div class="content"><a class="title" href="/posts/ccef6234.html" title="高等数学 | 三函数乘积的积分：表格法推广">高等数学 | 三函数乘积的积分：表格法推广</a><time datetime="2025-11-05T13:00:00.000Z" title="发表于 2025-11-05 21:00:00">2025-11-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2ed9be16.html" title="线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg?_r_=0bb5fd17-907f-a3db-cdca-fb9fe0e5c33e" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析"/></a><div class="content"><a class="title" href="/posts/2ed9be16.html" title="线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析">线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析</a><time datetime="2025-11-05T08:44:05.000Z" title="发表于 2025-11-05 16:44:05">2025-11-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b3d2fee7.html" title="【2025最新】WSL+LaTex+VSCode安装教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202505142157033.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【2025最新】WSL+LaTex+VSCode安装教程"/></a><div class="content"><a class="title" href="/posts/b3d2fee7.html" title="【2025最新】WSL+LaTex+VSCode安装教程">【2025最新】WSL+LaTex+VSCode安装教程</a><time datetime="2025-05-14T21:19:41.000Z" title="发表于 2025-05-15 05:19:41">2025-05-15</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2023 - 2025 By <a class="footer-bar-link" href="/" title="Prong" target="_blank">Prong</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">82</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">68</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">5</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://prong.ltd/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.png" alt="博客"/><span class="back-menu-item-text">博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://space.bilibili.com/37924260?spm_id_from=333.1007.0.0" title="B站"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411082120808.webp" alt="B站"/><span class="back-menu-item-text">B站</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="fa-solid fa-timeline faa-tada"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="fas fa-tags faa-tada"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="fas fa-folder-open faa-tada"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/messageboard/"><i class="fa fa-comments faa-tada"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 修仙</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/books/"><i class="fa-solid fa-book-open-reader faa-tada"></i><span> 书单</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="fa-solid fa-film faa-tada"></i><span> 电影</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="fa-brands fa-xbox faa-tada"></i><span> 游戏</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="fa-brands fa-bilibili faa-tada"></i><span> 番剧</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/cinemas/"><i class="fa-brands fa-bilibili faa-tada"></i><span> B站追剧</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/update/"><i class="fa-solid fa-file-pen faa-tada"></i><span> 更新手账</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="fa-solid fa-person-through-window faa-tada"></i><span> 关于自己</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 0.88rem;">C++<sup>4</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">C语言<sup>5</sup></a><a href="/tags/MySQL/" style="font-size: 0.88rem;">MySQL<sup>1</sup></a><a href="/tags/PPT/" style="font-size: 0.88rem;">PPT<sup>1</sup></a><a href="/tags/Python/" style="font-size: 0.88rem;">Python<sup>2</sup></a><a href="/tags/Zerotier/" style="font-size: 0.88rem;">Zerotier<sup>1</sup></a><a href="/tags/hexo/" style="font-size: 0.88rem;">hexo<sup>3</sup></a><a href="/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/" style="font-size: 0.88rem;">✒️随笔<sup>13</sup></a><a href="/tags/%E4%B8%89%E4%B8%8B%E4%B9%A1/" style="font-size: 0.88rem;">三下乡<sup>1</sup></a><a href="/tags/%E4%BF%9D%E9%99%A9%E5%AD%A6/" style="font-size: 0.88rem;">保险学<sup>1</sup></a><a href="/tags/%E5%95%86%E4%B8%9A%E9%93%B6%E8%A1%8C/" style="font-size: 0.88rem;">商业银行<sup>1</sup></a><a href="/tags/%E5%9B%BD%E5%80%BA/" style="font-size: 0.88rem;">国债<sup>1</sup></a><a href="/tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 0.88rem;">国际贸易<sup>1</sup></a><a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 0.88rem;">密码学<sup>1</sup></a><a href="/tags/%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 0.88rem;">微软输入法<sup>1</sup></a><a href="/tags/%E6%91%84%E5%BD%B1/" style="font-size: 0.88rem;">摄影<sup>1</sup></a><a href="/tags/%E6%94%AF%E6%95%99%E6%97%A5%E8%AE%B0/" style="font-size: 0.88rem;">支教日记<sup>4</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 0.88rem;">教程<sup>7</sup></a><a href="/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/" style="font-size: 0.88rem;">数字货币<sup>1</sup></a><a href="/tags/%E7%B2%AE%E9%A3%9F%E5%8D%B1%E6%9C%BA/" style="font-size: 0.88rem;">粮食危机<sup>1</sup></a><a href="/tags/%E7%BE%8E%E5%8C%96/" style="font-size: 0.88rem;">美化<sup>1</sup></a><a href="/tags/%E8%8C%85%E5%8F%B0/" style="font-size: 0.88rem;">茅台<sup>1</sup></a><a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 0.88rem;">论文<sup>7</sup></a><a href="/tags/%E9%AB%98%E7%B2%B1/" style="font-size: 0.88rem;">高粱<sup>1</sup></a><a href="/tags/%E9%AD%94%E6%94%B9/" style="font-size: 0.88rem;">魔改<sup>2</sup></a><a href="/tags/%F0%9F%92%B0%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 0.88rem;">💰微观经济学<sup>1</sup></a><a href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">📓学习笔记<sup>45</sup></a><a href="/tags/%F0%9F%94%A0LaTeX/" style="font-size: 0.88rem;">🔠LaTeX<sup>1</sup></a><a href="/tags/%F0%9F%94%A0MarkDown/" style="font-size: 0.88rem;">🔠MarkDown<sup>1</sup></a><a href="/tags/%F0%9F%A6%8Bbutterfly/" style="font-size: 0.88rem;">🦋butterfly<sup>3</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2023 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Prong 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.cbd.int/katex@0.16.0/dist/katex.min.css"><script src="https://cdn.cbd.int/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    anzhiyu.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.cbd.int/mermaid@10.2.4/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  anzhiyu.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-snowy-two.vercel.app/',
+      region: '',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.39/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-snowy-two.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo-snowy-two.vercel.app/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.39/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

@@ -1,0 +1,1787 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>prong的魔法地下室</title>
+  <icon>https://prong879.ltd/icon.png</icon>
+  
+  <link href="https://prong879.ltd/atom.xml" rel="self"/>
+  
+  <link href="https://prong879.ltd/"/>
+  <updated>2025-11-12T15:48:05.000Z</updated>
+  <id>https://prong879.ltd/</id>
+  
+  <author>
+    <name>Prong</name>
+    <email>prongzmy@outlook.com</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>概率论与数理统计 | 数三概统知识点整理</title>
+    <link href="https://prong879.ltd/posts/fa6ae62a.html"/>
+    <id>https://prong879.ltd/posts/fa6ae62a.html</id>
+    <published>2025-11-12T15:48:05.000Z</published>
+    <updated>2025-11-12T15:48:05.000Z</updated>
+    
+    <summary type="html">
+    
+      考研数学数学三范围内知识点整理
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="概率论与数理统计" scheme="https://prong879.ltd/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性代数 | 可逆矩阵的极分解定理</title>
+    <link href="https://prong879.ltd/posts/d900e6d.html"/>
+    <id>https://prong879.ltd/posts/d900e6d.html</id>
+    <published>2025-11-09T11:13:01.000Z</published>
+    <updated>2025-11-09T11:13:01.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;可逆矩阵的极分解定理&lt;/h1&gt;
+&lt;h2 id=&quot;一、定理概述&quot;&gt;一、定理概述&lt;/h2&gt;
+&lt;p&gt;可逆矩阵的极分解定理（Polar Decomposition Theorem）是线性代数中的一个基本且重要的定理。它类似于复数的极坐标表示形式 &lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="线性代数" scheme="https://prong879.ltd/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+      <category term="极分解定理" scheme="https://prong879.ltd/tags/%E6%9E%81%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高等数学 | 三函数乘积的积分：表格法推广</title>
+    <link href="https://prong879.ltd/posts/ccef6234.html"/>
+    <id>https://prong879.ltd/posts/ccef6234.html</id>
+    <published>2025-11-05T13:00:00.000Z</published>
+    <updated>2025-11-12T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      三函数乘积的积分：表格法推广
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="高等数学" scheme="https://prong879.ltd/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析</title>
+    <link href="https://prong879.ltd/posts/2ed9be16.html"/>
+    <id>https://prong879.ltd/posts/2ed9be16.html</id>
+    <published>2025-11-05T08:44:05.000Z</published>
+    <updated>2025-11-05T08:44:05.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;二元函数极值、海赛矩阵与李亚普诺夫稳定性分析——从一元到二元的推广&lt;/h1&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="线性代数" scheme="https://prong879.ltd/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【2025最新】WSL+LaTex+VSCode安装教程</title>
+    <link href="https://prong879.ltd/posts/b3d2fee7.html"/>
+    <id>https://prong879.ltd/posts/b3d2fee7.html</id>
+    <published>2025-05-14T21:19:41.000Z</published>
+    <updated>2025-05-14T21:19:41.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;【2025最新】WSL+LaTex+VSCode安装教程&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;假定你已经在Win里装了TexLive2025，配置了VSCode（实际上没有也无所谓），能正常编译，但苦于编译速度慢，需要利用WSL的Ubuntu的编译速度。&lt;/p&gt;
+&lt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Bug】PPT出现“抱歉出现问题可能导致ppt不稳定”</title>
+    <link href="https://prong879.ltd/posts/98f2c182.html"/>
+    <id>https://prong879.ltd/posts/98f2c182.html</id>
+    <published>2024-12-30T16:43:18.000Z</published>
+    <updated>2024-12-30T16:43:18.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;近日发现word往ppt里复制东西都会报错“抱歉出现问题可能导致ppt不稳定”，现已按教程解决。具体步骤如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;关闭所有 Office 软件，在 “开始 ”菜单中查找 “命令提示符”（或 “cmd”），右键单击并选择
+        
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="PPT" scheme="https://prong879.ltd/tags/PPT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>入党申请书</title>
+    <link href="https://prong879.ltd/posts/29932e80.html"/>
+    <id>https://prong879.ltd/posts/29932e80.html</id>
+    <published>2024-11-03T23:52:25.000Z</published>
+    <updated>2024-11-03T23:52:25.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;入党申请书&lt;/p&gt;
+&lt;p&gt;敬爱的党组织:&lt;/p&gt;
+&lt;p&gt;我申请加入中国共产党，为共产主义事业奋斗终身。&lt;/p&gt;
+&lt;p&gt;中国共产党是中国工人阶级的先锋队，是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心。党的基本路线是领导和团结全国各族人民，以经济建设为中心，坚
+        
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://prong879.ltd/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>保险学</title>
+    <link href="https://prong879.ltd/posts/56119828.html"/>
+    <id>https://prong879.ltd/posts/56119828.html</id>
+    <published>2024-10-30T00:32:54.000Z</published>
+    <updated>2024-10-30T00:32:54.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1&gt;保险学概述&lt;/h1&gt;
+&lt;p&gt;【关键词】风险、风险因素、风险识别、风险评估、风险管理、风险事故、基本风险、纯粹风险、投机风险、静态风险、动态风险、风险管理、转嫁风险、可保风险、道德风险、商业保险、强制保险、自愿保险、原保险、共同保险、重复保险、经济
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="保险学" scheme="https://prong879.ltd/tags/%E4%BF%9D%E9%99%A9%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>金融与数学</title>
+    <link href="https://prong879.ltd/posts/a102d742.html"/>
+    <id>https://prong879.ltd/posts/a102d742.html</id>
+    <published>2024-06-25T00:16:26.000Z</published>
+    <updated>2024-06-25T00:16:26.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;没有数学的帮助，今天的金融理论都将失去生存的根基。&lt;/p&gt;
+&lt;img src=&quot;https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202406242330674.webp&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://prong879.ltd/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="✒️随笔" scheme="https://prong879.ltd/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="金融" scheme="https://prong879.ltd/tags/%E9%87%91%E8%9E%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>金融道德论文 | 中国可转债市场弱势有效性实证检验</title>
+    <link href="https://prong879.ltd/posts/519a91dc.html"/>
+    <id>https://prong879.ltd/posts/519a91dc.html</id>
+    <published>2024-05-17T23:53:56.000Z</published>
+    <updated>2024-11-07T23:53:56.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;中国可转债市场弱势有效性的实证检验&lt;/h1&gt;
+&lt;center&gt;&lt;div style=&quot;height:2mm;&quot;&gt;&lt;/div&gt;&lt;div
+        
+      
+    
+    </summary>
+    
+    
+      <category term="论文与报告" scheme="https://prong879.ltd/categories/%E8%AE%BA%E6%96%87%E4%B8%8E%E6%8A%A5%E5%91%8A/"/>
+    
+    
+      <category term="论文" scheme="https://prong879.ltd/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="金融道德" scheme="https://prong879.ltd/tags/%E9%87%91%E8%9E%8D%E9%81%93%E5%BE%B7/"/>
+    
+      <category term="市场有效性" scheme="https://prong879.ltd/tags/%E5%B8%82%E5%9C%BA%E6%9C%89%E6%95%88%E6%80%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>专业英语小作文 | 超长期国债</title>
+    <link href="https://prong879.ltd/posts/dfd994fd.html"/>
+    <id>https://prong879.ltd/posts/dfd994fd.html</id>
+    <published>2024-05-15T18:54:56.000Z</published>
+    <updated>2024-11-09T18:54:56.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;Ultra-long-term government bonds expected to enhance economic vitality&lt;/h1&gt;
+&lt;p&gt;China is set to issue &lt;strong&gt;ultra-long-term national
+        
+      
+    
+    </summary>
+    
+    
+      <category term="论文与报告" scheme="https://prong879.ltd/categories/%E8%AE%BA%E6%96%87%E4%B8%8E%E6%8A%A5%E5%91%8A/"/>
+    
+    
+      <category term="论文" scheme="https://prong879.ltd/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="国债" scheme="https://prong879.ltd/tags/%E5%9B%BD%E5%80%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Zerotier | 重启路由器后Zerotier显示physical ip UNKNOWN的解决</title>
+    <link href="https://prong879.ltd/posts/d7ab375b.html"/>
+    <id>https://prong879.ltd/posts/d7ab375b.html</id>
+    <published>2024-01-09T20:46:51.000Z</published>
+    <updated>2024-01-09T20:46:51.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;此前设置的Zerotire虚拟局域网一直可以正常使用，速度也很不错，但今天重启路由器后，出现无法远程连接的问题。具体表现是Physical ip
+        
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Zerotier" scheme="https://prong879.ltd/tags/Zerotier/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计量经济学 | 基于ARCH模型的美国联邦基金利率预测分析</title>
+    <link href="https://prong879.ltd/posts/7b27845b.html"/>
+    <id>https://prong879.ltd/posts/7b27845b.html</id>
+    <published>2023-12-30T01:47:20.000Z</published>
+    <updated>2023-12-30T01:47:20.000Z</updated>
+    
+    <summary type="html">
+    
+      本文利用ARCH模型，在stata中建模预测了美国联邦基金利率。这篇文章是我的学年论文，这也是我第一次用Typora写论文，必须得说，这个显示主题typora-latex-theme用了之后真的很有正式期刊的味道。
+    
+    </summary>
+    
+    
+      <category term="论文与报告" scheme="https://prong879.ltd/categories/%E8%AE%BA%E6%96%87%E4%B8%8E%E6%8A%A5%E5%91%8A/"/>
+    
+    
+      <category term="论文" scheme="https://prong879.ltd/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="实证分析" scheme="https://prong879.ltd/tags/%E5%AE%9E%E8%AF%81%E5%88%86%E6%9E%90/"/>
+    
+      <category term="ARCH模型" scheme="https://prong879.ltd/tags/ARCH%E6%A8%A1%E5%9E%8B/"/>
+    
+      <category term="时间序列数据" scheme="https://prong879.ltd/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="Stata" scheme="https://prong879.ltd/tags/Stata/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计量经济学 | 时间序列ARMA的Eviews建模</title>
+    <link href="https://prong879.ltd/posts/b10dbaee.html"/>
+    <id>https://prong879.ltd/posts/b10dbaee.html</id>
+    <published>2023-12-26T20:01:53.000Z</published>
+    <updated>2023-12-26T20:01:53.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;ARMA建模预测&lt;/h1&gt;
+&lt;h2 id=&quot;序列模型识别&quot;&gt;序列模型识别&lt;/h2&gt;
+&lt;p&gt;选择数据类型为&lt;code&gt;Dated-regular
+        
+      
+    
+    </summary>
+    
+    
+      <category term="论文与报告" scheme="https://prong879.ltd/categories/%E8%AE%BA%E6%96%87%E4%B8%8E%E6%8A%A5%E5%91%8A/"/>
+    
+    
+      <category term="计量经济学" scheme="https://prong879.ltd/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+      <category term="ARMA" scheme="https://prong879.ltd/tags/ARMA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python | 学习笔记</title>
+    <link href="https://prong879.ltd/posts/297a89d9.html"/>
+    <id>https://prong879.ltd/posts/297a89d9.html</id>
+    <published>2023-12-17T18:46:13.000Z</published>
+    <updated>2023-12-17T18:46:13.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1&gt;Python简介&lt;/h1&gt;
+&lt;p&gt;孕育于1989，现在更新至3.0版本（PY3K）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是一种跨平台计算机程序设计语言&lt;/li&gt;
+&lt;li&gt;解释型语言：没有编译的环节&lt;/li&gt;
+&lt;li&gt;交互式语言：可以在提示符&lt;code&gt;&amp;g
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Python" scheme="https://prong879.ltd/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ | 机考参考资料和题目</title>
+    <link href="https://prong879.ltd/posts/cea7d534.html"/>
+    <id>https://prong879.ltd/posts/cea7d534.html</id>
+    <published>2023-12-17T17:58:09.000Z</published>
+    <updated>2023-12-17T17:58:09.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1&gt;重要提示&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;注意整型溢出问题&lt;/li&gt;
+&lt;li&gt;注意题目中的特殊情况（边界、极值等）&lt;/li&gt;
+&lt;li&gt;程序 秒钟能执行的操作数大约为 &lt;span class=&quot;katex&quot;&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="C++" scheme="https://prong879.ltd/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库 | MySQL实验报告</title>
+    <link href="https://prong879.ltd/posts/c47dff25.html"/>
+    <id>https://prong879.ltd/posts/c47dff25.html</id>
+    <published>2023-12-17T17:25:22.000Z</published>
+    <updated>2023-12-17T17:25:22.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;921107810XXX
+        
+      
+    
+    </summary>
+    
+    
+      <category term="论文与报告" scheme="https://prong879.ltd/categories/%E8%AE%BA%E6%96%87%E4%B8%8E%E6%8A%A5%E5%91%8A/"/>
+    
+    
+      <category term="MySQL" scheme="https://prong879.ltd/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ | 奥赛一本通刷题笔记</title>
+    <link href="https://prong879.ltd/posts/e6868ecb.html"/>
+    <id>https://prong879.ltd/posts/e6868ecb.html</id>
+    <published>2023-12-17T17:22:50.000Z</published>
+    <updated>2023-12-17T17:22:50.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;本文档2023-12-17上线在博客处。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;顺序结构程序设计&lt;/h1&gt;
+&lt;h2 id=&quot;运算符和表达式&quot;&gt;运算符和表达式&lt;/h2&gt;
+&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="C++" scheme="https://prong879.ltd/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计量经济学 | 时间序列数据</title>
+    <link href="https://prong879.ltd/posts/b8380377.html"/>
+    <id>https://prong879.ltd/posts/b8380377.html</id>
+    <published>2023-12-15T03:23:18.000Z</published>
+    <updated>2023-12-15T03:23:18.000Z</updated>
+    
+    <summary type="html">
+    
+      针对大多数教材对计量经济学尤其是金融计量学的知识讲解要么过于繁琐、要么过于简单的问题，我亲手撰写了这份讲义，按平稳性检验、白噪声检验、条件异方差模型的大纲，把时间序列数据完整梳理清楚，建立了计量经济学从静态模型到动态模型的相关知识的讲解。目前仍在继续更新中。
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="计量经济学" scheme="https://prong879.ltd/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中央银行学数字货币的技术基础</title>
+    <link href="https://prong879.ltd/posts/9ac414bb.html"/>
+    <id>https://prong879.ltd/posts/9ac414bb.html</id>
+    <published>2023-11-10T19:03:12.000Z</published>
+    <updated>2024-11-09T19:03:12.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;学习记录&lt;/h1&gt;
+&lt;h1&gt;DCEP信息加密技术导入&lt;/h1&gt;
+&lt;p&gt;信息加密技术简介&lt;/p&gt;
+&lt;p&gt;信息加密技术是&lt;strong&gt;利用数学或物理手段，对电子信息在传输过程中和存储体内进行保护，以防止泄漏的技术。&lt;/strong&gt;&lt;br&gt;
+保密通信，计算机密钥，防复制软盘
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="数字货币" scheme="https://prong879.ltd/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/"/>
+    
+      <category term="密码学" scheme="https://prong879.ltd/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>商业银行 | 知识体系</title>
+    <link href="https://prong879.ltd/posts/aade6737.html"/>
+    <id>https://prong879.ltd/posts/aade6737.html</id>
+    <published>2023-11-04T19:12:35.000Z</published>
+    <updated>2023-11-04T19:12:35.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;1 导论&lt;/h1&gt;
+&lt;h2 id=&quot;1-1课程及意义&quot;&gt;1.1课程及意义&lt;/h2&gt;
+&lt;p&gt;银行作为金融系统中最古老和最重要的机构，长期以来发挥着举足轻重的作用。然而 20
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="商业银行" scheme="https://prong879.ltd/tags/%E5%95%86%E4%B8%9A%E9%93%B6%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ | 核心知识及语法</title>
+    <link href="https://prong879.ltd/posts/ad4f1e09.html"/>
+    <id>https://prong879.ltd/posts/ad4f1e09.html</id>
+    <published>2023-10-25T13:50:06.000Z</published>
+    <updated>2023-10-25T13:50:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="C++" scheme="https://prong879.ltd/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ | 经典试题</title>
+    <link href="https://prong879.ltd/posts/2e989606.html"/>
+    <id>https://prong879.ltd/posts/2e989606.html</id>
+    <published>2023-10-25T13:48:43.000Z</published>
+    <updated>2023-10-25T13:48:43.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[toc]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文是备考时学习的一些较经典的例题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;重要提示&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;注意整型溢出问题&lt;/li&gt;
+&lt;li&gt;注意题目中的特殊情况（边界、极值等）&lt;/li&gt;
+&lt;li&gt;程序
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="C++" scheme="https://prong879.ltd/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>支教日记 | 2023年7月28日</title>
+    <link href="https://prong879.ltd/posts/6a67b56e.html"/>
+    <id>https://prong879.ltd/posts/6a67b56e.html</id>
+    <published>2023-07-28T23:46:17.000Z</published>
+    <updated>2024-11-05T23:46:17.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;随着央视直播这件大事的顺利结束，今天的生活明显感到渐入佳境。坦白而言，对于支教本身的期待必然会大于其他各类非教学方面的期待，我也始终秉持尽可能给孩子们传授更多知识、发掘更多潜力的启蒙式教学理念，希望尽可能在这28天里，给孩子们埋下一颗深深扎根的希望的种子，寄期望于未来。&lt;/
+        
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://prong879.ltd/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="✒️随笔" scheme="https://prong879.ltd/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="支教日记" scheme="https://prong879.ltd/tags/%E6%94%AF%E6%95%99%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>支教日记 | 2023年7月20日</title>
+    <link href="https://prong879.ltd/posts/afd39d81.html"/>
+    <id>https://prong879.ltd/posts/afd39d81.html</id>
+    <published>2023-07-20T23:46:17.000Z</published>
+    <updated>2024-11-05T23:46:17.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;忙碌的一天×n&lt;br&gt;
+三天一次的赶集日&lt;br&gt;
+发现好用的拼多多买菜&lt;br&gt;
+中午请哥们吃香的喝辣的！&lt;br&gt;
+白兰鸽巡游记 孩子们可爱的方言口音&lt;br&gt;
+安排的班里的唯六位男生作为标兵第一天上岗 搞班里卫生和秩序都好积极 泪目了&lt;br&gt;
+给我们班的同学讲授·《致橡树》
+        
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://prong879.ltd/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="✒️随笔" scheme="https://prong879.ltd/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="支教日记" scheme="https://prong879.ltd/tags/%E6%94%AF%E6%95%99%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>支教日记 | 2023年7月17日</title>
+    <link href="https://prong879.ltd/posts/75a4dfe8.html"/>
+    <id>https://prong879.ltd/posts/75a4dfe8.html</id>
+    <published>2023-07-17T23:46:17.000Z</published>
+    <updated>2024-11-05T23:46:17.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;每个孩子都是一株小草，各不相同，生长顺序也不一样，耐心的守在小草们的旁边，见证他们多样的成长。我们终究是过客，好好守护这份师生缘。&lt;/p&gt;
+&lt;p&gt;过完繁重的考试周，转头又踏上了前往贵州的征途。数千公里的跨越，每离贵州&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://prong879.ltd/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="✒️随笔" scheme="https://prong879.ltd/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="支教日记" scheme="https://prong879.ltd/tags/%E6%94%AF%E6%95%99%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>支教日记 | 2023年7月16日</title>
+    <link href="https://prong879.ltd/posts/cd18b88d.html"/>
+    <id>https://prong879.ltd/posts/cd18b88d.html</id>
+    <published>2023-07-16T23:46:17.000Z</published>
+    <updated>2024-11-05T23:46:17.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;去远方吧，去一个充满浪漫和希望的地方。&lt;br&gt;
+连续多日连轴转，几乎难以坐下静心休息片刻。整个假期确实变得无比充实，同时更意味着变得更加需要担当。常青藤支教队的各位同志来自五湖四海，跨越山海奔赴到共同的目的地，心怀一个共同的梦想：播下一颗种子，一颗属于希望的种子。在爱的滋润
+        
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://prong879.ltd/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="✒️随笔" scheme="https://prong879.ltd/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="支教日记" scheme="https://prong879.ltd/tags/%E6%94%AF%E6%95%99%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>证券投资小论文 | 哔哩哔哩投资分析20230710</title>
+    <link href="https://prong879.ltd/posts/60711ce7.html"/>
+    <id>https://prong879.ltd/posts/60711ce7.html</id>
+    <published>2023-07-10T19:08:49.000Z</published>
+    <updated>2024-11-09T19:08:49.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;本文不是严谨的投资分析，更不可当作投资建议，仅仅是我的课程论文，放在此处备份，以提供参考。投资有风险，投资需谨慎。务必注意分析的时效性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;关键词&lt;/strong&gt;：持续破圈 多元化 影视
+        
+      
+    
+    </summary>
+    
+    
+      <category term="论文与报告" scheme="https://prong879.ltd/categories/%E8%AE%BA%E6%96%87%E4%B8%8E%E6%8A%A5%E5%91%8A/"/>
+    
+    
+      <category term="论文" scheme="https://prong879.ltd/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="投资分析" scheme="https://prong879.ltd/tags/%E6%8A%95%E8%B5%84%E5%88%86%E6%9E%90/"/>
+    
+      <category term="Bilibili" scheme="https://prong879.ltd/tags/Bilibili/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三下乡 | 关于遵义高粱种植的社会调查</title>
+    <link href="https://prong879.ltd/posts/f90abe80.html"/>
+    <id>https://prong879.ltd/posts/f90abe80.html</id>
+    <published>2023-07-08T00:59:01.000Z</published>
+    <updated>2023-07-08T00:59:01.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;关于贵州省遵义市仁怀市的高粱种植对当地经济的促进的调查报告大纲如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;仁怀市的高粱种植现状&lt;/strong&gt;：仁怀市是贵州省重要的高粱种植区，主要生产酒用红高粱，是茅台酒的主要原料来源。仁怀市高粱种植面积达30万亩，年产量近10万吨
+        
+      
+    
+    </summary>
+    
+    
+      <category term="论文与报告" scheme="https://prong879.ltd/categories/%E8%AE%BA%E6%96%87%E4%B8%8E%E6%8A%A5%E5%91%8A/"/>
+    
+    
+      <category term="茅台" scheme="https://prong879.ltd/tags/%E8%8C%85%E5%8F%B0/"/>
+    
+      <category term="高粱" scheme="https://prong879.ltd/tags/%E9%AB%98%E7%B2%B1/"/>
+    
+      <category term="三下乡" scheme="https://prong879.ltd/tags/%E4%B8%89%E4%B8%8B%E4%B9%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>证券投资学 | 证券</title>
+    <link href="https://prong879.ltd/posts/73526dc3.html"/>
+    <id>https://prong879.ltd/posts/73526dc3.html</id>
+    <published>2023-06-28T22:30:09.000Z</published>
+    <updated>2023-06-28T22:30:09.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;证券概念及类型&lt;/h1&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="证券投资学" scheme="https://prong879.ltd/tags/%E8%AF%81%E5%88%B8%E6%8A%95%E8%B5%84%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计量经济学 | 6.滞后变量和虚拟变量</title>
+    <link href="https://prong879.ltd/posts/c2e3c69c.html"/>
+    <id>https://prong879.ltd/posts/c2e3c69c.html</id>
+    <published>2023-06-26T18:00:29.000Z</published>
+    <updated>2023-06-26T18:00:29.000Z</updated>
+    
+    <summary type="html">
+    
+      对时间序列的深入研究，利用其自相关性，寻找未来序列值如何用来自自身的因素作为解释变量做出预测
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="计量经济学" scheme="https://prong879.ltd/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计量经济学 | 5.时间序列计量经济学模型</title>
+    <link href="https://prong879.ltd/posts/975d5e69.html"/>
+    <id>https://prong879.ltd/posts/975d5e69.html</id>
+    <published>2023-06-02T15:04:03.000Z</published>
+    <updated>2023-06-02T15:04:03.000Z</updated>
+    
+    <summary type="html">
+    
+      只针对单个时间序列进行研究，简单了解时间序列数据
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="计量经济学" scheme="https://prong879.ltd/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计量经济学 | 4.放宽基本假设的模型</title>
+    <link href="https://prong879.ltd/posts/cbcc8976.html"/>
+    <id>https://prong879.ltd/posts/cbcc8976.html</id>
+    <published>2023-06-02T15:03:38.000Z</published>
+    <updated>2023-06-02T15:03:38.000Z</updated>
+    
+    <summary type="html">
+    
+      对于多元线性回归，讲解放宽基本假设的后果、判断、补救
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="计量经济学" scheme="https://prong879.ltd/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读后感 | 穷人的银行家</title>
+    <link href="https://prong879.ltd/posts/9619cbaf.html"/>
+    <id>https://prong879.ltd/posts/9619cbaf.html</id>
+    <published>2023-05-30T21:10:40.000Z</published>
+    <updated>2024-11-09T21:10:40.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;“金融服务对贫困人群来说就像氧气一样重要，如果没有金融服务，就会造成贫困以及其他各种问题，甚至导致生存问题。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本学期我阅读的第一本书，是尤努斯的《穷人的银行家》尤努斯用27美元探索出的普惠金融之路，帮助了
+        
+      
+    
+    </summary>
+    
+    
+      <category term="读后感" scheme="https://prong879.ltd/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+    
+      <category term="📚读后感" scheme="https://prong879.ltd/tags/%F0%9F%93%9A%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+      <category term="穷人的银行家" scheme="https://prong879.ltd/tags/%E7%A9%B7%E4%BA%BA%E7%9A%84%E9%93%B6%E8%A1%8C%E5%AE%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读后感 | 荣辱二十年</title>
+    <link href="https://prong879.ltd/posts/4c5553eb.html"/>
+    <id>https://prong879.ltd/posts/4c5553eb.html</id>
+    <published>2023-05-30T21:10:40.000Z</published>
+    <updated>2024-11-09T21:10:40.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本学期我阅读的第三本书是阚治东的《荣辱二十年》。二十年的光阴蹉跎，中国第一代证券先锋阚治东的人生起起落落，看过山巅的风景，也感受过谷底的滋味。阚治东的人生之路，也是中国证券市场发展的一个缩影与见证。&lt;/p&gt;
+&lt;p&gt;泰戈尔曾言：人的记忆力是有限的，不是所有经历过的人和事都能永
+        
+      
+    
+    </summary>
+    
+    
+      <category term="读后感" scheme="https://prong879.ltd/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+    
+      <category term="📚读后感" scheme="https://prong879.ltd/tags/%F0%9F%93%9A%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+      <category term="荣辱二十年" scheme="https://prong879.ltd/tags/%E8%8D%A3%E8%BE%B1%E4%BA%8C%E5%8D%81%E5%B9%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读后感 | 金融与好的社会</title>
+    <link href="https://prong879.ltd/posts/7d41e5a7.html"/>
+    <id>https://prong879.ltd/posts/7d41e5a7.html</id>
+    <published>2023-05-30T21:10:40.000Z</published>
+    <updated>2024-11-09T21:10:40.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本学期我阅读的第二部书，是罗伯特希勒的《金融与好的社会》。有人如是说：总的来说，这本书似乎是对于某一终极问题或命题——“这个世界会好吗”——的另一种回答或者是“金融版”回答。梁漱溟先生的《这个世界会好吗》、爱因斯坦的《人类的未来会好吗》都尝试回答了这个问题，一个是文化的角度
+        
+      
+    
+    </summary>
+    
+    
+      <category term="读后感" scheme="https://prong879.ltd/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+    
+      <category term="📚读后感" scheme="https://prong879.ltd/tags/%F0%9F%93%9A%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+      <category term="金融与好的社会" scheme="https://prong879.ltd/tags/%E9%87%91%E8%9E%8D%E4%B8%8E%E5%A5%BD%E7%9A%84%E7%A4%BE%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python | 习题</title>
+    <link href="https://prong879.ltd/posts/a87da565.html"/>
+    <id>https://prong879.ltd/posts/a87da565.html</id>
+    <published>2023-05-21T18:08:40.000Z</published>
+    <updated>2023-05-21T18:08:40.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;统计出单链表HL中结点的值等于给定值X的结点数。&lt;br&gt;
+int CountX(LNode* HL,ElemType x)&lt;/p&gt;
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Python" scheme="https://prong879.ltd/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>摄影 | 佳能G1X的使用</title>
+    <link href="https://prong879.ltd/posts/4264c8c.html"/>
+    <id>https://prong879.ltd/posts/4264c8c.html</id>
+    <published>2023-05-06T22:23:24.000Z</published>
+    <updated>2023-05-06T22:23:24.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;基础知识&lt;/h1&gt;
+&lt;h2 id=&quot;光圈&quot;&gt;光圈&lt;/h2&gt;
+&lt;h2 id=&quot;焦距&quot;&gt;焦距&lt;/h2&gt;
+&lt;h1&gt;P档&lt;/h1&gt;
+&lt;p&gt;P档的最明显特点就是程序自动曝光，与此相关的还有AE自动曝光&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="摄影" scheme="https://prong879.ltd/tags/%E6%91%84%E5%BD%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>教程 | 微软输入法的调教</title>
+    <link href="https://prong879.ltd/posts/45ceb10f.html"/>
+    <id>https://prong879.ltd/posts/45ceb10f.html</id>
+    <published>2023-05-04T18:53:45.000Z</published>
+    <updated>2023-05-04T18:53:45.000Z</updated>
+    
+    <summary type="html">
+    
+      关于自带输入法的美化和其他优化
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="微软输入法" scheme="https://prong879.ltd/tags/%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随笔 | 事故日记</title>
+    <link href="https://prong879.ltd/posts/ac3e0c4.html"/>
+    <id>https://prong879.ltd/posts/ac3e0c4.html</id>
+    <published>2023-04-30T20:25:28.000Z</published>
+    <updated>2023-04-30T20:25:28.000Z</updated>
+    
+    <summary type="html">
+    
+      一起因为移动硬盘故障导致的电脑重装......
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://prong879.ltd/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="https://prong879.ltd/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>国际经济与贸易 | 21世纪韩国国际贸易政策及对中国产业转型升级的启示</title>
+    <link href="https://prong879.ltd/posts/d9ed3f4a.html"/>
+    <id>https://prong879.ltd/posts/d9ed3f4a.html</id>
+    <published>2023-04-29T23:19:46.000Z</published>
+    <updated>2024-11-07T23:19:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;引言&lt;/h1&gt;
+&lt;p&gt;随全球经济增长放缓、疫情后产能释放以及竞争加剧等因素，2022年韩国贸易收支出现472亿美元的逆差，创历史新高1。贸易形式恶化和受其影响的工业领域方面的萎靡、银行业的萎缩引起了广泛关注。被视为“全球贸易晴雨表”的韩国2，由于其特殊的国际贸易地位，其经
+        
+      
+    
+    </summary>
+    
+    
+      <category term="论文与报告" scheme="https://prong879.ltd/categories/%E8%AE%BA%E6%96%87%E4%B8%8E%E6%8A%A5%E5%91%8A/"/>
+    
+    
+      <category term="论文" scheme="https://prong879.ltd/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="国际贸易" scheme="https://prong879.ltd/tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>金融市场学 | 东南亚金融危机</title>
+    <link href="https://prong879.ltd/posts/dcc75105.html"/>
+    <id>https://prong879.ltd/posts/dcc75105.html</id>
+    <published>2023-03-27T23:43:14.000Z</published>
+    <updated>2023-03-27T23:43:14.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;一个简单的逻辑是：&lt;br&gt;
+当时东南亚各国多年来经济高速发展，以出口替代为导向的经济政策和金融自由化的风潮吸引了外资大量流入，存在大量的逆差，造成了“错配”的情况：一是货币错配，二是期限错配。由此导致这些国家的资本结构、外债结构存在巨大风险：大量流入的外资存款在国内被用于房
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计量经济学 | Stata的应用</title>
+    <link href="https://prong879.ltd/posts/cb666fbf.html"/>
+    <id>https://prong879.ltd/posts/cb666fbf.html</id>
+    <published>2023-03-11T12:49:33.000Z</published>
+    <updated>2023-03-11T12:49:33.000Z</updated>
+    
+    <summary type="html">
+    
+      一些Stata的计量经济学的相关操作
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="计量经济学" scheme="https://prong879.ltd/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随笔 | 写在大二下伊始</title>
+    <link href="https://prong879.ltd/posts/515ed00d.html"/>
+    <id>https://prong879.ltd/posts/515ed00d.html</id>
+    <published>2023-03-06T13:32:27.000Z</published>
+    <updated>2023-03-06T13:32:27.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;一些关于过去的随感&lt;/h1&gt;
+&lt;p&gt;昨天博友建议我加上RSS订阅功能，才让我意识到我的博客在过去一段时间内，更像是我的线上笔记查阅处，而不是我的随想安放区。这篇2023的随想，来的确实有些迟了。&lt;/p&gt;
+&lt;p&gt;必须承认，我自己并不是一个勤于思考的人。在高考前，由于经常写作
+        
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://prong879.ltd/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="✒️随笔" scheme="https://prong879.ltd/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性代数 | 课程概要</title>
+    <link href="https://prong879.ltd/posts/4f8d761d.html"/>
+    <id>https://prong879.ltd/posts/4f8d761d.html</id>
+    <published>2023-02-27T21:55:57.000Z</published>
+    <updated>2023-02-27T21:55:57.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;内容简介&lt;/h1&gt;
+&lt;p&gt;线性代数是一门以向量、向量空间(线性空间)、线性方程组、线性变换为为研究对象的学科。&lt;/p&gt;
+&lt;h1&gt;资料推荐&lt;/h1&gt;
+&lt;p&gt;下面是我学习这门课程所用到的一些学习资料：&lt;/p&gt;
+&lt;div calss=&quot;anzhiyu-tag-link&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="线性代数" scheme="https://prong879.ltd/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>金融市场学 | 课程概要</title>
+    <link href="https://prong879.ltd/posts/3ab11216.html"/>
+    <id>https://prong879.ltd/posts/3ab11216.html</id>
+    <published>2023-02-27T18:33:01.000Z</published>
+    <updated>2023-02-27T18:33:01.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;div class=&quot;note primary flat&quot;&gt;&lt;p&gt;本文基于new
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="金融市场学" scheme="https://prong879.ltd/tags/%E9%87%91%E8%9E%8D%E5%B8%82%E5%9C%BA%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计量经济学 | 3.多元线性回归模型</title>
+    <link href="https://prong879.ltd/posts/27ae12db.html"/>
+    <id>https://prong879.ltd/posts/27ae12db.html</id>
+    <published>2023-02-26T11:22:19.000Z</published>
+    <updated>2023-02-26T11:22:19.000Z</updated>
+    
+    <summary type="html">
+    
+      从一元线性回归拓展到多元线性回归，重点讲述多元线性回归得到线性、无偏、最小方差的OLS估计的前提（古典假定）
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="计量经济学" scheme="https://prong879.ltd/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计量经济学 | 2. 线性回归模型</title>
+    <link href="https://prong879.ltd/posts/c1bdfc7a.html"/>
+    <id>https://prong879.ltd/posts/c1bdfc7a.html</id>
+    <published>2023-02-25T19:08:29.000Z</published>
+    <updated>2023-02-25T19:08:29.000Z</updated>
+    
+    <summary type="html">
+    
+      基于一元线性回归（Y和X），重点讲述一元线性回归得到线性、无偏、最小方差的OLS估计的前提（古典假定）
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="计量经济学" scheme="https://prong879.ltd/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计量经济学 | 1.计量经济学简介</title>
+    <link href="https://prong879.ltd/posts/629aaade.html"/>
+    <id>https://prong879.ltd/posts/629aaade.html</id>
+    <published>2023-02-25T19:04:22.000Z</published>
+    <updated>2023-02-25T19:04:22.000Z</updated>
+    
+    <summary type="html">
+    
+      《计量经济学》的课程简介
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="计量经济学" scheme="https://prong879.ltd/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性代数 | 逆矩阵</title>
+    <link href="https://prong879.ltd/posts/d5889fb7.html"/>
+    <id>https://prong879.ltd/posts/d5889fb7.html</id>
+    <published>2023-02-25T00:13:01.000Z</published>
+    <updated>2023-02-25T00:13:01.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[toc]&lt;/p&gt;
+&lt;p&gt;在线性代数中，逆矩阵具有诸多性质，拥有许多用途。本文从各个方面总结逆矩阵相关的性质。&lt;/p&gt;
+&lt;h1&gt;定义&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="线性代数" scheme="https://prong879.ltd/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LaTeX | 大括号语法</title>
+    <link href="https://prong879.ltd/posts/faf7ca29.html"/>
+    <id>https://prong879.ltd/posts/faf7ca29.html</id>
+    <published>2023-02-13T22:34:16.000Z</published>
+    <updated>2023-02-13T22:34:16.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;div calss=&quot;anzhiyu-tag-link&quot;&gt;&lt;a class=&quot;tag-Link&quot; target=&quot;_blank&quot; href=&quot;https://blog.csdn.net/LCCFlccf/article/details/89643585&quot;&gt;
+    &lt;div
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="🔠LaTeX" scheme="https://prong879.ltd/tags/%F0%9F%94%A0LaTeX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语语法 | 时间状语从句</title>
+    <link href="https://prong879.ltd/posts/bc8a107e.html"/>
+    <id>https://prong879.ltd/posts/bc8a107e.html</id>
+    <published>2023-02-09T09:15:09.000Z</published>
+    <updated>2023-02-09T09:15:09.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;div class=&quot;note primary flat&quot;&gt;&lt;p&gt;名词性从句的引导词按 &lt;mark class=&quot;hl-label red&quot;&gt;从句的类型&lt;/mark&gt;  分类&lt;br&gt;
+*&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;note primary
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="🔠英语语法" scheme="https://prong879.ltd/tags/%F0%9F%94%A0%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo教程 | twikoo配置、评论邮件回复</title>
+    <link href="https://prong879.ltd/posts/772a7933.html"/>
+    <id>https://prong879.ltd/posts/772a7933.html</id>
+    <published>2023-01-27T14:23:58.000Z</published>
+    <updated>2023-01-27T14:23:58.000Z</updated>
+    
+    <summary type="html">
+    
+      本文集成了twikoo配置、评论邮件回复的教程
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
+    
+      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo美化 | hexo页面宽幅调整</title>
+    <link href="https://prong879.ltd/posts/b667bea9.html"/>
+    <id>https://prong879.ltd/posts/b667bea9.html</id>
+    <published>2023-01-26T22:22:52.000Z</published>
+    <updated>2023-01-26T22:22:52.000Z</updated>
+    
+    <summary type="html">
+    
+      调整butterfly主题hexo博客页面宽幅的操作方法
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
+    
+      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
+    
+      <category term="魔改" scheme="https://prong879.ltd/tags/%E9%AD%94%E6%94%B9/"/>
+    
+      <category term="美化" scheme="https://prong879.ltd/tags/%E7%BE%8E%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo美化 | 关于 界面魔改教程</title>
+    <link href="https://prong879.ltd/posts/5c37dc6d.html"/>
+    <id>https://prong879.ltd/posts/5c37dc6d.html</id>
+    <published>2023-01-26T00:34:59.000Z</published>
+    <updated>2023-01-26T00:34:59.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;前言&lt;/h1&gt;
+&lt;div class=&quot;note primary flat&quot;&gt;&lt;p&gt;本文主要基于两位大佬的教程，原文链接如下&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
+    
+      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
+    
+      <category term="魔改" scheme="https://prong879.ltd/tags/%E9%AD%94%E6%94%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语语法 | 3.名词性从句</title>
+    <link href="https://prong879.ltd/posts/62884ef2.html"/>
+    <id>https://prong879.ltd/posts/62884ef2.html</id>
+    <published>2023-01-22T23:15:49.000Z</published>
+    <updated>2023-03-07T23:15:49.000Z</updated>
+    
+    <summary type="html">
+    
+      本文章介绍了名词性从句的分类、引导词的使用方法
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="🔠英语语法" scheme="https://prong879.ltd/tags/%F0%9F%94%A0%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语语法| 2. 并列句</title>
+    <link href="https://prong879.ltd/posts/4de84589.html"/>
+    <id>https://prong879.ltd/posts/4de84589.html</id>
+    <published>2023-01-17T22:13:55.000Z</published>
+    <updated>2023-01-17T22:13:55.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;并列句&lt;/h1&gt;
+&lt;h2 id=&quot;什么是并列句&quot;&gt;什么是并列句&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;用连词连接两个句子&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I love you, you love the
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="🔠英语语法" scheme="https://prong879.ltd/tags/%F0%9F%94%A0%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语语法 | 1.简单句</title>
+    <link href="https://prong879.ltd/posts/e1102549.html"/>
+    <id>https://prong879.ltd/posts/e1102549.html</id>
+    <published>2023-01-16T22:54:58.000Z</published>
+    <updated>2023-01-16T22:54:58.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1&gt;大纲&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;简单句&lt;/li&gt;
+&lt;li&gt;并列句&lt;/li&gt;
+&lt;li&gt;名词（短语）和名词性从句（包含同位语从句）&lt;/li&gt;
+&lt;li&gt;定语和定语从句&lt;/li&gt;
+&lt;li&gt;状语和状语从句&lt;/li&gt;
+&lt;li&gt;英语里特殊结构&lt;/li&gt;
+&lt;/
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="🔠英语语法" scheme="https://prong879.ltd/tags/%F0%9F%94%A0%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言 | 4.函数</title>
+    <link href="https://prong879.ltd/posts/4458362e.html"/>
+    <id>https://prong879.ltd/posts/4458362e.html</id>
+    <published>2023-01-15T15:31:43.000Z</published>
+    <updated>2023-01-15T15:31:43.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;主要掌握函数的基本使用和递归&lt;br&gt;
+[toc]&lt;/p&gt;
+&lt;h1&gt;函数是什么&lt;/h1&gt;
+&lt;p&gt;==子程序==，负责完成某项特定任务，具备相对独立性。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="C语言" scheme="https://prong879.ltd/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言 | 3.分支循环例题</title>
+    <link href="https://prong879.ltd/posts/f7d22121.html"/>
+    <id>https://prong879.ltd/posts/f7d22121.html</id>
+    <published>2023-01-15T15:00:54.000Z</published>
+    <updated>2023-01-15T15:00:54.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1&gt;三个数从大到小排序输出&lt;/h1&gt;
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="C语言" scheme="https://prong879.ltd/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+</feed>

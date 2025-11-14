@@ -1,0 +1,812 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>计量经济学 | Stata的应用 | prong的魔法地下室</title><meta name="keywords" content="📓学习笔记,计量经济学"><meta name="author" content="Prong,prongzmy@outlook.com"><meta name="copyright" content="Prong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="计量经济学 | Stata的应用"><meta name="application-name" content="计量经济学 | Stata的应用"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="计量经济学 | Stata的应用"><meta property="og:url" content="https://prong879.ltd/posts/cb666fbf.html"><meta property="og:site_name" content="prong的魔法地下室"><meta property="og:description" content="一些Stata的计量经济学的相关操作"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202302252351393.webp"><meta property="article:author" content="Prong"><meta property="article:tag" content="prong的地下室"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202302252351393.webp"><meta name="description" content="一些Stata的计量经济学的相关操作"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://prong879.ltd/posts/cb666fbf.html"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: {"enable":true,"title":"与数众多博主无限进步","addFriendPlaceholder":"昵称：\n链接：\n头像：\n描述：\n站点截图：\n"},
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: undefined,
+  LA51: {"enable":true,"ck":"KcXfHrLj94HMK7QD","LingQueMonitorID":"KcXftMDgWoPfFk7O"},
+  greetingBox: undefined,
+  twikooEnvId: 'https://twikoo-snowy-two.vercel.app/',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: undefined,
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: {"mode":"both","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  authorStatus: {"skills":null},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Prong","link":"链接: ","source":"来源: prong的魔法地下室","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'prong的魔法地下室',
+  title: '计量经济学 | Stata的应用',
+  postAI: '',
+  pageFillDescription: '前言, 研究问题和主要思路, 数据选取和整理, 下载统计年鉴的数据, 整理为截面数据, 可能会遇到的问题和初步解决思路, 初步整理, 整理为面板数据, 问题和解决思路, 具体处理, 数据的实证分析, 描述性统计, 描述性统计表格, 散点图绘制, 相关分析, 回归分析, 异质性分析, 稳健性分析, , 改进, 现行代码, 附录, 常用数据平台前言计量经济学对生活中的经济现象进行研究试图找到现象的因果关系正如我在概况所说计量经济学的研究过程可以总结为下面这些步骤明确研究问题写出要估计的回归方程式选择适当的数据集使用统计软件用数据估计回归方程式分析并解释结果常用于计量经济学的软件有等由于我的科研训练涉及面板数据的分析所以选用作为研究的主力软件本篇文章根据我的科研进度持续更新研究问题和主要思路探索生育率和房价之间的关系数据选取和整理为了探索生育率和房价之间的关系我们选用至的各项有关数据被解释变量生育率解释变量平均房价控制变量人均数据来源分为两部分年以前各项数据在中国区域经济统计年鉴中可以直接找到年以后从各省省统计年鉴中获取数据从各统计年鉴中获得的数据是截面数据而且往往由于表格的设置我们首先得到的是一个地区对应一个或几个变量选取的变量需要进行整理从而形成对应年份完整的截面数据得到截面数据之后需要转化为面板数据才能在中进行回归分析数据来源一定要选取可靠的官方平台可以避免无数潜在的下载统计年鉴的数据统计年鉴通常由各级统计局进行整理在次年发布上一年的有关数据例如中国区域经济统计年鉴登录知网中国经济社会大数据研究平台选择区域经济统计年鉴引用站外地址中国区域经济统计年鉴中国经济社会大数据研究平台选择对应年度例如我们需要查看年的数据那么就需要打开年的统计年鉴由于我们需要的是各地州的相关数据在左侧目录选择第三章地级统计资料以地区生产总值为例选择对应的表格下载版本建议在下载数据的时候就做好整理比如按年份分类收集需要注意一是不同年份的统计年鉴表格的分录可能有所区别例如商品房销售面积和商品房销售总额在的统计年鉴是固定资产投资和房屋销售而在年的统计年鉴则是固定资产投资二是不同年份的统计单位可能不同例如出生人口在年的单位是人而在年的单位变为了万人三是不同年份各省行政区划可能会发生变化以我在整理中发现的情况为例年起广西省南宁地区改为崇左市年起云南省昭通地区改为昭通市丽江地区改为丽江市临沧地区改为临沧市思茅地区改为思茅市年起重庆市新增江津区合川区永川区南川区年起湖北省襄樊市改为襄阳市年起贵州省铜仁地区改为铜仁市毕节地区改为毕节市年起安徽省撤销巢湖市将我们所需要的全部年份的相应表格下载并做好整理记录下中途可能遇到的诸如单位转换区划变动等问题然后就可以进行下一步的操作整理为截面数据由于实证分析需要使用面板数据我们需要把原始表格转化为面板数据我目前还不清楚高效的转化方法所以使用一步一步手动整理思路如下确定所需变量将某一年份的相关变量地名总人口出生人口等从原始表格复制到一张新表里形成截面数据把不同年份的截面数据合并成面板数据可能会遇到的问题和初步解决思路区划变动导致地名前后不一建立一个地名对照表检查不同年份区划的变化更改名字则以最新地名为准新增区划则在前面年份留空撤销区划则在后面年份留空合并区划同样在后续年份留空计量单位前后不一手动统一选取方便的计量单位没有删除标题栏上面也有标题栏下面也有标题栏用筛选选出来然后删除历史原因某些观测量缺失因为由观测值有缺失面板数据在中作为不平衡面板数据进行处理错别字例如我在复制之后贵州省就变成了责州省我也不知道怎么搞出来这个问题的用查找替换干了它数据包含空格用查找替换干了它数据小数点变成一眼丁真用筛选数据被储存为文本型一方面建议复制粘贴时使用选择性粘贴粘贴为值另一方面而言强烈建议团队统一用对数据进行处理不要和混用不然可能出现一些玄学的有几种方法处理点击转换为数字清除格式初步整理下载好统计年鉴的数据之后还需要对它进行初步整理包含我们需要的数据对应的表格如下选中我们需要的地名和变量到一张新表里地名是为了方便前后对照以防出错核对完成后地名保留一列删除其余重复的地名列即可这样我们就得到了一份初步的截面数据如你所见我使用的变量有平均房价出生率这样的变量在统计年鉴没有直接给出而是需要我们计算得到我的建议是复制数据从本地文件复制不要从在线预览的文件里复制在截面数据这里保留需要用于后续计算的原始数据以便后续的数据处理需要计算的变量统一在面板数据的草稿里运算因为我们的面板数据势必是检查过变量前后一致性的可以保证变量区划名称一致从而便于我们获取所需要构造的新变量我们现在已经得到了在同一年份内准确的截面数据但是如前文所言可能会存在区划变动地名变更的问题建议制作一份不同年份地名对照表并按前文的解决思路订正统一地名记录变动情况地名的检查完成以后还要对计量单位进行检查统一通过这样的处理方法我们就保证了地名的一致性变量的一致性将各个年份的截面数据以数据年份命名保存至一个新工作簿中如果前后地名不统一对于系统来说数据就贼不平衡有的缺早期数据有的没有晚期数据非常不利于我们的回归分析而变量如果不统一例如前面用粗出生率出生率出生人口总人口出生率出生人口总人口出生率总人口出生人口后面用出生率出生人口常住人口出生率出生人口常住人口出生率常住人口出生人口总人口和常住人口的巨大差异就放大了数据的波动性和不准确性因此建议使用在绝大多数年份都可以得到的统计量便于后续分析整理为面板数据问题和解决思路现在假设通过前面得到的面板数据已经统一前后地名确定计量单位无误不包含因为数据操作得到的提示符比如说不存在数据里因为包含空格引号导致的数据无效具体处理有快捷方法把每个工作表的内容合并到一张新工作表此处不再赘述也可以一张表一张表慢慢复制总之经过合并以后我们就得到了我们的面板数据的草稿这样的表格往往是不能直接在里方便的使用的在早先的版本中中文变量名称会无法显示或显示会乱码尽管在新版本例如中已经支持中文的显示我还是建议用字母缩写来重命名变量减少出的几率也方便写代码的时候输入变量名对数据进行整理可以在里输指令也可以在用笨办法处理此处记录的处理方法因为以前我不会防止以后忘记导入数据表把第一行作为变量名整理变量对变量重命名把地名转换成数值型避免类型问题地区给变量排序被解释变量第一然后是解释变量年份巴拉巴拉防止报错不认识面板数据声明面板数据格式指定截面维度为时间维度为将数据对数化消除异方差经过这样的操作我们就得到了需要的的面板数据形式数据的实证分析实证分析的步骤其实有规可循描述性统计相关性分析共线性判断描述性统计首先进行的是描述性统计描述性统计分析主要是对研究样本中与所有变量相关的数据进行统计描述包括频数分析中心趋势分析方差分析分布分析这类十分基本的统计图形基本思路如下使用或或命令生成表格使用或命令绘制散点图使用制作拟合线和置信区间在上述命令后加上分组依据进行分组使用输出结果并保存在这部分我们需要对原始数据进行描述性统计通过制作含有原始数据的样本量中位数标准差最小值最大值的统计表格绘制被解释变量与不同解释变量的分布情况以及对应的拟合线置信区间的散点图对原始数据进行基本分析从而决定接下来的处理方法然后我们可以按年份分组按地区分组继续制作这样的表格散点图进一步进行分析描述性统计表格首先对原始数据进行基本的描述性统计表格可以看出我们收集个有效的数据样本由于部分有缺失平均房价有个样本人均有个样本制作这样的基本描述统计表格可以用以下三个方法方法一利用制作表格输出基本统计描述这个语句有两个部分第一部分是输出语法可以设定输出文件的名字可以选输出为等类型第二部分是统计表语法语法是被解释变量解释变量方法二使用方法三安装然后可以根据年份分组得到进一步的统计结果描述例如按年份分组统计描述按年份分组统计变量的均值标准差等散点图绘制散点图的绘制主要使用语法拟合线和置信区间的绘制主要使用语法而如果需要同时绘制散点图拟合线置信区间可以使用的语法出生率与房价的散点图出生率与房价的散点图出生率与人均的散点图出生率与人均的散点图绘制出生率和房价的散点图并加入拟合线和置信区间按年份分组带拟合线和置信区间分年度的出生率和房价散点图相关分析接下来我们需要进行相关分析判断各变量之间的相关性这一部分主要使用连玉君老师制作的相关分析统计表与自带的相关分析相比能用的数目显示出置信度例如代表代表代表语法是被解释变量解释变量相关分析回归分析当我们做完描述性统计和相关分析接下来可以进行回归分析基本思路是使用双向固定效应系统回归进行基准回归分析回归语法是被解释变量解释变量整理数据对面板数据进行双向固定效应回归个体效应时间效应主要使用基本语法是被解释变量解释变量在后续我们还会在此基础上检验地区效应房价水平效应对面板数据进行系统回归通常使用它的一般形式是其中是因变量是自变量是用于估计的内生变量是用于估计的外生变量是一些可选项方式一系统回归或者使用方式二关键是区分外生内生变量方式一将所有的滞后量都视为内生变量并且使用它们的滞后水平作为工具变量方式二将因变量的滞后量视为内生变量并且使用它的滞后水平作为工具变量而将解释变量和它们的滞后量视为外生变量并且使用它们的当期值作为工具变量如果认为所有的滞后量都与当期误差项相关那么方式一可能更合理如果认为解释变量和它们的滞后量与当期误差项无关那么方式二可能更合理这取决于您对模型动态性和数据特征的假设和检验在命令中加入选项以便进行两步估计并且使用的有限样本校正来计算稳健标准误例如或者异质性分析稳健性分析将数据对数化消除异方差对基本事实使用表格和散点图描述基本统计描述做基本统计描述然后输出对数化后基本统计描述做基本统计描述然后输出按年份分组统计描述按年份分组统计变量的均值标准差等出生率与房价的散点图出生率与房价的散点图出生率与人均的散点图出生率与人均的散点图绘制出生率和房价的散点图并加入拟合线和置信区间按年份分组带拟合线和置信区间分年度的出生率和房价散点图做相关分析相关分析对数化后相关分析使用双向固定效应系统回归进行基准回归分析回归整理数据设置面板数据结构个体效应和随机效应的联合显著性检验表示固定效应个体效应显著若同时包括时期虚拟变量利用检验表示随机效应检验随机效应是否显著需要运行随机效应模型后使用检验固定效应模型保存回归结果随机效应模型保存回归结果比较两者结果小于零选用固定效应当模型误差项存在序列相关或异方差时用异方差和序列相关检验序列相关检验异方差检验双向固定效应回归系统回归或者这样以不同地区不同房价绝对水平与房价增长率进行异质性分析计算每个地区的平均房价水平以不同房价绝对水平进行异质性分析将房价划分为四个等频组别并生成新变量表示组别编号整理数据以不同房价增长率进行异质性分析计算每个地区的房价增长率计算每个地区的平均房价增长率将房价增长率划分为四个等频组别并生成新变量表示组别编号整理数据在双向固定效应回归中加入地区虚拟变量检验地区效应是固定地区效应而是个体固定效应相对于更精确的固定地区效应在双向固定效应回归中用平均房价水平替代房价检验房价水平效应在双向固定效应回归中用房价增长率替代房价检验房价增长率效应改进月日前初稿作者顺序现行代码将数据对数化消除异方差对基本事实使用表格和散点图描述基本统计描述做基本统计描述然后输出按年份分组统计变量的均值标准差等绘制出生率和房价的散点图并加入拟合线和置信区间按年份分组做相关分析相关分析使用双向固定效应系统回归进行基准回归分析回归整理数据设置面板数据结构个体效应和随机效应的联合显著性检验表示固定效应个体效应显著若同时包括时期虚拟变量利用检验表示随机效应检验随机效应是否显著需要运行随机效应模型后使用检验固定效应模型保存回归结果随机效应模型保存回归结果比较两者结果小于零选用固定效应当模型误差项存在序列相关或异方差时用异方差和序列相关检验序列相关检验异方差检验双向固定效应回归系统回归或者这样以不同地区不同房价绝对水平与房价增长率进行异质性分析计算每个地区的平均房价水平以不同房价绝对水平进行异质性分析将房价划分为四个等频组别并生成新变量表示组别编号以不同房价增长率进行异质性分析计算每个地区每年的房价增长率并生成新变量表示增长率值将房价增长率划分为四个等频组别并生成新变量表示组别编号整理数据在双向固定效应回归中加入地区虚拟变量检验地区效应在双向固定效应回归中用平均房价水平替代房价检验房价水平效应在双向固定效应回归中用房价增长率替代房价检验房价增长率效应使用估计工具变量法进行稳健性分析假设有一个政策变量取值为或表示是否实施了某项政策假设有一个合适的工具变量与相关但与出生率无关生成政策和房价的交互项设置面板数据结构使用估计方法回归出生率和政策房价的关系使用工具变量法回归出生率和政策房价的关系其中是的工具变量附录常用数据平台中国区域经济统计年鉴云南省统计年鉴贵州省统计年鉴广西省统计年鉴江西省统计年鉴江苏省统计年鉴浙江省统计年鉴上海市统计年鉴四川省统计年鉴重庆市统计年鉴湖北省统计年鉴安徽省统计年鉴',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-11 20:49:33',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="prong的魔法地下室" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">prong的魔法地下室</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="fa-solid fa-timeline faa-tada"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="fas fa-tags faa-tada"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="fas fa-folder-open faa-tada"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/messageboard/"><i class="fa fa-comments faa-tada"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 修仙</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/books/"><i class="fa-solid fa-book-open-reader faa-tada"></i><span> 书单</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="fa-solid fa-film faa-tada"></i><span> 电影</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="fa-brands fa-xbox faa-tada"></i><span> 游戏</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="fa-brands fa-bilibili faa-tada"></i><span> 番剧</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/cinemas/"><i class="fa-brands fa-bilibili faa-tada"></i><span> B站追剧</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/update/"><i class="fa-solid fa-file-pen faa-tada"></i><span> 更新手账</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="fa-solid fa-person-through-window faa-tada"></i><span> 关于自己</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/mm_facetoface_collect_qrcode_1730547752845.webp" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/mm_facetoface_collect_qrcode_1730547752845.webp"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/1730547802675.webp" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/1730547802675.webp"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/ARCH%E6%A8%A1%E5%9E%8B/" style="font-size: 1.05rem;">ARCH模型<sup>1</sup></a><a href="/tags/C/" style="font-size: 1.05rem;">C++<sup>4</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">C语言<sup>5</sup></a><a href="/tags/MySQL/" style="font-size: 1.05rem;">MySQL<sup>1</sup></a><a href="/tags/PPT/" style="font-size: 1.05rem;">PPT<sup>1</sup></a><a href="/tags/Python/" style="font-size: 1.05rem;">Python<sup>2</sup></a><a href="/tags/Zerotier/" style="font-size: 1.05rem;">Zerotier<sup>1</sup></a><a href="/tags/hexo/" style="font-size: 1.05rem;">hexo<sup>3</sup></a><a href="/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/" style="font-size: 1.05rem;">✒️随笔<sup>13</sup></a><a href="/tags/%E4%B8%89%E4%B8%8B%E4%B9%A1/" style="font-size: 1.05rem;">三下乡<sup>1</sup></a><a href="/tags/%E4%BF%9D%E9%99%A9%E5%AD%A6/" style="font-size: 1.05rem;">保险学<sup>1</sup></a><a href="/tags/%E5%95%86%E4%B8%9A%E9%93%B6%E8%A1%8C/" style="font-size: 1.05rem;">商业银行<sup>1</sup></a><a href="/tags/%E5%9B%BD%E5%80%BA/" style="font-size: 1.05rem;">国债<sup>1</sup></a><a href="/tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 1.05rem;">国际贸易<sup>1</sup></a><a href="/tags/%E5%A4%A7%E7%BA%B2%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">大纲笔记<sup>1</sup></a><a href="/tags/%E5%AE%9E%E8%AF%81%E5%88%86%E6%9E%90/" style="font-size: 1.05rem;">实证分析<sup>1</sup></a><a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 1.05rem;">密码学<sup>1</sup></a><a href="/tags/%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 1.05rem;">微软输入法<sup>1</sup></a><a href="/tags/%E6%91%84%E5%BD%B1/" style="font-size: 1.05rem;">摄影<sup>1</sup></a><a href="/tags/%E6%94%AF%E6%95%99%E6%97%A5%E8%AE%B0/" style="font-size: 1.05rem;">支教日记<sup>4</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.05rem;">教程<sup>7</sup></a><a href="/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/" style="font-size: 1.05rem;">数字货币<sup>1</sup></a><a href="/tags/%E6%9E%81%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/" style="font-size: 1.05rem;">极分解定理<sup>1</sup></a><a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 1.05rem;">概率论与数理统计<sup>1</sup></a><a href="/tags/%E7%B2%AE%E9%A3%9F%E5%8D%B1%E6%9C%BA/" style="font-size: 1.05rem;">粮食危机<sup>1</sup></a><a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 1.05rem;">线性代数<sup>4</sup></a><a href="/tags/%E7%BE%8E%E5%8C%96/" style="font-size: 1.05rem;">美化<sup>1</sup></a><a href="/tags/%E8%8C%85%E5%8F%B0/" style="font-size: 1.05rem;">茅台<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7/" style="font-size: 1.05rem;">计算机二级<sup>1</sup></a><a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 1.05rem;">论文<sup>7</sup></a><a href="/tags/%E9%AB%98%E7%B2%B1/" style="font-size: 1.05rem;">高粱<sup>1</sup></a><a href="/tags/%E9%AD%94%E6%94%B9/" style="font-size: 1.05rem;">魔改<sup>2</sup></a><a href="/tags/%F0%9F%8C%90%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 1.05rem;">🌐网络协议<sup>1</sup></a><a href="/tags/%F0%9F%92%B0%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 1.05rem;">💰微观经济学<sup>1</sup></a><a href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">📓学习笔记<sup>45</sup></a><a href="/tags/%F0%9F%94%A0LaTeX/" style="font-size: 1.05rem;">🔠LaTeX<sup>1</sup></a><a href="/tags/%F0%9F%94%A0MarkDown/" style="font-size: 1.05rem;">🔠MarkDown<sup>1</sup></a><a href="/tags/%F0%9F%94%A0%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/" style="font-size: 1.05rem;">🔠英语语法<sup>4</sup></a><a href="/tags/%F0%9F%96%A5%EF%B8%8F%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 1.05rem;">🖥️计算机基础<sup>5</sup></a><a href="/tags/%F0%9F%A6%8Bbutterfly/" style="font-size: 1.05rem;">🦋butterfly<sup>3</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/11/"><span class="card-archive-list-date">十一月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">十月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">学习笔记</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>📓学习笔记</span></a><a class="article-meta__tags" href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>计量经济学</span></a></span></div></div><h1 class="post-title" itemprop="name headline">计量经济学 | Stata的应用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2023-03-11T12:49:33.000Z" title="发表于 2023-03-11 20:49:33">2023-03-11</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2023-03-11T12:49:33.000Z" title="更新于 2023-03-11 20:49:33">2023-03-11</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">6.1k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>20分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="计量经济学 | Stata的应用"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为南京"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>南京</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303112136946.webp"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://prong879.ltd/posts/cb666fbf.html"><header><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">学习笔记</a><a href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" tabindex="-1" itemprop="url">📓学习笔记</a><a href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" tabindex="-1" itemprop="url">计量经济学</a><h1 id="CrawlerTitle" itemprop="name headline">计量经济学 | Stata的应用</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Prong</span><time itemprop="dateCreated datePublished" datetime="2023-03-11T12:49:33.000Z" title="发表于 2023-03-11 20:49:33">2023-03-11</time><time itemprop="dateCreated datePublished" datetime="2023-03-11T12:49:33.000Z" title="更新于 2023-03-11 20:49:33">2023-03-11</time></header><h1>前言</h1>
+<p>计量经济学对生活中的经济现象进行研究，试图找到现象的因果关系。正如我在<code>[概况]</code>所说，计量经济学的研究过程可以总结为下面这些步骤：</p>
+<ul>
+<li>明确研究问题</li>
+<li>写出要估计的回归方程式</li>
+<li>选择适当的数据集</li>
+<li>使用统计软件，用数据估计回归方程式</li>
+<li>分析并解释结果</li>
+</ul>
+<p>常用于计量经济学的软件有Eviews、Matlab、Stata等。由于我的科研训练涉及面板数据的分析，所以选用Stata作为研究的主力软件。本篇文章根据我的科研进度持续更新。</p>
+<h1>研究问题和主要思路</h1>
+<p>探索生育率和房价之间的关系。</p>
+<h1>数据选取和整理</h1>
+<p>为了探索生育率和房价之间的关系，我们选用2002至2021的各项有关数据：</p>
+<ul>
+<li>被解释变量
+<ul>
+<li>生育率</li>
+</ul>
+</li>
+<li>解释变量
+<ul>
+<li>平均房价</li>
+</ul>
+</li>
+<li>控制变量
+<ul>
+<li>人均GDP</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<p>数据来源分为两部分：</p>
+<ul>
+<li>2014年以前各项数据在《中国区域经济统计年鉴》中可以直接找到。</li>
+<li>2014年以后从各省《XX省统计年鉴》中获取数据。</li>
+</ul>
+<p>从各《统计年鉴》中获得的数据是截面数据，而且往往由于表格的设置，我们首先得到的是一个地区对应一个或几个变量，选取的变量需要进行整理，从而形成对应年份完整的截面数据。得到截面数据之后，需要转化为面板数据才能在Stata中进行回归分析。</p>
+<div class="note warning flat"><p>数据来源一定要选取可靠的官方平台，可以避免无数潜在的bug</p>
+</div>
+<h2 id="下载统计年鉴的数据">下载统计年鉴的数据</h2>
+<p>统计年鉴通常由各级统计局进行整理，在次年发布上一年的有关数据。例如：《2014中国区域经济统计年鉴》<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111331243.webp" alt></p>
+<p>登录知网中国经济社会大数据研究平台，选择《区域经济统计年鉴》</p>
+<div calss="anzhiyu-tag-link"><a class="tag-Link" target="_blank" href="https://data.cnki.net/yearBook/single?id=N2015070200">
+    <div class="tag-link-tips">引用站外地址</div>
+    <div class="tag-link-bottom">
+        <div class="tag-link-left" style>
+          <i class="anzhiyufont anzhiyu-icon-link" style></i>
+        </div>
+        <div class="tag-link-right">
+            <div class="tag-link-title">《中国区域经济统计年鉴》</div>
+            <div class="tag-link-sitename">中国经济社会大数据研究平台</div>
+        </div>
+        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>
+    </div>
+    </a></div>
+<p>选择对应年度，例如我们需要查看2012年的数据，那么就需要打开2013年的统计年鉴。</p>
+<p>由于我们需要的是各地州的相关数据，在左侧目录选择 <code>第三章 地级统计资料</code> ，以地区生产总值为例：<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111336888.webp" alt></p>
+<p>选择对应的表格，下载excel版本，建议在下载数据的时候就做好整理，比如按年份分类收集。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111338307.webp" alt></p>
+<p>需要注意，一是：<br>
+<strong>不同年份的统计年鉴表格的分录可能有所区别</strong>。例如<code>商品房销售面积</code>和<code>商品房销售总额</code>，在2013的统计年鉴是《3-5 固定资产投资和房屋销售》，而在2002年的统计年鉴则是《固定资产投资》。</p>
+<p>二是：<br>
+不同年份的统计单位可能不同。例如<code>出生人口</code>在2002年的单位是 <strong>人</strong>，而在2008年的单位变为了 <strong>万人</strong>。</p>
+<p>三是：<br>
+不同年份，各省行政区划可能会发生变化。以我在整理中发现的情况为例：</p>
+<blockquote>
+<p>2003年起广西省南宁地区改为崇左市<br>
+2003年起，云南省昭通地区改为昭通市，丽江地区改为丽江市，临沧地区改为临沧市，思茅地区改为思茅市<br>
+2006年起重庆市新增江津区、合川区、永川区、南川区<br>
+2010年起湖北省襄樊市改为襄阳市<br>
+2011年起，贵州省铜仁地区改为铜仁市，毕节地区改为毕节市<br>
+2011年起安徽省撤销巢湖市</p>
+</blockquote>
+<p>将我们所需要的全部年份的相应表格下载并做好整理，记录下中途可能遇到的诸如单位转换、区划变动等问题，然后就可以进行下一步的操作。</p>
+<h2 id="整理为截面数据">整理为截面数据</h2>
+<p>由于实证分析需要使用面板数据，我们需要把原始表格转化为面板数据。我目前还不清楚高效的转化方法，所以使用excel一步一步手动整理，思路如下：</p>
+<ul>
+<li>确定所需变量</li>
+<li>将某一年份的相关变量（地名、GDP、总人口、出生人口等）从原始表格复制到一张新表里，形成截面数据</li>
+<li>把不同年份的截面数据合并成面板数据</li>
+</ul>
+<h3 id="可能会遇到的问题和初步解决思路">可能会遇到的问题和初步解决思路</h3>
+<ul>
+<li>区划变动导致地名前后不一
+<ul>
+<li>建立一个地名对照表，检查不同年份区划的变化，更改名字则以最新地名为准，新增区划则在前面年份留空，撤销区划则在后面年份留空，合并区划同样在后续年份留空。</li>
+</ul>
+</li>
+<li>计量单位前后不一
+<ul>
+<li>手动统一，选取方便的计量单位</li>
+</ul>
+</li>
+<li>没有删除标题栏（上面也有标题栏，下面也有标题栏）
+<ul>
+<li>用<code>筛选</code>选出来然后删除</li>
+</ul>
+</li>
+<li>历史原因某些观测量缺失
+<ul>
+<li>因为由观测值有缺失，面板数据在Stata中作为不平衡面板数据进行处理</li>
+</ul>
+</li>
+<li>错别字
+<ul>
+<li>例如我在复制之后<code>贵州省</code>就变成了<code>责州省</code>，我也不知道怎么搞出来这个问题的。</li>
+<li>用<code>查找替换</code>干了它</li>
+</ul>
+</li>
+<li>数据包含空格
+<ul>
+<li>用<code>查找替换</code>干了它</li>
+</ul>
+</li>
+<li>数据小数点 <code>.</code> 变成 <code>'</code>
+<ul>
+<li>一眼丁真，用筛选</li>
+</ul>
+</li>
+<li>数据被excel储存为文本型
+<ul>
+<li><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111404749.webp" alt></li>
+<li>一方面建议复制粘贴时，使用<code>选择性粘贴-粘贴为值</code></li>
+<li>另一方面而言，<strong>强烈建议团队统一用Microsoft Excel对数据进行处理，不要WPS和Excel混用，不然可能出现一些玄学的bug</strong></li>
+<li>有几种方法处理：
+<ul>
+<li>点击<code>转换为数字</code></li>
+<li>清除格式</li>
+<li><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111406954.webp" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="初步整理">初步整理</h3>
+<p>下载好统计年鉴的excel数据之后，还需要对它进行初步整理。包含我们需要的数据对应的excel表格如下：<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111354476.webp" alt></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111340526.webp" alt></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111341008.webp" alt></p>
+<p>选中我们需要的地名和变量到一张新表里（地名是为了方便前后对照以防出错），核对完成后地名保留一列，删除其余重复的地名列即可。这样我们就得到了一份初步的截面数据。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111420284.webp" alt></p>
+<div class="note warning flat"><p>如你所见，我使用的变量有<code>平均房价</code>、<code>出生率</code>，这样的变量在统计年鉴没有直接给出，而是需要我们计算得到。我的建议是：</p>
+<ul>
+<li>复制数据从本地文件复制，不要从在线预览的文件里复制。</li>
+<li>在截面数据这里保留需要用于后续计算的<strong>原始数据</strong>，以便后续的数据处理。</li>
+<li>需要计算的变量统一在<strong>面板数据</strong>的草稿里运算，因为我们的面板数据势必是检查过变量前后一致性的，可以保证变量、区划名称一致，从而便于我们获取所需要构造的新变量。</li>
+</ul>
+</div>
+<p>我们现在已经得到了在同一年份内准确的截面数据，但是如前文所言，可能会存在区划变动、地名变更的问题。建议制作一份不同年份地名对照表，并按前文的解决思路订正、统一地名，记录变动情况。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111430944.webp" alt></p>
+<p>地名的检查完成以后，还要对计量单位进行检查、统一。通过这样的处理方法，我们就保证了地名的一致性、变量的一致性。将各个年份的截面数据以数据年份命名，保存至一个新工作簿中。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111427138.webp" alt></p>
+<blockquote>
+<p>如果前后地名不统一，对于系统来说数据就贼不平衡，有的缺早期数据，有的没有晚期数据，非常不利于我们的回归分析。</p>
+</blockquote>
+<blockquote>
+<p>而变量如果不统一，例如前面用粗出生率<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>出生率</mtext><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mtext>出生人口</mtext><mtext>总人口</mtext></mfrac></mstyle></mrow><annotation encoding="application/x-tex">出生率=\cfrac{出生人口}{总人口}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">出生率</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.276em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.59em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">总人口</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.74em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">出生人口</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span></span></span></span></span></span>，后面用<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>出生率</mtext><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mtext>出生人口</mtext><mtext>常住人口</mtext></mfrac></mstyle></mrow><annotation encoding="application/x-tex">出生率=\cfrac{出生人口}{常住人口}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">出生率</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.276em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.59em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">常住人口</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.74em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">出生人口</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span></span></span></span></span></span>，总人口和常住人口的巨大差异就放大了数据的波动性和不准确性。因此建议使用在绝大多数年份都可以得到的统计量，便于后续分析。</p>
+</blockquote>
+<h2 id="整理为面板数据">整理为面板数据</h2>
+<h3 id="问题和解决思路">问题和解决思路</h3>
+<p>现在假设通过前面得到的面板数据，已经统一前后地名、确定计量单位无误、不包含因为excel数据操作得到的提示符（比如说<code>#DIV/0!</code>、<code>#VALUE!</code>）、不存在数据里因为包含空格、引号导致的数据无效。</p>
+<ul>
+<li></li>
+</ul>
+<h3 id="具体处理">具体处理</h3>
+<p>excel有快捷方法把每个工作表的内容合并到一张新工作表，此处不再赘述。也可以一张表一张表慢慢复制。总之经过合并以后，我们就得到了我们的面板数据的草稿</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111443511.webp" alt></p>
+<p>这样的表格往往是不能直接在stata里方便的使用的。在Stata早先的版本中，中文变量名称会无法显示或显示会乱码，尽管在新版本（例如stata 17）中已经支持中文的显示，我还是建议用字母缩写来重命名变量，减少出bug的几率，也方便写代码的时候输入变量名。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111442420.webp" alt></p>
+<p>对数据进行整理，可以在stata里输指令，也可以在excel用笨办法处理。此处记录stata的处理方法（因为以前我不会，防止以后忘记）</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*导入excel数据表，把第一行作为变量名*/</span></span><br><span class="line">import excel <span class="string">&quot;F:\Note\Stata\DATA1.xlsx&quot;</span>, sheet(<span class="string">&quot;Sheet3&quot;</span>) firstrow</span><br><span class="line"></span><br><span class="line"><span class="comment">/*整理变量，对变量重命名*/</span></span><br><span class="line"><span class="keyword">rename</span> [old name] [new name]</span><br><span class="line"></span><br><span class="line"><span class="comment">/*把地名转换成数值型避免类型问题，*/</span></span><br><span class="line"><span class="keyword">encode</span> 地区, <span class="keyword">gen</span>(id)</span><br><span class="line"></span><br><span class="line"><span class="comment">/*给变量排序，被解释变量第一，然后是解释变量，年份，巴拉巴拉*/</span></span><br><span class="line"><span class="keyword">order</span> y x1 x2 year id province</span><br><span class="line"></span><br><span class="line"><span class="comment">/*防止报错不认识面板数据*/</span></span><br><span class="line"><span class="keyword">duplicates</span> <span class="keyword">drop</span> id year, force</span><br><span class="line"></span><br><span class="line"><span class="comment">/*声明面板数据格式，指定截面维度为id，时间维度为year*/</span></span><br><span class="line"><span class="keyword">xtset</span> id year</span><br><span class="line"></span><br><span class="line"><span class="comment">/*将数据对数化，消除异方差*/</span></span><br><span class="line"><span class="keyword">gen</span> logy = <span class="built_in">log</span>(y)</span><br><span class="line"><span class="keyword">gen</span> logx1 = <span class="built_in">log</span>(x1)</span><br><span class="line"><span class="keyword">gen</span> logx2 = <span class="built_in">log</span>(x2)</span><br></pre></td></tr></table></figure>
+<p>经过这样的操作，我们就得到了stata需要的的面板数据形式。</p>
+<h1>数据的实证分析</h1>
+<p>实证分析的步骤其实有规可循：</p>
+<ul>
+<li>描述性统计</li>
+<li>相关性分析</li>
+<li>共线性判断</li>
+<li></li>
+</ul>
+<h2 id="描述性统计">描述性统计</h2>
+<p>首先进行的是描述性统计。描述性统计分析主要是对研究样本中与所有变量相关的数据进行统计描述，包括频数分析、中心趋势分析、方差分析、分布分析这类十分基本的统计图形。基本思路如下</p>
+<ul>
+<li>使用<code>tabulate</code>或<code>tabstat</code>或<code>summary</code>命令生成表格。</li>
+<li>使用<code>scatter</code>或<code>twoway</code>命令绘制散点图。</li>
+<li>使用<code>lfitci</code>制作拟合线和置信区间。</li>
+<li>在上述命令后加上<code>by (分组依据)</code>进行分组。</li>
+<li>使用<code>logout</code>输出结果并保存。</li>
+</ul>
+<p>在这部分，我们需要对原始数据进行<strong>描述性统计</strong>，通过制作含有原始数据的样本量、中位数、标准差、最小值、最大值的<strong>统计表格</strong>，绘制被解释变量与不同解释变量的分布情况以及对应的拟合线、置信区间的<strong>散点图</strong>。对原始数据进行基本分析，从而决定接下来的处理方法。然后我们可以<strong>按年份分组</strong>、<strong>按地区分组</strong>继续制作这样的表格、散点图，进一步进行分析。</p>
+<h3 id="描述性统计表格">描述性统计表格</h3>
+<p>首先，对原始数据进行基本的描述性统计表格。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303111513072.webp" alt></p>
+<p>可以看出我们收集1483个有效的数据样本，由于部分有缺失，x1平均房价有1442个样本，x2人均GDP有1442个样本。制作这样的基本描述统计表格，可以用以下三个方法。</p>
+<ul>
+<li>方法一<br>
+利用<code>tabstat</code>制作表格，<code>logout</code>输出。<br>
+<code>logout,save(基本统计描述)word replace:tabstat y x1 x2,s(N mean p50 sd min max) f(%12.3f) c(s)</code><br>
+这个语句有两个部分，第一部分<code>logout</code>是输出语法，可以设定输出文件的名字，可以选输出为word、excel等类型。<br>
+第二部分是<code>tabstat</code>统计表语法，语法是<code>tabstat [被解释变量] [解释变量], s() f() c()</code></li>
+<li>方法二<br>
+使用<code>summary</code></li>
+<li>方法三<br>
+安装asdoc<br>
+<code> ssc install asdoc</code><br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303131854825.webp" alt></li>
+</ul>
+<p>然后，可以根据年份分组得到进一步的统计结果描述，例如：<br>
+<code>logout,save(按年份分组统计描述)word replace:tabstat logy logx1 logx2, by(year) /*按年份分组统计变量的均值、标准差等*/</code></p>
+<h3 id="散点图绘制">散点图绘制</h3>
+<p>散点图的绘制主要使用<code>scatter</code>语法，拟合线和置信区间的绘制主要使用<code>lfitci</code>语法。而如果需要同时绘制散点图、拟合线、置信区间，可以使用<code>graph twoway</code>的语法。</p>
+<p><code>scatter logy logx1 || lfit logy logx1 /*出生率与房价的散点图，logout,save(出生率与房价的散点图)word replace:*/</code><br>
+<code>scatter logy logx2 || lfit logy logx2 /*出生率与人均GDP的散点图，logout,save(出生率与人均GDP的散点图)word replace:*/</code><br>
+<code>graph twoway (scatter logy logx1) (lfitci logy logx1), by(year) /*绘制出生率和房价的散点图，并加入拟合线和置信区间，按年份分组，logout,save(带拟合线和置信区间分年度的出生率和房价散点图)word replace:*/</code></p>
+<h2 id="相关分析">相关分析</h2>
+<p>接下来，我们需要进行相关分析，判断各变量之间的相关性。这一部分主要使用连玉君老师制作的<code>pwcorr_a</code>相关分析统计表。与自带的相关分析<code>pwcorr</code>相比，<code>pwcorr_a</code>能用<code>*</code>的数目显示出置信度，例如<code>*</code>代表0.001，<code>**</code>代表0.025，<code>***</code>代表0.05。语法是<code>pwcorr_a [被解释变量] [解释变量]</code></p>
+<p><code>logout,save(相关分析)word replace:pwcorr_a y x1 x2</code></p>
+<h2 id="回归分析">回归分析</h2>
+<p>当我们做完描述性统计和相关分析，接下来可以进行回归分析。基本思路是使用OLS、双向固定效应、系统GMM回归进行基准回归分析。</p>
+<p>OLS回归，语法是<code>regress [被解释变量] [解释变量]</code><br>
+<code>regress logy logx1 logx2</code></p>
+<p>整理数据<br>
+<code>sort id year</code></p>
+<p>对面板数据进行双向固定效应回归（个体效应（id）、时间效应（year）），主要使用<code>xtreg</code>，基本语法是<code>xtreg [被解释变量] [解释变量], fe</code>。在后续我们还会在此基础上检验地区效应、房价水平效应。<br>
+<code>xtreg logy logx1 logx2, fe</code></p>
+<p>对面板数据进行系统GMM回归，通常使用<code>xtabond2</code>。它的一般形式是<code>xtabond2 depvar indepvars, gmm(gmmvars) iv(ivvars) options</code>，其中<code>depvar</code>是因变量，<code>indepvars</code>是自变量，<code>gmmvars</code>是用于GMM估计的内生变量，<code>ivvars</code>是用于IV估计的外生变量，<code>options</code>是一些可选项。<br>
+<strong>方式一</strong><code>xtabond2 logy L.logy L.logx1 L.logx2, gmm(L.logy L.logx1 L.logx2) iv(L.logy L.logx1 L.logx2) robust /*系统GMM回归*/</code><br>
+或者使用<strong>方式二</strong><code>xtabond2 logy l.logy logx1 logx2, gmm(l.logy) iv(logx1 logx2) robust</code>关键是区分外生内生变量。</p>
+<p>方式一将所有的滞后量都视为内生变量，并且使用它们的滞后水平作为工具变量；方式二将因变量的滞后量视为内生变量，并且使用它的滞后水平作为工具变量，而将解释变量和它们的滞后量视为外生变量，并且使用它们的当期值作为工具变量。<br>
+如果认为所有的滞后量都与当期误差项相关，那么方式一可能更合理；如果认为解释变量和它们的滞后量与当期误差项无关，那么方式二可能更合理。这取决于您对模型动态性和数据特征的假设和检验。</p>
+<p>在xtabond2命令中加入twostep选项，以便进行两步估计，并且使用Windmeijer (2005) 的有限样本校正来计算稳健标准误。例如：<br>
+<code>xtabond2 logy L.logy L.logx1 L.logx2, gmm(L.logy L.logx1 L.logx2) iv(L.logy L.logx1 L.logx2) twostep robust</code><br>
+或者<br>
+<code>xtabond2 logy l.logy logx1 logx2, gmm(l.logy) iv(logx1 logx2) twostep robust</code></p>
+<h2 id="异质性分析">异质性分析</h2>
+<h2 id="稳健性分析">稳健性分析</h2>
+<h2 id></h2>
+<p>/<em>将数据对数化，消除异方差</em>/<br>
+gen logy = log(y)<br>
+gen logx1 = log(x1)<br>
+gen logx2 = log(x2)</p>
+<p>/<em>对基本事实使用表格和散点图描述</em>/<br>
+logout,save(基本统计描述)word replace:tabstat y x1 x2,s(N mean p50 sd min max) f(%12.3f) c(s)  /<em>做基本统计描述然后输出</em>/<br>
+logout,save(对数化后基本统计描述)word replace:tabstat logy logx1 logx2,s(N mean p50 sd min max) f(%12.3f) c(s)  /<em>做基本统计描述然后输出</em>/<br>
+logout,save(按年份分组统计描述)word replace:tabstat logy logx1 logx2, by(year) /<em>按年份分组统计变量的均值、标准差等</em>/<br>
+scatter logy logx1 || lfit logy logx1 /<em>出生率与房价的散点图，logout,save(出生率与房价的散点图)word replace:</em>/<br>
+scatter logy logx2 || lfit logy logx2 /<em>出生率与人均GDP的散点图，logout,save(出生率与人均GDP的散点图)word replace:</em>/<br>
+graph twoway (scatter logy logx1) (lfitci logy logx1), by(year) /<em>绘制出生率和房价的散点图，并加入拟合线和置信区间，按年份分组，logout,save(带拟合线和置信区间分年度的出生率和房价散点图)word replace:</em>/</p>
+<p>/<em>做相关分析</em>/<br>
+logout,save(相关分析)word replace:pwcorr_a logy logx1 logx2<br>
+logout,save(对数化后相关分析)word replace:pwcorr_a logy logx1 logx2</p>
+<p>/<em>使用OLS、双向固定效应、系统GMM回归进行基准回归分析</em>/<br>
+regress logy logx1 logx2 /<em>OLS回归</em>/<br>
+sort id year /<em>整理数据</em>/<br>
+xtset id year /<em>设置面板数据结构</em>/</p>
+<p>/<em>个体效应和随机效应的联合显著性检验</em>/<br>
+xtreg logy logx1 logx2, fe //fe表示固定效应，p&lt;0.01个体效应显著;若同时包括时期虚拟变量，xtreg invest mvalue kstock i.year,fe，利用 testparm 检验<br>
+xtreg logy logx1 logx2, re //re表示随机效应<br>
+xttest0  //检验随机效应是否显著，需要运行随机效应模型后使用</p>
+<p>/<em>hausman检验</em>/<br>
+xtreg logy logx1 logx2 , fe /<em>固定效应模型</em>/<br>
+est store fe /<em>保存回归结果</em>/<br>
+xtreg logy logx1 logx2 , re /<em>随机效应模型</em>/<br>
+est store re /<em>保存回归结果</em>/<br>
+hausman fe re /<em>比较两者结果，小于零选用固定效应</em>/</p>
+<p>/<em>当模型误差项存在序列相关或异方差时，用异方差和序列相关检验</em>/<br>
+xtserial logy logx1 logx2 /<em>序列相关检验</em>/<br>
+xtreg logy logx1 logx2, fe<br>
+xttest3 //异方差检验</p>
+<p>xtreg logy logx1 logx2, fe /<em>双向固定效应回归</em>/<br>
+xtabond2 logy L.logy L.logx1 L.logx2, gmm(L.logy L.logx1 L.logx2) iv(L.logy L.logx1 L.logx2) robust /<em>系统GMM回归</em>/<br>
+//或者这样？xtabond2 logy l.logy logx1 logx2, gmm(l.logy) iv(logx1 logx2) robust</p>
+<p>/<em>以不同地区、不同房价绝对水平与房价增长率进行异质性分析</em>/<br>
+by id: egen x1_mean = mean(x1) /<em>计算每个地区的平均房价水平</em>/</p>
+<p>/<em>以不同房价绝对水平进行异质性分析</em>/<br>
+xtile hp = x1, nq(4) /<em>将房价划分为四个等频组别，并生成新变量hp表示组别编号</em>/<br>
+sort hp id year /<em>整理数据</em>/<br>
+by hp: regress y x1 x2</p>
+<p>/<em>以不同房价增长率进行异质性分析</em>/<br>
+sort id year<br>
+bysort id: gen dx1 = D.x1 /<em>计算每个地区的房价增长率</em>/<br>
+egen dx1_mean = mean(dx1) /<em>计算每个地区的平均房价增长率</em>/<br>
+xtile hg = dx1_mean, nq(4) /<em>将房价增长率划分为四个等频组别，并生成新变量hg表示组别编号</em>/<br>
+sort hg id year /<em>整理数据</em>/<br>
+by hg: regress y x1 x2</p>
+<p>xtreg y x1 x2 <a target="_blank" rel="noopener" href="http://i.id">i.id</a>, fe /<em>在双向固定效应回归中加入地区虚拟变量，检验地区效应</em>/<br>
+xtreg y x1 x2, fe /<em>i.id是固定地区效应，而fe是个体固定效应，相对于更精确的固定地区效应</em>/<br>
+xtreg y x1_mean x2 i.year, fe /<em>在双向固定效应回归中用平均房价水平替代房价，检验房价水平效应</em>/<br>
+xtreg y dx1 x2 i.year, fe /<em>在双向固定效应回归中用房价增长率替代房价，检验房价增长率效应</em>/</p>
+<h1>改进</h1>
+<ul>
+<li>11月1日前初稿</li>
+<li>作者顺序</li>
+<li></li>
+</ul>
+<hr>
+<h1>现行代码</h1>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*将数据对数化，消除异方差*/</span></span><br><span class="line"><span class="keyword">gen</span> logy = <span class="built_in">log</span>(y)</span><br><span class="line"><span class="keyword">gen</span> logx1 = <span class="built_in">log</span>(x1)</span><br><span class="line"><span class="keyword">gen</span> logx2 = <span class="built_in">log</span>(x2)</span><br><span class="line"></span><br><span class="line"><span class="comment">/*对基本事实使用表格和散点图描述*/</span></span><br><span class="line">logout,<span class="keyword">save</span>(基本统计描述)word <span class="keyword">replace</span>:<span class="keyword">tabstat</span> y x1 x2,<span class="built_in">s</span>(<span class="keyword">N</span> <span class="keyword">mean</span> p50 sd min max) <span class="built_in">f</span>(%12.3f) c(s)  <span class="comment">/*做基本统计描述然后输出*/</span></span><br><span class="line"><span class="keyword">tabstat</span> logy logx1 logx2, <span class="keyword">by</span>(year) <span class="comment">/*按年份分组统计变量的均值、标准差等*/</span></span><br><span class="line"><span class="keyword">graph</span> <span class="keyword">twoway</span> (<span class="keyword">scatter</span> logy logx1) (lfitci logy logx1), <span class="keyword">by</span>(year) <span class="comment">/*绘制出生率和房价的散点图，并加入拟合线和置信区间，按年份分组*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*做相关分析*/</span></span><br><span class="line">logout,<span class="keyword">save</span>(相关分析)word <span class="keyword">replace</span>:pwcorr_a y x1 x2</span><br><span class="line"></span><br><span class="line"><span class="comment">/*使用OLS、双向固定效应、系统GMM回归进行基准回归分析*/</span></span><br><span class="line"><span class="keyword">regress</span> logy logx1 logx2 <span class="comment">/*OLS回归*/</span></span><br><span class="line"><span class="keyword">sort</span> id year <span class="comment">/*整理数据*/</span></span><br><span class="line"><span class="keyword">xtset</span> id year <span class="comment">/*设置面板数据结构*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*个体效应和随机效应的联合显著性检验*/</span></span><br><span class="line"><span class="keyword">xtreg</span> logy logx1 logx2, fe <span class="comment">//fe表示固定效应，p&lt;0.01个体效应显著;若同时包括时期虚拟变量，xtreg invest mvalue kstock i.year,fe，利用 testparm 检验</span></span><br><span class="line"><span class="keyword">xtreg</span> logy logx1 logx2, re <span class="comment">//re表示随机效应</span></span><br><span class="line"><span class="keyword">xttest0</span>  <span class="comment">//检验随机效应是否显著，需要运行随机效应模型后使用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*hausman检验*/</span></span><br><span class="line"><span class="keyword">xtreg</span> logy logx1 logx2 , fe <span class="comment">/*固定效应模型*/</span></span><br><span class="line"><span class="keyword">est</span> store fe <span class="comment">/*保存回归结果*/</span></span><br><span class="line"><span class="keyword">xtreg</span> logy logx1 logx2 , re <span class="comment">/*随机效应模型*/</span></span><br><span class="line"><span class="keyword">est</span> store re <span class="comment">/*保存回归结果*/</span></span><br><span class="line"><span class="keyword">hausman</span> fe re <span class="comment">/*比较两者结果，小于零选用固定效应*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*当模型误差项存在序列相关或异方差时，用异方差和序列相关检验*/</span></span><br><span class="line">xtserial logy logx1 logx2 <span class="comment">/*序列相关检验*/</span></span><br><span class="line"><span class="keyword">xtreg</span> logy logx1 logx2, fe </span><br><span class="line">xttest3 <span class="comment">//异方差检验</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">xtreg</span> logy logx1 logx2, fe <span class="comment">/*双向固定效应回归*/</span></span><br><span class="line">xtabond2 logy <span class="keyword">L</span>.logy <span class="keyword">L</span>.logx1 <span class="keyword">L</span>.logx2, gmm(<span class="keyword">L</span>.logy <span class="keyword">L</span>.logx1 <span class="keyword">L</span>.logx2) iv(<span class="keyword">L</span>.logy <span class="keyword">L</span>.logx1 <span class="keyword">L</span>.logx2) robust <span class="comment">/*系统GMM回归*/</span></span><br><span class="line"><span class="comment">//或者这样？xtabond2 logy l.logy logx1 logx2, gmm(l.logy) iv(logx1 logx2) robust</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*以不同地区、不同房价绝对水平与房价增长率进行异质性分析*/</span></span><br><span class="line"><span class="keyword">by</span> id: <span class="keyword">egen</span> logx1_mean = <span class="keyword">mean</span>(logx1) <span class="comment">/*计算每个地区的平均房价水平*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*以不同房价绝对水平进行异质性分析*/</span></span><br><span class="line"><span class="keyword">xtile</span> hp = logx1, nq(4) <span class="comment">/*将房价划分为四个等频组别，并生成新变量hp表示组别编号*/</span></span><br><span class="line"><span class="keyword">by</span> hp: <span class="keyword">regress</span> logy logx1 logx2</span><br><span class="line"></span><br><span class="line"><span class="comment">/*以不同房价增长率进行异质性分析*/</span></span><br><span class="line"><span class="keyword">bysort</span> id: <span class="keyword">gen</span> dlogx1 = <span class="keyword">d</span>.logx1 <span class="comment">/*计算每个地区每年的房价增长率，并生成新变量dx1表示增长率值*/</span></span><br><span class="line"><span class="keyword">xtile</span> hg = dlogx1, nq(4) <span class="comment">/*将房价增长率划分为四个等频组别，并生成新变量hg表示组别编号*/</span></span><br><span class="line"><span class="keyword">sort</span> hp id year <span class="comment">/*整理数据*/</span></span><br><span class="line"><span class="keyword">by</span> hg: <span class="keyword">regress</span> logy logx1 logx2</span><br><span class="line"></span><br><span class="line"><span class="keyword">xtreg</span> logy logx1 logx2 i.id, fe <span class="comment">/*在双向固定效应回归中加入地区虚拟变量，检验地区效应*/</span></span><br><span class="line"><span class="keyword">xtreg</span> logy logx1_mean logx2 i.year, fe <span class="comment">/*在双向固定效应回归中用平均房价水平替代房价，检验房价水平效应*/</span></span><br><span class="line"><span class="keyword">xtreg</span> logy logx1_growth logx2 i.year, fe <span class="comment">/*在双向固定效应回归中用房价增长率替代房价，检验房价增长率效应*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*使用DID估计、工具变量法进行稳健性分析*/</span></span><br><span class="line"><span class="comment">/*假设有一个政策变量policy，取值为0或1，表示是否实施了某项政策。假设有一个合适的工具变量z，与policy相关但与出生率无关。*/</span></span><br><span class="line"><span class="keyword">gen</span> policy_x_logx1 = policy*logx1 <span class="comment">/*生成政策和房价的交互项*/</span></span><br><span class="line"><span class="keyword">xtset</span> id year <span class="comment">/*设置面板数据结构*/</span></span><br><span class="line"><span class="keyword">xtreg</span> logy policy_x_logx1 policy logx2 i.year, fe <span class="comment">/*使用DID估计方法回归出生率和政策、房价的关系*/</span></span><br><span class="line">ivregress 2sls logy (logx1 = z) policy_x_logx1 policy logx2 i.year, robust <span class="comment">/*使用工具变量法回归出生率和政策、房价的关系，其中z是logx1的工具变量*/</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1>附录</h1>
+<h2 id="常用数据平台">常用数据平台</h2>
+<p><a href="data.cnki.net/yearBook/single?id=N2015070200">中国区域经济统计年鉴</a><br>
+<a href="https://">云南省统计年鉴</a><br>
+<a target="_blank" rel="noopener" href="http://stjj.guizhou.gov.cn/tjsj_35719/sjcx_35720/gztjnj_40112/">贵州省统计年鉴</a><br>
+<a target="_blank" rel="noopener" href="http://tjj.gxzf.gov.cn/tjsj/tjnj/">广西省统计年鉴</a><br>
+<a target="_blank" rel="noopener" href="http://tjj.jiangxi.gov.cn/col/col38595/index.html">江西省统计年鉴</a><br>
+<a target="_blank" rel="noopener" href="http://www.jiangsu.gov.cn/col/col84736/index.html">江苏省统计年鉴</a><br>
+<a target="_blank" rel="noopener" href="http://tjj.zj.gov.cn/col/col1525563/index.html">浙江省统计年鉴</a><br>
+<a target="_blank" rel="noopener" href="https://tjj.sh.gov.cn/tjnj/">上海市统计年鉴</a><br>
+<a target="_blank" rel="noopener" href="http://tjj.sc.gov.cn/scstjj/c105855/nj.shtml">四川省统计年鉴</a><br>
+<a target="_blank" rel="noopener" href="http://tjj.cq.gov.cn/zwgk_233/tjnj/wap.html">重庆市统计年鉴</a><br>
+<a target="_blank" rel="noopener" href="http://tjj.hubei.gov.cn/tjsj/sjkscx/tjnj/qstjnj/">湖北省统计年鉴</a><br>
+<a target="_blank" rel="noopener" href="http://tjj.ah.gov.cn/ssah/qwfbjd/tjnj/index.html">安徽省统计年鉴</a></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301242359645.webp" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301242359645.webp" title="头像" alt="头像"></a><div class="post-copyright__author_name">Prong</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://prong879.ltd/posts/cb666fbf.html">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://prong879.ltd/posts/cb666fbf.html')">计量经济学 | Stata的应用</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/mm_facetoface_collect_qrcode_1730547752845.webp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/mm_facetoface_collect_qrcode_1730547752845.webp" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/1730547802675.webp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/1730547802675.webp" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://prong879.ltd/posts/cb666fbf.html"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=计量经济学 | Stata的应用&amp;url=https://prong879.ltd/posts/cb666fbf.html&amp;pic=https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303112136946.webp" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://prong879.ltd" target="_blank">prong的魔法地下室</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>📓学习笔记<span class="tagsPageCount">45</span></a><a class="post-meta__box__tags" href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>计量经济学<span class="tagsPageCount">9</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303112139249.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/515ed00d.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303112141479.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">随笔 | 写在大二下伊始</div></div></a></div><div class="next-post pull-right"><a href="/posts/dcc75105.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202302272132190.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">金融市场学 | 东南亚金融危机</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/posts/629aaade.html" title="计量经济学 | 1.计量经济学简介"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202302252351393.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-02-26</div><div class="title">计量经济学 | 1.计量经济学简介</div></div></a></div><div><a href="/posts/c1bdfc7a.html" title="计量经济学 | 2. 线性回归模型"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202302252351393.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-02-26</div><div class="title">计量经济学 | 2. 线性回归模型</div></div></a></div><div><a href="/posts/27ae12db.html" title="计量经济学 | 3.多元线性回归模型"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202302252351393.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-02-26</div><div class="title">计量经济学 | 3.多元线性回归模型</div></div></a></div><div><a href="/posts/cbcc8976.html" title="计量经济学 | 4.放宽基本假设的模型"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202302252351393.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-06-02</div><div class="title">计量经济学 | 4.放宽基本假设的模型</div></div></a></div><div><a href="/posts/c2e3c69c.html" title="计量经济学 | 6.滞后变量和虚拟变量"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202302252351393.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-06-27</div><div class="title">计量经济学 | 6.滞后变量和虚拟变量</div></div></a></div><div><a href="/posts/975d5e69.html" title="计量经济学 | 5.时间序列计量经济学模型"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202302252351393.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-06-02</div><div class="title">计量经济学 | 5.时间序列计量经济学模型</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)" style="display: none">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301242359645.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://emotion.acs.pw/emotion/QQ/154.gif" alt="status"/></div></div><div class="author-info__description">这是尖头叉子在霍格沃茨的休息室~</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">Prong</h1><div class="author-info__desc"></div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/37924260/" target="_blank" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="social-icon faa-parent animated-hover" href="/atom.xml" target="_blank" title="RSS订阅"><i class="anzhiyufont anzhiyu-icon-rss"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">研究问题和主要思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">数据选取和整理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E7%BB%9F%E8%AE%A1%E5%B9%B4%E9%89%B4%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">3.1.</span> <span class="toc-text">下载统计年鉴的数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E7%90%86%E4%B8%BA%E6%88%AA%E9%9D%A2%E6%95%B0%E6%8D%AE"><span class="toc-number">3.2.</span> <span class="toc-text">整理为截面数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E5%88%9D%E6%AD%A5%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF"><span class="toc-number">3.2.1.</span> <span class="toc-text">可能会遇到的问题和初步解决思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E6%AD%A5%E6%95%B4%E7%90%86"><span class="toc-number">3.2.2.</span> <span class="toc-text">初步整理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E7%90%86%E4%B8%BA%E9%9D%A2%E6%9D%BF%E6%95%B0%E6%8D%AE"><span class="toc-number">3.3.</span> <span class="toc-text">整理为面板数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF"><span class="toc-number">3.3.1.</span> <span class="toc-text">问题和解决思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%A4%84%E7%90%86"><span class="toc-number">3.3.2.</span> <span class="toc-text">具体处理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">数据的实证分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1"><span class="toc-number">4.1.</span> <span class="toc-text">描述性统计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1%E8%A1%A8%E6%A0%BC"><span class="toc-number">4.1.1.</span> <span class="toc-text">描述性统计表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E7%82%B9%E5%9B%BE%E7%BB%98%E5%88%B6"><span class="toc-number">4.1.2.</span> <span class="toc-text">散点图绘制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90"><span class="toc-number">4.2.</span> <span class="toc-text">相关分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90"><span class="toc-number">4.3.</span> <span class="toc-text">回归分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E8%B4%A8%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-number">4.4.</span> <span class="toc-text">异质性分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%B3%E5%81%A5%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-number">4.5.</span> <span class="toc-text">稳健性分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.6.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">改进</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">现行代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0"><span class="toc-number">7.1.</span> <span class="toc-text">常用数据平台</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/fa6ae62a.html" title="概率论与数理统计 | 数三概统知识点整理"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303112139249.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论与数理统计 | 数三概统知识点整理"/></a><div class="content"><a class="title" href="/posts/fa6ae62a.html" title="概率论与数理统计 | 数三概统知识点整理">概率论与数理统计 | 数三概统知识点整理</a><time datetime="2025-11-12T15:48:05.000Z" title="发表于 2025-11-12 23:48:05">2025-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d900e6d.html" title="线性代数 | 可逆矩阵的极分解定理"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg?_r_=a613699b-63ab-4a80-3216-3a5e11de6163" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数 | 可逆矩阵的极分解定理"/></a><div class="content"><a class="title" href="/posts/d900e6d.html" title="线性代数 | 可逆矩阵的极分解定理">线性代数 | 可逆矩阵的极分解定理</a><time datetime="2025-11-09T11:13:01.000Z" title="发表于 2025-11-09 19:13:01">2025-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ccef6234.html" title="高等数学 | 三函数乘积的积分：表格法推广"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg?_r_=8ea09cde-920b-11b2-e712-63df31e7ae73" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高等数学 | 三函数乘积的积分：表格法推广"/></a><div class="content"><a class="title" href="/posts/ccef6234.html" title="高等数学 | 三函数乘积的积分：表格法推广">高等数学 | 三函数乘积的积分：表格法推广</a><time datetime="2025-11-05T13:00:00.000Z" title="发表于 2025-11-05 21:00:00">2025-11-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2ed9be16.html" title="线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg?_r_=0bb5fd17-907f-a3db-cdca-fb9fe0e5c33e" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析"/></a><div class="content"><a class="title" href="/posts/2ed9be16.html" title="线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析">线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析</a><time datetime="2025-11-05T08:44:05.000Z" title="发表于 2025-11-05 16:44:05">2025-11-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b3d2fee7.html" title="【2025最新】WSL+LaTex+VSCode安装教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202505142157033.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【2025最新】WSL+LaTex+VSCode安装教程"/></a><div class="content"><a class="title" href="/posts/b3d2fee7.html" title="【2025最新】WSL+LaTex+VSCode安装教程">【2025最新】WSL+LaTex+VSCode安装教程</a><time datetime="2025-05-14T21:19:41.000Z" title="发表于 2025-05-15 05:19:41">2025-05-15</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2023 - 2025 By <a class="footer-bar-link" href="/" title="Prong" target="_blank">Prong</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">82</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">68</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">5</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://prong.ltd/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.png" alt="博客"/><span class="back-menu-item-text">博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://space.bilibili.com/37924260?spm_id_from=333.1007.0.0" title="B站"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411082120808.webp" alt="B站"/><span class="back-menu-item-text">B站</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="fa-solid fa-timeline faa-tada"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="fas fa-tags faa-tada"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="fas fa-folder-open faa-tada"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/messageboard/"><i class="fa fa-comments faa-tada"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 修仙</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/books/"><i class="fa-solid fa-book-open-reader faa-tada"></i><span> 书单</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="fa-solid fa-film faa-tada"></i><span> 电影</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="fa-brands fa-xbox faa-tada"></i><span> 游戏</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="fa-brands fa-bilibili faa-tada"></i><span> 番剧</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/cinemas/"><i class="fa-brands fa-bilibili faa-tada"></i><span> B站追剧</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/update/"><i class="fa-solid fa-file-pen faa-tada"></i><span> 更新手账</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="fa-solid fa-person-through-window faa-tada"></i><span> 关于自己</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 0.88rem;">C++<sup>4</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">C语言<sup>5</sup></a><a href="/tags/MySQL/" style="font-size: 0.88rem;">MySQL<sup>1</sup></a><a href="/tags/PPT/" style="font-size: 0.88rem;">PPT<sup>1</sup></a><a href="/tags/Python/" style="font-size: 0.88rem;">Python<sup>2</sup></a><a href="/tags/Zerotier/" style="font-size: 0.88rem;">Zerotier<sup>1</sup></a><a href="/tags/hexo/" style="font-size: 0.88rem;">hexo<sup>3</sup></a><a href="/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/" style="font-size: 0.88rem;">✒️随笔<sup>13</sup></a><a href="/tags/%E4%B8%89%E4%B8%8B%E4%B9%A1/" style="font-size: 0.88rem;">三下乡<sup>1</sup></a><a href="/tags/%E4%BF%9D%E9%99%A9%E5%AD%A6/" style="font-size: 0.88rem;">保险学<sup>1</sup></a><a href="/tags/%E5%95%86%E4%B8%9A%E9%93%B6%E8%A1%8C/" style="font-size: 0.88rem;">商业银行<sup>1</sup></a><a href="/tags/%E5%9B%BD%E5%80%BA/" style="font-size: 0.88rem;">国债<sup>1</sup></a><a href="/tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 0.88rem;">国际贸易<sup>1</sup></a><a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 0.88rem;">密码学<sup>1</sup></a><a href="/tags/%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 0.88rem;">微软输入法<sup>1</sup></a><a href="/tags/%E6%91%84%E5%BD%B1/" style="font-size: 0.88rem;">摄影<sup>1</sup></a><a href="/tags/%E6%94%AF%E6%95%99%E6%97%A5%E8%AE%B0/" style="font-size: 0.88rem;">支教日记<sup>4</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 0.88rem;">教程<sup>7</sup></a><a href="/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/" style="font-size: 0.88rem;">数字货币<sup>1</sup></a><a href="/tags/%E7%B2%AE%E9%A3%9F%E5%8D%B1%E6%9C%BA/" style="font-size: 0.88rem;">粮食危机<sup>1</sup></a><a href="/tags/%E7%BE%8E%E5%8C%96/" style="font-size: 0.88rem;">美化<sup>1</sup></a><a href="/tags/%E8%8C%85%E5%8F%B0/" style="font-size: 0.88rem;">茅台<sup>1</sup></a><a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 0.88rem;">论文<sup>7</sup></a><a href="/tags/%E9%AB%98%E7%B2%B1/" style="font-size: 0.88rem;">高粱<sup>1</sup></a><a href="/tags/%E9%AD%94%E6%94%B9/" style="font-size: 0.88rem;">魔改<sup>2</sup></a><a href="/tags/%F0%9F%92%B0%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 0.88rem;">💰微观经济学<sup>1</sup></a><a href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">📓学习笔记<sup>45</sup></a><a href="/tags/%F0%9F%94%A0LaTeX/" style="font-size: 0.88rem;">🔠LaTeX<sup>1</sup></a><a href="/tags/%F0%9F%94%A0MarkDown/" style="font-size: 0.88rem;">🔠MarkDown<sup>1</sup></a><a href="/tags/%F0%9F%A6%8Bbutterfly/" style="font-size: 0.88rem;">🦋butterfly<sup>3</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2023 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Prong 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.cbd.int/katex@0.16.0/dist/katex.min.css"><script src="https://cdn.cbd.int/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    anzhiyu.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.cbd.int/mermaid@10.2.4/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  anzhiyu.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-snowy-two.vercel.app/',
+      region: '',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.39/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-snowy-two.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo-snowy-two.vercel.app/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.39/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

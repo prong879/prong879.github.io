@@ -1,0 +1,820 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>中央银行学数字货币的技术基础 | prong的魔法地下室</title><meta name="keywords" content="📓学习笔记,数字货币,密码学"><meta name="author" content="Prong,prongzmy@outlook.com"><meta name="copyright" content="Prong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="中央银行学数字货币的技术基础"><meta name="application-name" content="中央银行学数字货币的技术基础"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="中央银行学数字货币的技术基础"><meta property="og:url" content="https://prong879.ltd/posts/9ac414bb.html"><meta property="og:site_name" content="prong的魔法地下室"><meta property="og:description" content="学习记录 DCEP信息加密技术导入 信息加密技术简介 信息加密技术是利用数学或物理手段，对电子信息在传输过程中和存储体内进行保护，以防止泄漏的技术。 保密通信，计算机密钥，防复制软盘等都属于信息加密技术。通信过程中的加密主要是采用密码，在数字通信中可利用计算机采用加密法，改变负载信息的数码结构。计算"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411091905190.webp"><meta property="article:author" content="Prong"><meta property="article:tag" content="prong的地下室"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411091905190.webp"><meta name="description" content="学习记录 DCEP信息加密技术导入 信息加密技术简介 信息加密技术是利用数学或物理手段，对电子信息在传输过程中和存储体内进行保护，以防止泄漏的技术。 保密通信，计算机密钥，防复制软盘等都属于信息加密技术。通信过程中的加密主要是采用密码，在数字通信中可利用计算机采用加密法，改变负载信息的数码结构。计算"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://prong879.ltd/posts/9ac414bb.html"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: {"enable":true,"title":"与数众多博主无限进步","addFriendPlaceholder":"昵称：\n链接：\n头像：\n描述：\n站点截图：\n"},
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: undefined,
+  LA51: {"enable":true,"ck":"KcXfHrLj94HMK7QD","LingQueMonitorID":"KcXftMDgWoPfFk7O"},
+  greetingBox: undefined,
+  twikooEnvId: 'https://twikoo-snowy-two.vercel.app/',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: undefined,
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: {"mode":"both","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  authorStatus: {"skills":null},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Prong","link":"链接: ","source":"来源: prong的魔法地下室","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'prong的魔法地下室',
+  title: '中央银行学数字货币的技术基础',
+  postAI: '',
+  pageFillDescription: '学习记录, DCEP信息加密技术导入, 常规算法（对称算法）, 公钥加密算法（非对称算法）, 公钥、私钥, SM2国密算法, 数字货币, 起源, 数字签名学习记录信息加密技术导入信息加密技术简介信息加密技术是利用数学或物理手段对电子信息在传输过程中和存储体内进行保护以防止泄漏的技术保密通信计算机密钥防复制软盘等都属于信息加密技术通信过程中的加密主要是采用密码在数字通信中可利用计算机采用加密法改变负载信息的数码结构计算机信息保护则以软件加密为主目前世界上最流行的几种加密体制和加密算法有算法和算法等为防止破密加密软件还常采用硬件加密和加密软盘加密就是通过密码算术对数据进行转化使之成为没有正确密钥任何人都无法读懂的报文而这些以无法读懂的形式出现的数据一般被称为密文为了读懂报文密文必须重新转变为它的最初形式明文而含有用来以数学方式转换报文的双重密码就是密钥在这种情况下即使一则信息被截获并阅读这则信息也是毫无利用价值的而实现这种转化的算法标准据不完全统计到现在为止已经有近多种在这里主要介绍几种重要的标准按照国际上通行的惯例将这近种方法按照双方收发的密钥是否相同的标准划分为两大类常规算法对称算法一种是常规算法也叫私钥加密算法或对称加密算法其特征是收信方和发信方使用相同的密钥即加密密钥和解密密钥是相同或等价的比较著名的常规密码算法有美国的及其各种变形比如和的前身欧洲的日本的以及以代换密码和转轮密码为代表的古典密码等在私钥加密算法中信息的接受者和发送者都使用相同的密钥所以双方的密钥都处于保密的状态因为私钥的保密性必须基于密钥的保密性而非算法上这在硬件上增加了私钥加密算法的安全性但同时我们也看到这也增加了一个挑战收发双方都必须为自己的密钥负责这种情况在两者在地理上分离显得尤为重要私钥算法还面临这一个更大的困难那就是对私钥的管理和分发十分的困难和复杂而且所需的费用十分的庞大比如说一个个用户的网络就需要派发个私钥特别是对于一些大型的并且广域的网络来说其管理是一个十分困难的过程正因为这些因素从而决定了私钥算法的使用范围而且私钥加密算法不支持数字签名这对远距离的传输来说也是一个障碍另一个影响私钥的保密性的因素是算法的复杂性现今为止国际上比较通行的是以及最近推广的常规密码的优点是有很强的保密强度且经受住时间的检验和攻击但其密钥必须通过安全的途径传送因此其密钥管理成为系统安全的重要因素公钥加密算法非对称算法另外一种是公钥加密算法也叫非对称加密算法其特征是收信方和发信方使用的密钥互不相同而且几乎不可能从加密密钥推导解密密钥比较著名的公钥密码算法有背包密码密码零知识证明的算法椭圆曲线算法等等面对在执行过程中如何使用和分享密钥及保持其机密性等问题年和提出了公开的密钥密码技术的概念被称为技术从此公钥加密算法便产生了由于采取了公共密钥密钥的管理和分发就变得简单多了对于一个个用户的网络来说只需要个密钥便可达到密度同时使得公钥加密法的保密性全部集中在及其复杂的数学问题上它的安全性因而也得到了保证但是在实际运用中公共密钥加密算法并没有完全的取代私钥加密算法其重要的原因是它的实现速度远远赶不上私钥加密算法非对称加密算法是一种密钥的保密方法非对称加密算法需要两个密钥公开密钥简称公钥和私有密钥简称私钥公钥与私钥是一对如果用公钥对数据进行加密只有用对应的私钥才能解密因为加密和解密使用的是两个不同的密钥所以这种算法叫作非对称加密算法非对称加密算法实现机密信息交换的基本过程是甲方生成一对密钥并将公钥公开需要向甲方发送信息的其他角色乙方使用该密钥甲方的公钥对机密信息进行加密后再发送给甲方甲方再用自己私钥对加密后的信息进行解密甲方想要回复乙方时正好相反使用乙方的公钥对数据进行加密同理乙方使用自己的私钥来进行解密加密应用过程乙方生成一对密钥公钥和私钥并将公钥向其它方公开得到该公钥的甲方使用该密钥公钥对机密信息进行加密后再发送给乙方乙方再用自己保存的另一把专用密钥私钥对加密后的信息进行解密在传输过程中即使攻击者截获了传输的密文并得到了乙的公钥也无法破解密文因为只有乙的私钥才能解密密文同样如果乙要回复加密信息给甲那么需要甲先公布甲的公钥给乙用于加密甲自己保存甲的私钥用于解密对称与非对称密钥加密比较非对称密钥加密解决了密钥协定与密钥交换问题但并没有解决实际安全结构中的所有问题对称与非对称密钥加密还有其他一些差别各有所长特征对称加密非对称加密加密解密使用的密钥加密解密使用的密钥相同加密解密使用的密钥不同加密解密的速度快慢得到的密文长度通常等于或小于明文长度大于明文长度密钥协定与密钥交换大问题没问题所需密钥树与消息交换参与着个数的关系大约为参与者个数的平方因此伸缩性不好等于参与者个数因此伸缩性好用法主要用于加密解密不能用于数字签名完整性与不可抵赖检查可以用于加密解密和用于数字签名完整性与不可抵赖检查算法类型密钥说明说明非对称分组密码长度可变通常为或者位最流行的公钥算法它的美国专利于年月到期可以免费使用非对称分组密码长度可变通常为或者位不如常用但也用于一些协议如以的通信建立为例来分析非对称加密技术的使用使用的非对称加密算法为例子解析为客户端为服务端第一步服务端接收客户端的请求第二步服务端通过非对称加密算法生成了一对公私钥和第三步服务端将就是服务端的公钥发送给客户端第四步客户端对服务端的公钥证书进行加密对服务端的公钥证书进行验证验证通过后生成随机的对称秘钥利用公钥证书对对称秘钥进行加密第五步将生成的对称秘钥发送给服务端第六步生成加密的内容用私钥对加密的内容解密获得对称秘钥使用对称秘钥对响应内容进行加密第七步将加密的响应内容发送给客户端第八步客户端使用对称秘钥解密响应内容在这个例子中对对称秘钥的加密使用到了非对称加密算法生成的公私钥其中对称秘钥对内容加密是为达到效率高的目的使用非对称加密算法对对称秘钥进行加密是为了达到传输安全的目的往往在实际的使用中这两种加密算法是结合使用的总结非对称密钥加密要解决对称密钥加密的密钥交换问题是著名的非对称密钥加密协议非对称密钥加密中每个通信方要一个密钥对公钥向每个人提供而私钥则是个人保密的数字信封结合了对称密钥加密与非对称密钥加密的好处公钥私钥首先我们需要区分加密和认证这两个基本概念加密是将数据资料加密使得非法用户即使取得加密过的资料也无法获取正确的资料内容所以数据加密可以保护数据防止监听攻击其重点在于数据的安全性身份认证是用来判断某个身份的真实性确认身份后系统才可以依不同的身份给予不同的权限其重点在于用户的真实性两者的侧重点是不同的其次我们还要了解公钥和私钥的概念和作用在现代密码体制中加密和解密是采用不同的密钥公开密钥也就是非对称密钥密码系统每个通信方均需要两个密钥即公钥和私钥这两把密钥可以互为加解密公钥是公开的不需要保密而私钥是由个人自己持有并且必须妥善保管和注意保密公钥私钥的原则一个公钥对应一个私钥密钥对中让大家都知道的是公钥不告诉大家只有自己知道的是私钥如果用其中一个密钥加密数据则只有对应的那个密钥才可以解密如果用其中一个密钥可以进行解密数据则该数据必然是对应的那个密钥进行的加密非对称密钥密码的主要应用就是公钥加密和公钥认证而公钥加密的过程和公钥认证的过程是不一样的使用电子邮件的方式说明一下公钥和私钥原理使用公钥与私钥的目的就是实现安全的电子邮件必须实现如下目的我发送给你的内容必须加密在邮件的传输过程中不能被别人看到必须保证是我发送的邮件不是别人冒充我的要达到这样的目标必须发送邮件的两人都有公钥和私钥公钥就是给大家用的你可以通过电子邮件发布可以通过网站让别人下载公钥其实是用来加密验章用的私钥就是自己的必须非常小心保存最好加上密码私钥是用来解密签章首先就的所有权来说私钥只有个人拥有公钥与私钥的作用是用公钥加密的内容只能用私钥解密用私钥加密的内容只能用公钥解密比如说我要给你发送一个加密的邮件首先我必须拥有你的公钥你也必须拥有我的公钥首先我用你的公钥给这个邮件加密这样就保证这个邮件不被别人看到而且保证这个邮件在传送过程中没有被修改你收到邮件后用你的私钥就可以解密就能看到内容其次我用我的私钥给这个邮件加密发送到你手里后你可以用我的公钥解密因为私钥只有我手里有这样就保证了这个邮件是我发送的当资料时会使用的公钥加密这样才能确保只有能解开否则普罗大众都能解开加密的讯息就是去了资料的保密性验证方面则是使用签验章的机制传资料给大家时会以自己的私钥做签章如此所有收到讯息的人都可以用的公钥进行验章便可确认讯息是由发出来的了国密算法是国家密码管理局于年月日发布的椭圆曲线公钥密码算法算法和算法都是公钥密码算法算法是一种更先进安全的算法在我们国家商用密码体系中被用来替换算法该算法是我国自主设计的公钥密码算法包括椭圆曲线数字签名算法椭圆曲线密钥交换协议椭圆曲线公钥加密算法分别用于实现数字签名密钥协商和数据加密等功能算法与算法不同的是算法是基于椭圆曲线上点群离散对数难题相对于算法位的密码强度已经比位的密码强度要高算法是基于椭圆曲线算法所以学习算法首先学习算法算法描述用户选定一条适合加密的椭圆曲线如并取椭圆曲线上一点作为基点用户选择一个私有密钥并生成公开密钥公钥用户将和点公钥传给用户用户接到信息后将待传输的明文编码到上一点并产生一个随机整数加密开始用户计算点用户将传给用户用户接到信息后计算结果就是点因为再对点进行解码就可以得到明文在密码学中描述一条上的椭圆曲线常用到六个参量用来确定一条椭圆曲线为基点为点的阶是椭圆曲线上所有点的个数与相除的整数部分这几个参量取值的选择直接影响了加密的安全性参量值一般要求满足以下几个条件序号参量当然越大越安全但越大计算速度会变慢位左右可以满足一般安全要求为素数曲线参数标准推荐使用位素域上的椭圆曲线其中密钥生成算法选择随机数作为私钥其中计算公钥输出密钥对数字签名算法签名签名者用户的秘钥对包括其私钥和公钥签名者用户具有长度为比特的可辨别标识是由整数转换而成的两个字节待签名的消息为数字签名数字货币数字货币的出现被视为货币形态的又一次重大革命有望成为数字经济时代的主流通货和重要金融基础设施根据中国人民银行法定数字货币原型系统实验探索了二元模式下法定数字货币发行转移回笼闭环流程设计了的加密字符串表达形式通过存款准备金等额兑换的发行回笼机制在转移过程中的转换机制以及原型系统的总体架构系统架构和技术架构并在局部采用分布式账本技术基础上探讨增强其可用性的改进方法由央行主导在保持实物现金发行的同时发行以加密算法为基础的数字货币即的一部分由数字货币构成目标是构建一个兼具安全性与灵活性的简明高效符合国情的数字货币发行流通体系所以设计过程中尤其注重技术手段机制设计和法律法规这个层次的协调统一在技术路线上充分吸收和改造现有信息技术确保数字货币信息基础设施的安全性与效率性数字货币系统的发行和回笼环节主要是中央银行与商业银行之间的双向兑换过程具有金额规模大笔数少的批发业务类型核心在于数字货币的确权和属主的变更以及数字货币加密字串的形成面向最终的用户应用转移过程更主要是小额高频实时的零售业务特征转移过程是将来源币作废产生去向币的过程主要包括旧币验签旧币作废生产新币确权登记这步形成原子性的事务核心是对满足国密规范要求的签名信息进行验签操作起源中国人民银行以下简称人民银行高度重视法定数字货币的研究开发年成立法定数字货币研究小组开始对发行框架关键技术发行流通环境及相关国际经验等进行专项研究年成立数字货币研究所完成法定数字货币第一代原型系统搭建年末经国务院批准人民银行开始组织商业机构共同开展法定数字货币以下简称数字人民币字母缩写按照国际使用惯例暂定为研发试验目前研发试验已基本完成顶层设计功能研发系统调试等工作正遵循稳步安全可控创新实用的原则选择部分有代表性的地区开展试点测试本质上就是一种数字支付工具全称是指的是数字货币指的电子支付即数字货币和电子支付工具其功能属性与纸钞完全一样只不过是数字化形态国际货币基金组织把央行数字货币称作英文是实际上描述的是同一个概念本文中使用的就是指通常性的央行数字货币无国家限制如果使用则特指中国即将推出的央行数字货币年月日立陶宛央行在其官方网站上正式发售数字货币宣告了全球首枚央行数字货币诞生数字货币的诞生也标志着人类货币发展历程从一般等价物贵金属纸币电子货币之后又进入了一个全新的历史阶段数字货币是基于密码学技术利用复杂的加密算法所形成的网络货币统称由于数字货币必须用到数字加密算法所以也被称为数字加密货币数字货币与电子货币和虚拟货币有着本质区别总体而言电子货币是主权货币的电子化形态虚拟货币没有实物形态不由货币当局发行本质上不是货币而是网络服务的消费者权益凭证从数字货币的起源以及与电子货币和虚拟货币的比较来看数字货币具有以下特征首先数字货币特别是基于公有区块链的数字货币其产生与存在是由分布式记账网络体系而来公有区块链是指世界上任何个体或者团体都可以发送交易且交易能够获得该区块链的有效确认任何人都可以参与其共识过程比特币系列的虚拟数字货币均基于公有区块链数字货币不同于主权货币和虚拟货币后两者必须要有相应的实体机构进行信用背书其次数字货币具有较高的私密性和安全性数字货币基于区块链的分布式记账技术不同于电子货币等需要唯一的机构记录账户信息相关记账信息分布与所有交易主体之间每次的交易数据就会创建一个区块而下一个区块信息必须通过上一个区块信息计算出来这样由一个个彼此耦合的区块构成完整的区块链再次数字加密货币具有去中心化特征作为一种权益证明代表了使用者们之间基于信任产生的内在价值货币在持有者之间流通不需要依赖特定的机构和支付结算网络也不需要额外支付手续费理论上数字货币流通范围可以覆盖全球持有者不必担心受到潜在金融制裁的影响通过以上分析可以看出数字货币在一定程度上弥补了传统货币形态的缺陷适应了数字经济的发展需求是金融科技创新的重要领域具有时代进步意义对货币当局而言发行主权数字货币不仅可以应对私人数字货币冲击和巩固本国法币地位而且还具有显著的社会效益数字货币可以部分替代流通中的纸币现金节省社会资源数字货币可以更好地满足居民多样化的金融服务需求数字货币去中心化特征可以规避灾难事故对支付系统稳定性的破坏主权数字货币如果最终普及可以为货币当局实行零利率或负利率条件下的货币政策提供技术支撑为适应数字货币发展的新形势年中国人民银行成立专门研究小组正式启动法定数字货币的研发工作年央行又成立了数字货币研究所并与数家商业银行联合展开研究从数字货币方案原型数字票据等多个维度论证实施数字货币的可行性历时三年完成了数字货币发行运作总体方案及相关专利技术储备年央行在下半年工作电视会议上明确提出要加快推进我国法定数字货币的研发进程年月央行进一步提出要本着先境内后境外先简单封闭场景后复杂开放场景先零售支付场景后大型批发支付场景原则稳步推进测试工作根据央行官方披露央行数字货币是由央行主导在保持实物现金发行的同时发行以加密算法为基础的数字货币即的一部分由数字货币构成央行数字货币运行框架将呈现一币两库三中心格局一币是指由央行担保并签名发行代表具体金额的加密数字串两库是指中央银行发行库和商业银行银行库三中心是指认证中心登记中心和大数据分析中心在上述运行框架下发行将采用二元体系实现投放与回笼上层是央行对商业银行等参与发行的代理发行机构下层是代理发行机构对公众该体系不会改变流通中的货币债权债务关系代理发行机构将向央行缴纳全额准备金以保证不超发在技术路线选择上央行保持技术中性不干预代理发行机构具体的技术路线选择央行会设立若干技术指标门槛确保满足高并发安全性和稳定性的要求在应用终端形态上装载于数字钱包程序采用模型的非对称加密技术使用者可以借助类似于手机扫码或近场支付等形式完成交易首先通过发行逐步替代纸钞现金可以大幅减少纸币发行过程中的人力物力成本同时提高货币发行效率根据年末全国万亿元纸币数量全年在纸币印制投放回笼等七大发行环节累计成本投入超过亿元年初突发的公共卫生事件也暴露出纸币流通容易成为病毒传染媒介的弊端此外利用特定算法进行加密相比纸币更加难以被伪造其次有别于一般的数字加密货币在记账流程上将是全程单向透明所有者标识对其他使用者和发行机构匿名但对央行数字货币系统后台实名可以通过系统后台与真实用户对应因此的交易行为各方可以完整被追溯从而为监管部门进行反洗钱反诈骗等提供技术支撑在货币流通过程中通过预设的前瞻触发条件可使货币按照预期目标精准投放从而确保货币政策更加精准高效执行再次同其他数字加密货币相类似存在于移动终端的数字钱包中不必与银行账户绑定也不需借助跨境支付结算网络可以穿透包括地理司法和金融主权等管理边界在中国境外更容易获得和使用在境外的广泛流通有助于加快人民币国际化进程并丰富跨境人民币支付应用场景数字签名数字签名的定义手写签名传统的确认方式如书信签约支付批复等在网络时代人们通过网络支付费用买卖股票为了保证网上商务活动的安全需要一个很重要的安全机制数字签名数字签名在信息安全包括鉴别数据完整性抗抵赖性等方面特别是在大型网络安全通信中的密钥分配鉴别及电子商务系统中具有重要作用数字签名又称公钥数字签名是只有信息的发送者才能产生的别人无法伪造的一段数字串这段数字串同时也是对信息的发送者发送信息真实性的一个有效证明它是一种类似写在纸上的普通的物理签名但是使用了公钥加密领域的技术来实现的用于鉴别数字信息的方法一套数字签名通常定义两种互补的运算一个用于签名另一个用于验证数字签名是非对称密钥加密技术与数字摘要技术的应用数字签名的文件的完整性是很容易验证的不需要骑缝章骑缝签名也不需要笔迹专家而且数字签名具有不可抵赖性不可否认性简单地说所谓数字签名就是附加在数据单元上的一些数据或是对数据单元所作的密码变换这种数据或变换允许数据单元的接收者用以确认数据单元的来源和数据单元的完整性并保护数据防止被人例如接收者进行伪造它是对电子形式的消息进行签名的一种方法一个签名消息能在一个通信网络中传输基于公钥密码体制和私钥密码体制都可以获得数字签名主要是基于公钥密码体制的数字签名包括普通数字签名和特殊数字签名普通数字签名算法有数字签名算法椭圆曲线数字签名算法和有限自动机数字签名算法等特殊数字签名有盲签名代理签名群签名不可否认签名公平盲签名门限签名具有消息恢复功能的签名等它与具体应用环境密切相关在流转的过程中涉及到数据的来源验证完整性等问题那么数字签名技术就起到了关键作用可以使数据具备归属人的身份同时来可以对数据进行归属验证同时利用非对称加密技术和摘要技术的结合来保证签名数据的完整性等每个人都有一对钥匙数字身份其中一个只有她他本人知道密钥另一个公开的公钥签名的时候用密钥验证签名的时候用公钥又因为任何人都可以落款声称她他就是你因此公钥必须向接受者信任的人身份认证机构来注册注册后身份认证机构给你发一数字证书对文件签名后你把此数字证书连同文件及签名一起发给接受者接受者向身份认证机构求证是否真地是用你的密钥签发的文件在通讯中使用数字签名一般具有以下特点鉴权公钥加密系统允许任何人在发送信息时使用私钥进行加密接收信息时使用公钥解密当然接收者不可能百分之百确信发送者的真实身份而只能在密码系统未被破译的情况下才有理由确信鉴权的重要性在财务数据上表现得尤为突出举个例子假设一家银行将指令由它的分行传输到它的中央管理系统指令的格式是其中是账户的账号而是账户的现有金额这时一位远程客户可以先存入元观察传输的结果然后接二连三的发送格式为的指令这种方法被称作重放攻击完整性传输数据的双方都总希望确认消息未在传输的过程中被修改加密使得第三方想要读取数据十分困难然而第三方仍然能采取可行的方法在传输的过程中修改数据一个通俗的例子就是同形攻击回想一下还是上面的那家银行从它的分行向它的中央管理系统发送格式为的指令其中是账号而是账户中的金额一个远程客户可以先存元然后拦截传输结果再传输这样他就立刻变成百万富翁了不可抵赖在密文背景下抵赖这个词指的是不承认与消息有关的举动即声称消息来自第三方消息的接收方可以通过数字签名来防止所有后续的抵赖行为因为接收方可以出示签名给别人看来证明信息的来源发送报文时发送方用一个哈希函数从报文文本中生成报文摘要然后用发送方的私钥对这个摘要进行加密这个加密后的摘要将作为报文的数字签名和报文一起发送给接收方接收方首先用与发送方一样的哈希函数从接收到的原始报文中计算出报文摘要接着再公钥来对报文附加的数字签名进行解密如果这两个摘要相同那么接收方就能确认该报文是发送方的数字签名有两种作用一是能确定消息确实是由发送方签名并发出来的因为别人假冒不了发送方的签名二是数字签名能确定消息的完整性因为数字签名的特点是它代表了文件的特征文件如果发生改变数字摘要的值也将发生变化不同的文件将得到不同的数字摘要一次数字签名涉及到一个哈希函数接收者的公钥发送方的私钥签名流程发送者对消息计算摘要值发送者用私钥对摘要值进行签名得到签名值发送者将原始消息和签名值一同发给接收者验签流程接收者接到消息后拆分出消息和消息签名值接收者使用公钥对消息进行运算得到摘要值接收者对摘要值和签名值进行比较如果相同表示签名验证成功否则就是验证失败',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-10 03:03:12',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="prong的魔法地下室" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">prong的魔法地下室</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="fa-solid fa-timeline faa-tada"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="fas fa-tags faa-tada"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="fas fa-folder-open faa-tada"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/messageboard/"><i class="fa fa-comments faa-tada"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 修仙</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/books/"><i class="fa-solid fa-book-open-reader faa-tada"></i><span> 书单</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="fa-solid fa-film faa-tada"></i><span> 电影</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="fa-brands fa-xbox faa-tada"></i><span> 游戏</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="fa-brands fa-bilibili faa-tada"></i><span> 番剧</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/cinemas/"><i class="fa-brands fa-bilibili faa-tada"></i><span> B站追剧</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/update/"><i class="fa-solid fa-file-pen faa-tada"></i><span> 更新手账</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="fa-solid fa-person-through-window faa-tada"></i><span> 关于自己</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/mm_facetoface_collect_qrcode_1730547752845.webp" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/mm_facetoface_collect_qrcode_1730547752845.webp"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/1730547802675.webp" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/1730547802675.webp"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/ARCH%E6%A8%A1%E5%9E%8B/" style="font-size: 1.05rem;">ARCH模型<sup>1</sup></a><a href="/tags/C/" style="font-size: 1.05rem;">C++<sup>4</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">C语言<sup>5</sup></a><a href="/tags/MySQL/" style="font-size: 1.05rem;">MySQL<sup>1</sup></a><a href="/tags/PPT/" style="font-size: 1.05rem;">PPT<sup>1</sup></a><a href="/tags/Python/" style="font-size: 1.05rem;">Python<sup>2</sup></a><a href="/tags/Zerotier/" style="font-size: 1.05rem;">Zerotier<sup>1</sup></a><a href="/tags/hexo/" style="font-size: 1.05rem;">hexo<sup>3</sup></a><a href="/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/" style="font-size: 1.05rem;">✒️随笔<sup>13</sup></a><a href="/tags/%E4%B8%89%E4%B8%8B%E4%B9%A1/" style="font-size: 1.05rem;">三下乡<sup>1</sup></a><a href="/tags/%E4%BF%9D%E9%99%A9%E5%AD%A6/" style="font-size: 1.05rem;">保险学<sup>1</sup></a><a href="/tags/%E5%95%86%E4%B8%9A%E9%93%B6%E8%A1%8C/" style="font-size: 1.05rem;">商业银行<sup>1</sup></a><a href="/tags/%E5%9B%BD%E5%80%BA/" style="font-size: 1.05rem;">国债<sup>1</sup></a><a href="/tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 1.05rem;">国际贸易<sup>1</sup></a><a href="/tags/%E5%A4%A7%E7%BA%B2%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">大纲笔记<sup>1</sup></a><a href="/tags/%E5%AE%9E%E8%AF%81%E5%88%86%E6%9E%90/" style="font-size: 1.05rem;">实证分析<sup>1</sup></a><a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 1.05rem;">密码学<sup>1</sup></a><a href="/tags/%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 1.05rem;">微软输入法<sup>1</sup></a><a href="/tags/%E6%91%84%E5%BD%B1/" style="font-size: 1.05rem;">摄影<sup>1</sup></a><a href="/tags/%E6%94%AF%E6%95%99%E6%97%A5%E8%AE%B0/" style="font-size: 1.05rem;">支教日记<sup>4</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.05rem;">教程<sup>7</sup></a><a href="/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/" style="font-size: 1.05rem;">数字货币<sup>1</sup></a><a href="/tags/%E6%9E%81%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/" style="font-size: 1.05rem;">极分解定理<sup>1</sup></a><a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 1.05rem;">概率论与数理统计<sup>1</sup></a><a href="/tags/%E7%B2%AE%E9%A3%9F%E5%8D%B1%E6%9C%BA/" style="font-size: 1.05rem;">粮食危机<sup>1</sup></a><a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 1.05rem;">线性代数<sup>4</sup></a><a href="/tags/%E7%BE%8E%E5%8C%96/" style="font-size: 1.05rem;">美化<sup>1</sup></a><a href="/tags/%E8%8C%85%E5%8F%B0/" style="font-size: 1.05rem;">茅台<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7/" style="font-size: 1.05rem;">计算机二级<sup>1</sup></a><a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 1.05rem;">论文<sup>7</sup></a><a href="/tags/%E9%AB%98%E7%B2%B1/" style="font-size: 1.05rem;">高粱<sup>1</sup></a><a href="/tags/%E9%AD%94%E6%94%B9/" style="font-size: 1.05rem;">魔改<sup>2</sup></a><a href="/tags/%F0%9F%8C%90%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 1.05rem;">🌐网络协议<sup>1</sup></a><a href="/tags/%F0%9F%92%B0%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 1.05rem;">💰微观经济学<sup>1</sup></a><a href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">📓学习笔记<sup>45</sup></a><a href="/tags/%F0%9F%94%A0LaTeX/" style="font-size: 1.05rem;">🔠LaTeX<sup>1</sup></a><a href="/tags/%F0%9F%94%A0MarkDown/" style="font-size: 1.05rem;">🔠MarkDown<sup>1</sup></a><a href="/tags/%F0%9F%94%A0%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/" style="font-size: 1.05rem;">🔠英语语法<sup>4</sup></a><a href="/tags/%F0%9F%96%A5%EF%B8%8F%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 1.05rem;">🖥️计算机基础<sup>5</sup></a><a href="/tags/%F0%9F%A6%8Bbutterfly/" style="font-size: 1.05rem;">🦋butterfly<sup>3</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/11/"><span class="card-archive-list-date">十一月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">十月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">学习笔记</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>📓学习笔记</span></a><a class="article-meta__tags" href="/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>数字货币</span></a><a class="article-meta__tags" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>密码学</span></a></span></div></div><h1 class="post-title" itemprop="name headline">中央银行学数字货币的技术基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2023-11-10T19:03:12.000Z" title="发表于 2023-11-11 03:03:12">2023-11-11</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-11-09T19:03:12.000Z" title="更新于 2024-11-10 03:03:12">2024-11-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">8.9k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>26分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="中央银行学数字货币的技术基础"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为南京"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>南京</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411091905190.webp"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://prong879.ltd/posts/9ac414bb.html"><header><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">学习笔记</a><a href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" tabindex="-1" itemprop="url">📓学习笔记</a><a href="/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/" tabindex="-1" itemprop="url">数字货币</a><a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" tabindex="-1" itemprop="url">密码学</a><h1 id="CrawlerTitle" itemprop="name headline">中央银行学数字货币的技术基础</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Prong</span><time itemprop="dateCreated datePublished" datetime="2023-11-10T19:03:12.000Z" title="发表于 2023-11-11 03:03:12">2023-11-11</time><time itemprop="dateCreated datePublished" datetime="2024-11-09T19:03:12.000Z" title="更新于 2024-11-10 03:03:12">2024-11-10</time></header><h1>学习记录</h1>
+<h1>DCEP信息加密技术导入</h1>
+<p>信息加密技术简介</p>
+<p>信息加密技术是<strong>利用数学或物理手段，对电子信息在传输过程中和存储体内进行保护，以防止泄漏的技术。</strong><br>
+保密通信，计算机密钥，防复制软盘等都属于信息加密技术。通信过程中的加密主要是采用密码，在数字通信中可利用计算机采用加密法，改变负载信息的数码结构。计算机信息保护则以软件加密为主。目前世界上最流行的几种加密体制和加密算法有：RSA算法和CCEP算法等。为防止破密，加密软件还常采用硬件加密和加密软盘。</p>
+<p>加密就是通过密码算术对数据进行转化，使之成为没有正确密钥任何人都无法读懂的报文。而这些以无法读懂的形式出现的数据一般被称为密文。为了读懂报文，密文必须重新转变为它的最初形式–明文。而含有用来以数学方式转换报文的双重密码就是密钥。在这种情况下即使一则信息被截获并阅读，这则信息也是毫无利用价值的。</p>
+<p>而实现这种转化的算法标准，据不完全统计，到现在为止已经有近200多种。在这里，主要介绍几种重要的标准。按照国际上通行的惯例，将这近200种方法按照双方收发的密钥是否相同的标准划分为两大类：</p>
+<h2 id="常规算法（对称算法）">常规算法（对称算法）</h2>
+<p>一种是<strong>常规算法</strong>（也叫<strong>私钥加密算法</strong>或<strong>对称加密算法</strong>），其特征是收信方和发信方使用相同的密钥，即加密密钥和解密密钥是相同或等价的。</p>
+<p>比较著名的常规密码算法有：美国的DES及其各种变形，比如3DES、GDES、NewDES和DES的前身Lucifer；欧洲的IDEA；日本的FEALN、LOKI?91、Skipjack、RC4、RC5以及以代换密码和转轮密码为代表的古典密码等。</p>
+<p>在<strong>私钥加密算法</strong>中，信息的接受者和发送者都使用相同的密钥，所以双方的密钥都处于保密的状态，因为<strong>私钥的保密性必须基于密钥的保密性</strong>，而非算法上。这在硬件上增加了私钥加密算法的安全性。但同时我们也看到这也增加了一个挑战：收发双方都必须为自己的密钥负责，这种情况在两者在地理上分离显得尤为重要。</p>
+<p>私钥算法还面临这一个更大的困难，那就是对私钥的管理和分发十分的困难和复杂，而且所需的费用十分的庞大。比如说，一个 n 个用户的网络就需要派发 n(n-1)/2 个私钥，特别是对于一些大型的并且广域的网络来说，其管理是一个十分困难的过程，正因为这些因素从而决定了私钥算法的使用范围。</p>
+<p>而且，私钥加密算法不支持数字签名，这对远距离的传输来说也是一个障碍。另一个影响私钥的保密性的因素是算法的复杂性。现今为止，国际上比较通行的是DES、3DES以及最近推广的AES。</p>
+<p>常规密码的优点是有很强的保密强度，且经受住时间的检验和攻击，但其密钥必须通过安全的途径传送。因此，其密钥管理成为系统安全的重要因素。</p>
+<h2 id="公钥加密算法（非对称算法）">公钥加密算法（非对称算法）</h2>
+<p>另外一种是公钥加密算法（也叫非对称加密算法）。其特征是收信方和发信方使用的密钥互不相同，而且几乎不可能从加密密钥推导解密密钥。</p>
+<p>比较著名的公钥密码算法有：RSA、背包密码、McEliece密码、DiffeHellman、Rabin、OngFiatShamir、零知识证明的算法、椭圆曲线、EIGamal算法等等。</p>
+<p>面对在执行过程中如何使用和分享密钥及保持其机密性等问题，1975年WhitefieldDiffe和MartiHellman提出了公开的密钥密码技术的概念，被称为Diffie-Hellman技术。从此公钥加密算法便产生了。</p>
+<p>由于采取了公共密钥，密钥的管理和分发就变得简单多了，对于一个n个用户的网络来说，只需要2n个密钥便可达到密度。同时使得公钥加密法的保密性全部集中在及其复杂的数学问题上，它的安全性因而也得到了保证。但是在实际运用中，公共密钥加密算法并没有完全的取代私钥加密算法。其重要的原因是它的实现速度远远赶不上私钥加密算法。</p>
+<p>非对称加密算法是一种密钥的保密方法。非对称加密算法需要两个密钥：<strong>公开密钥</strong>（publickey:简称公钥）和<strong>私有密钥</strong>（privatekey:简称私钥）。公钥与私钥是一对，如果用公钥对数据进行加密，只有用对应的私钥才能解密。因为加密和解密使用的是两个不同的密钥，所以这种算法叫作非对称加密算法。非对称加密算法实现机密信息交换的基本过程是：甲方生成一对密钥并将公钥公开，需要向甲方发送信息的其他角色(乙方)使用该密钥(甲方的公钥)对机密信息进行加密后再发送给甲方；甲方再用自己私钥对加密后的信息进行解密。甲方想要回复乙方时正好相反，使用乙方的公钥对数据进行加密，同理，乙方使用自己的私钥来进行解密。</p>
+<p>加密应用过程：</p>
+<ul>
+<li>乙方生成一对密钥（公钥和私钥）并将公钥向其它方公开。、</li>
+<li>得到该公钥的甲方使用该密钥（公钥）对机密信息进行加密后再发送给乙方。</li>
+<li>乙方再用自己保存的另一把专用密钥（私钥）对加密后的信息进行解密。</li>
+</ul>
+<p>在传输过程中，即使攻击者截获了传输的密文，并得到了乙的公钥，也无法破解密文，因为只有乙的私钥才能解密密文。同样，如果乙要回复加密信息给甲，那么需要甲先公布甲的公钥给乙用于加密，甲自己保存甲的私钥用于解密。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311101048204.webp" alt></p>
+<p>对称与非对称密钥加密比较： 非对称密钥加密解决了密钥协定与密钥交换问题，但并没有解决实际安全结构中的所有问题。对称与非对称密钥加密还有其他一些差别，各有所长。</p>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>对称加密</th>
+<th>非对称加密</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加密/解密使用的密钥</td>
+<td>加密/解密使用的密钥相同</td>
+<td>加密/解密使用的密钥不同</td>
+</tr>
+<tr>
+<td>加密/解密的速度</td>
+<td>快</td>
+<td>慢</td>
+</tr>
+<tr>
+<td>得到的密文长度</td>
+<td>通常等于或小于明文长度</td>
+<td>大于明文长度</td>
+</tr>
+<tr>
+<td>密钥协定与密钥交换</td>
+<td>大问题</td>
+<td>没问题</td>
+</tr>
+<tr>
+<td>所需密钥树与消息交换参与着个数的关系</td>
+<td>大约为参与者个数的平方，因此伸缩性不好</td>
+<td>等于参与者个数，因此伸缩性好</td>
+</tr>
+<tr>
+<td>用法</td>
+<td>主要用于加密/解密，不能用于数字签名（完整性与不可抵赖检查）</td>
+<td>可以用于加密/解密，和用于数字签名（完整性与不可抵赖检查）</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>类型</th>
+<th>密钥说明</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RSA</td>
+<td>非对称分组密码</td>
+<td>长度可变(通常为512、1024、或者2048位)</td>
+<td>最流行的公钥算法。它的美国专利于2000年9月到期。可以免费使用.</td>
+</tr>
+<tr>
+<td>E1Gamal</td>
+<td>非对称分组密码</td>
+<td>长度可变(通常为512、1024、或者2048位)</td>
+<td>不如RAS常用，但也用于一些协议，如PGP</td>
+</tr>
+</tbody>
+</table>
+<p>以https的通信建立为例，来分析非对称加密技术的使用，使用的非对称加密算法为RSA：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311101054708.webp" alt></p>
+<p>https例子解析：</p>
+<ul>
+<li>pClient为客户端、Server为服务端
+<ul>
+<li>第一步：服务端接收客户端的https请求</li>
+<li>第二步：服务端通过非对称加密算法生成了一对公私钥（crtprivate和crtpublic）</li>
+<li>第三步：服务端将crtpublic就是服务端的公钥发送给客户端</li>
+<li>第四步：客户端对服务端的公钥证书进行加密
+<ul>
+<li>对服务端的公钥证书进行验证</li>
+<li>验证通过后，生成随机的对称秘钥（randomkey）</li>
+<li>利用公钥证书对对称秘钥进行加密</li>
+</ul>
+</li>
+<li>第五步：将生成的对称秘钥发送给服务端</li>
+<li>第六步：生成加密的内容
+<ul>
+<li>用私钥对加密的内容解密</li>
+<li>获得对称秘钥</li>
+<li>使用对称秘钥对响应内容进行加密</li>
+</ul>
+</li>
+<li>第七步：将加密的响应内容发送给客户端</li>
+<li>第八步：客户端使用对称秘钥解密响应内容</li>
+</ul>
+</li>
+</ul>
+<p>在这个例子中对对称秘钥的加密使用到了非对称加密算法生成的公私钥，其中对称秘钥对内容加密是为达到效率高的目的，使用非对称加密算法对对称秘钥进行加密是为了达到传输安全的目的。往往在实际的使用中，这两种加密算法是结合使用的。</p>
+<p>总结:</p>
+<ul>
+<li>非对称密钥加密要解决对称密钥加密的密钥交换问题。</li>
+<li>RSA是著名的非对称密钥加密协议。</li>
+<li>非对称密钥加密中每个通信方要一个密钥对。</li>
+<li>公钥向每个人提供，而私钥则是个人保密的。</li>
+<li>数字信封结合了对称密钥加密与非对称密钥加密的好处</li>
+</ul>
+<h3 id="公钥、私钥">公钥、私钥</h3>
+<p>首先我们需要区分加密和认证这两个基本概念</p>
+<ul>
+<li>加密是将数据资料加密，使得非法用户即使取得加密过的资料，也无法获取正确的资料内容，所以数据加密可以保护数据，防止监听攻击。其重点在于数据的安全性。</li>
+<li>身份认证是用来判断某个身份的真实性，确认身份后，系统才可以依不同的身份给予不同的权限。其重点在于用户的真实性。两者的侧重点是不同的。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311101114013.webp" alt></li>
+</ul>
+<p>其次我们还要了解公钥和私钥的概念和作用<br>
+在现代密码体制中加密和解密是采用不同的密钥（公开密钥），也就是非对称密钥密码系统，每个通信方均需要两个密钥，即公钥和私钥，这两把密钥可以互为加解密。公钥是公开的，不需要保密，而私钥是由个人自己持有，并且必须妥善保管和注意保密。</p>
+<p>公钥私钥的原则</p>
+<ul>
+<li>一个公钥对应一个私钥。</li>
+<li>密钥对中，让大家都知道的是公钥，不告诉大家，只有自己知道的，是私钥。</li>
+<li>如果用其中一个密钥加密数据，则只有对应的那个密钥才可以解密。</li>
+<li>如果用其中一个密钥可以进行解密数据，则该数据必然是对应的那个密钥进行的加密。</li>
+</ul>
+<p>非对称密钥密码的主要应用就是公钥加密和公钥认证，而公钥加密的过程和公钥认证的过程是不一样的</p>
+<p>使用电子邮件的方式说明一下公钥和私钥原理。使用公钥与私钥的目的就是实现安全的电子邮件，必须实现如下目的：</p>
+<ul>
+<li>我发送给你的内容必须加密，在邮件的传输过程中不能被别人看到。</li>
+<li>必须保证是我发送的邮件，不是别人冒充我的。</li>
+</ul>
+<p><strong>要达到这样的目标必须发送邮件的两人都有公钥和私钥</strong>。公钥，就是给大家用的，你可以通过电子邮件发布，可以通过网站让别人下载，<strong>公钥其实是用来加密/验章</strong>用的。私钥，就是自己的，必须非常小心保存，最好加上密码，<strong>私钥是用来解密/签章</strong>，首先就Key的所有权来说，私钥只有个人拥有。</p>
+<p>公钥与私钥的作用是：用公钥加密的内容只能用私钥解密，用私钥加密的内容只能用公钥解密。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311101121526.webp" alt></p>
+<p>比如说，我要给你发送一个加密的邮件。首先，我必须拥有你的公钥，你也必须拥有我的公钥。<br>
+首先，我用你的公钥给这个邮件加密，这样就保证这个邮件不被别人看到，而且保证这个邮件在传送过程中没有被修改。你收到邮件后，用你的私钥就可以解密，就能看到内容。<br>
+其次我用我的私钥给这个邮件加密，发送到你手里后，你可以用我的公钥解密。因为私钥只有我手里有，这样就保证了这个邮件是我发送的。<br>
+当A-&gt;B资料时，A会使用B的公钥加密，这样才能确保只有B能解开，否则普罗大众都能解开加密的讯息，就是去了资料的保密性。验证方面则是使用签验章的机制，A传资料给大家时，会以自己的私钥做签章，如此所有收到讯息的人都可以用A的公钥进行验章，便可确认讯息是由A 发出来的了。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311101121678.webp" alt></p>
+<h3 id="SM2国密算法">SM2国密算法</h3>
+<p>SM2是国家密码管理局于2010年12月17日发布的椭圆曲线公钥密码算法。SM2算法和RSA算法都是公钥密码算法，SM2算法是一种更先进安全的算法，在我们国家商用密码体系中被用来替换RSA算法。该算法是我国自主设计的公钥密码算法，包括<strong>SM2-1椭圆曲线数字签名算法，SM2-2椭圆曲线密钥交换协议，SM2-3椭圆曲线公钥加密算法</strong>，分别用于实现数字签名密钥协商和数据加密等功能。SM2算法与RSA算法不同的是，SM2算法是基于椭圆曲线上点群离散对数难题，相对于RSA算法，256位的SM2密码强度已经比2048位的RSA密码强度要高。</p>
+<p>SM2算法是基于椭圆曲线算法，所以学习SM2算法，首先学习ECC算法：<br>
+<strong>ECC算法描述</strong></p>
+<ul>
+<li>用户A选定一条适合加密的椭圆曲线Ep(a,b)(如:y2=x3+ax+b)，并取椭圆曲线上一点，作为基点G</li>
+<li>用户A选择一个私有密钥k，并生成公开密钥（公钥PB）K=kG</li>
+<li>用户A将Ep(a,b)和点（公钥）K，G传给用户B④用户B接到信息后，将待传输的明文（M）编码到Ep(a,b)上一点M，并产生一个随机整数r（r&lt; n）。加密开始</li>
+<li>用户B计算点C1=M+rK；C2=rG</li>
+<li>用户B将C1、C2传给用户A</li>
+<li>用户A接到信息后，计算C1-kC2，结果就是点M。因为C1-kC2=M+rK-k(rG)=M+rK-r(kG)=M</li>
+<li>再对点M进行解码就可以得到明文</li>
+</ul>
+<p>在密码学中，描述一条Fp上的椭圆曲线，常用到六个参量：T=（p,a,b,G,n,h）</p>
+<ul>
+<li>p 、a 、b 用来确定一条椭圆曲线</li>
+<li>G为基点</li>
+<li>n为点G的阶</li>
+<li>h 是椭圆曲线上所有点的个数m与相除的整数部分</li>
+</ul>
+<p>这几个参量取值的选择，直接影响了加密的安全性。参量值一般要求满足以下几个条件：</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>参量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>p 当然越大越安全，但越大，计算速度会变慢，200位左右可以满足一般安全要求</td>
+</tr>
+<tr>
+<td>2</td>
+<td>p≠n×h</td>
+</tr>
+<tr>
+<td>3</td>
+<td>pt≠1 (mod n)，1≤t&lt;20</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4a3+27b2≠0 (mod p)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>n 为素数</td>
+</tr>
+<tr>
+<td>6</td>
+<td>h≤4</td>
+</tr>
+</tbody>
+</table>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311101153170.webp" alt></p>
+<p>曲线参数<br>
+SM2标准推荐使用256位素域Fp上的椭圆曲线y2=x3+ax+b，其中：<br>
+P=FFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000FFFFFFFFFFFFFFFF<br>
+a=FFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000FFFFFFFFFFFFFFFC<br>
+b=28E9FA9E9D9F5E344D5A9E4BCF6509A7F39789F515AB8F92DDBCBD414D940E93<br>
+n=FFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFF7203DF6B21C6052B53BBF409394C74C7<br>
+Gx=32C4AE2C1F1981195F9904466A39C9948FE30BBFF2660BE1715A4589334C74C7<br>
+Gy=BC3736A2F4F6779C59BDCEE36B692153D0A9877CC62A474002DF32E52139F0A0</p>
+<p>密钥生成算法</p>
+<ul>
+<li>Alice选择随机数dA作为私钥，其中0 &lt; d &lt; n</li>
+<li>Alice计算公钥PA=dA* G</li>
+<li>输出密钥对（sk=dA，pk=PA）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311101156560.webp" alt></p>
+<p>数字签名算法</p>
+<ul>
+<li>签名
+<ul>
+<li>签名者用户A的秘钥对包括其私钥dA和公钥PA=[dA]G=(xA,yA)</li>
+<li>签名者用户A具有长度为entlenA比特的可辨别标识IDA</li>
+<li>ENTLA是由整数entlenA转换而成的两个字节</li>
+<li>ZA=H256(ENTLA||IDA||a||b||xG||yG||xA||yA)</li>
+<li>待签名的消息为M</li>
+<li>数字签名(r,s)</li>
+</ul>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311101200649.webp" alt></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311101200648.webp" alt></p>
+<h2 id="数字货币">数字货币</h2>
+<p>数字货币的出现被视为货币形态的又一次重大革命，有望成为数字经济时代的主流通货和重要金融基础设施。根据中国人民银行法定数字货币原型系统实验，探索了二元模式下法定数字货币发行、转移、回笼闭环流程。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311101036489.webp" alt></p>
+<p>设计了DCEP的加密字符串表达形式、通过存款准备金等额兑换的发行回笼机制、DCEP在转移过程中的转换机制以及原型系统的总体架构、系统架构和技术架构，并在局部采用分布式账本技术基础上探讨增强其可用性的改进方法。由央行主导,在保持实物现金发行的同时发行以加密算法为基础的数字货币,即M0的一部分由数字货币构成。目标是构建一个兼具安全性与灵活性的简明、高效、符合国情的数字货币发行流通体系，所以设计过程中尤其注重<strong>技术手段</strong>、<strong>机制设计</strong>和<strong>法律法规</strong>这3个层次的协调统一。</p>
+<p>在技术路线上,充分吸收和改造现有信息技术，确保数字货币信息基础设施的安全性与效率性。</p>
+<ul>
+<li>数字货币系统的发行和回笼环节，主要是中央银行与商业银行之间的DCEP双向兑换过程，具有金额规模大、笔数少的批发业务类型。核心在于数字货币的确权和属主的变更以及数字货币加密字串的形成。</li>
+<li>面向最终的用户应用，转移过程更主要是小额、高频、实时的零售业务特征。转移过程是将来源币作废，产生去向币的过程，主要包括：旧币验签、旧币作废、生产新币、确权登记这4步，形成原子性的事务。核心是对满足国密SM2规范要求的签名信息进行验签操作。</li>
+</ul>
+<h3 id="起源">起源</h3>
+<p>中国人民银行(以下简称人民银行)高度重视法定数字货币的研究开发。2014 年，成立法定数字货币研究小组，开始对发行框架、关键技术、发行流通环境及相关国际经验等进行专项研究。</p>
+<p>2016 年，成立数字货币研究所，完成法定数字货币第一代原型系统搭建。2017 年末，经国务院批准，人民银行开始组织商业机构共同开展法定数字货币(以下简称数字人民币，字母缩写按照国际使用惯例暂定为“e-CNY”)研发试验。目前，研发试验已基本完成顶层设计、功能研发、系统调试等工作，正遵循稳步、安、全可控、创新、实用的原则，选择部分有代表性的地区开展试点测试。</p>
+<p>DCEP 本质上就是一种数字支付工具。DCEP 全称是Digital Currency Electronic Payment，DC 指的是数字货币，EP 指的电子支付，即数字货币和电子支付工具。其功能属性与纸钞完全一样，只不过是数字化形态。</p>
+<blockquote>
+<p>国际货币基金组织IMF把央行数字货币称作CBDC，英文是“Central BankDigital Currency”,实际上描述的是同一个概念。本文中使用的CBDC 就是指通常性的央行数字货币（无国家限制），如果使用（DC/EP）则特指中国即将推出的央行数字货币。</p>
+</blockquote>
+<p>2020年7月23日，立陶宛央行在其官方网站上正式发售数字货币LB Coin，宣告了全球首枚央行数字货币诞生。数字货币的诞生，也标志着人类货币发展历程从一般等价物、贵金属、纸币、电子货币之后，又进入了一个全新的历史阶段。</p>
+<p>数字货币是基于密码学技术，利用复杂的加密算法所形成的网络货币统称。由于数字货币必须用到数字加密算法，所以也被称为数字加密货币（Crypto Currency）。数字货币与电子货币和虚拟货币有着本质区别。总体而言，电子货币是主权货币的电子化形态。虚拟货币没有实物形态，不由货币当局发行，本质上不是货币，而是网络服务的消费者权益凭证。从数字货币的起源以及与电子货币和虚拟货币的比较来看，数字货币具有以下特征:</p>
+<ul>
+<li>首先，数字货币特别是基于公有区块链的数字货币，其产生与存在是由分布式记账网络体系而来（公有区块链是指，世界上任何个体或者团体都可以发送交易，且交易能够获得该区块链的有效确认，任何人都可以参与其共识过程。比特币系列的虚拟数字货币均基于公有区块链）。数字货币不同于主权货币和虚拟货币，后两者必须要有相应的实体机构进行信用背书。</li>
+<li>其次，数字货币具有较高的私密性和安全性。数字货币基于区块链的分布式记账技术，不同于电子货币等需要唯一的机构记录账户信息。相关记账信息分布与所有交易主体之间，每次的交易数据就会创建一个区块。而下一个区块信息，必须通过上一个区块信息计算出来，这样由一个个彼此耦合的区块构成完整的区块链。</li>
+<li>再次，数字加密货币具有去中心化特征，作为一种权益证明，代表了使用者们之间基于信任产生的内在价值，货币在持有者之间流通不需要依赖特定的机构和支付结算网络，也不需要额外支付手续费。理论上数字货币流通范围可以覆盖全球，持有者不必担心受到潜在金融制裁的影响。</li>
+</ul>
+<p>通过以上分析可以看出，数字货币在一定程度上弥补了传统货币形态的缺陷，适应了数字经济的发展需求，是金融科技创新的重要领域，具有时代进步意义。对货币当局而言，发行主权数字货币不仅可以应对私人数字货币冲击和巩固本国法币地位，而且还具有显著的社会效益。</p>
+<p>数字货币可以部分替代流通中的纸币现金，节省社会资源；数字货币可以更好地满足居民多样化的金融服务需求；数字货币去中心化特征可以规避灾难事故对支付系统稳定性的破坏；主权数字货币如果最终普及，可以为货币当局实行“零利率”或“负利率”条件下的货币政策提供技术支撑。</p>
+<p>为适应数字货币发展的新形势，2014年，中国人民银行成立专门研究小组，正式启动法定数字货币（DCEP）的研发工作。2017年，央行又成立了数字货币研究所，并与数家商业银行联合展开研究，从数字货币方案原型、数字票据等多个维度论证实施数字货币的可行性。历时三年，完成了数字货币发行运作总体方案及相关专利技术储备。</p>
+<p>2019年，央行在下半年工作电视会议上明确提出“要加快推进我国法定数字货币的研发进程”。2020年4月，央行进一步提出要本着“先境内后境外”“先简单封闭场景后复杂开放场景”“先零售支付场景后大型批发支付场景”原则，稳步推进DCEP测试工作。</p>
+<p>根据央行官方披露，央行数字货币DCEP是由央行主导，在保持实物现金发行的同时发行以加密算法为基础的数字货币，即M0的一部分由数字货币构成。央行数字货币运行框架将呈现“一币、两库、三中心”格局。一币是指由央行担保并签名发行代表具体金额的加密数字串。两库是指中央银行发行库和商业银行银行库。三中心是指认证中心、登记中心和大数据分析中心。</p>
+<p>在上述运行框架下，DCEP发行将采用二元体系实现投放与回笼，上层是央行对商业银行等参与发行的代理发行机构，下层是代理发行机构对公众，该体系不会改变流通中的货币债权债务关系，代理发行机构将向央行缴纳全额准备金，以保证DCEP不超发。在技术路线选择上，央行保持技术中性，不干预代理发行机构具体的技术路线选择。央行会设立若干技术指标门槛，确保DCEP满足高并发、安全性和稳定性的要求。在应用终端形态上，DCEP装载于数字钱包程序，采用UTXO模型的非对称加密技术，使用者可以借助类似于手机扫码或近场支付（NFC）等形式完成交易。</p>
+<ul>
+<li>首先，通过发行DCEP逐步替代纸钞现金，可以大幅减少纸币发行过程中的人力物力成本，同时提高货币发行效率。根据2019年末全国7.7万亿元M0纸币数量，全年在纸币印制、投放、回笼等七大发行环节累计成本投入超过2700亿元。2020年初突发的公共卫生事件，也暴露出纸币流通容易成为病毒传染媒介的弊端。此外，DCEP利用特定算法进行加密，相比纸币更加难以被伪造。</li>
+<li>其次，有别于一般的数字加密货币，DCEP在记账流程上将是全程单向透明。DCEP所有者标识对其他使用者和发行机构匿名，但对央行数字货币系统后台实名，可以通过系统后台与真实用户对应。因此，DCEP的交易行为各方可以完整被追溯，从而为监管部门进行反洗钱、反诈骗等提供技术支撑。在货币流通过程中，DCEP通过预设的“前瞻触发条件”，可使货币按照预期目标精准投放，从而确保货币政策更加精准高效执行。</li>
+<li>再次，同其他数字加密货币相类似，DCEP存在于移动终端的数字钱包中，不必与银行账户绑定，也不需借助跨境支付结算网络，可以穿透包括地理、司法和金融主权等管理边界，在中国境外更容易获得和使用。DCEP在境外的广泛流通，有助于加快人民币国际化进程，并丰富跨境人民币支付应用场景。</li>
+</ul>
+<h1>数字签名</h1>
+<p>数字签名的定义</p>
+<ul>
+<li>手写签名：传统的确认方式，如书信、签约、支付、批复等</li>
+<li>在网络时代，人们通过网络支付费用、买卖股票，为了保证网上商务活动的安全，需要一个很重要的安全机制-数字签名</li>
+<li>数字签名在信息安全，包括鉴别、数据完整性、抗抵赖性等方面，特别是在大型网络安全通信中的密钥分配、鉴别及电子商务系统中，具有重要作用。</li>
+</ul>
+<p>数字签名（又称公钥数字签名）是只有信息的发送者才能产生的别人无法伪造的一段数字串，这段数字串同时也是对信息的发送者发送信息真实性的一个有效证明。它是一种类似写在纸上的普通的物理签名，但是使用了公钥加密领域的技术来实现的，用于鉴别数字信息的方法。一套数字签名通常定义两种互补的运算，一个用于<strong>签名</strong>，另一个用于<strong>验证</strong>。数字签名是非对称密钥加密技术与数字摘要技术的应用。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311102120443.webp" alt></p>
+<p>数字签名的文件的完整性是很容易验证的（不需要骑缝章，骑缝签名，也不需要笔迹专家），而且数字签名具有不可抵赖性（不可否认性）。<br>
+简单地说，所谓<strong>数字签名就是附加在数据单元上的一些数据，或是对数据单元所作的密码变换</strong>。这种数据或变换允许数据单元的接收者用以确认数据单元的来源和数据单元的完整性并保护数据，防止被人(例如接收者)进行伪造。它是对电子形式的消息进行签名的一种方法，一个签名消息能在一个通信网络中传输。基于公钥密码体制和私钥密码体制都可以获得数字签名，主要是基于公钥密码体制的数字签名。包括普通数字签名和特殊数字签名。</p>
+<ul>
+<li>普通数字签名算法有RSA、ElGamal、Fiat-Shamir、Guillou-Quisquarter、Schnorr、Ong-Schnorr-Shamir数字签名算法、Des/DSA，椭圆曲线数字签名算法和有限自动机数字签名算法等。</li>
+<li>特殊数字签名有盲签名、代理签名、群签名、不可否认签名、公平盲签名、门限签名、具有消息恢复功能的签名等，它与具体应用环境密切相关。</li>
+<li>DCEP在流转的过程中，涉及到数据的来源、验证、完整性等问题。那么，数字签名技术就起到了关键作用，可以使数据具备归属人的身份，同时来可以对数据进行归属验证；同时，利用非对称加密技术和摘要技术的结合，来保证签名数据的完整性等。</li>
+</ul>
+<p>每个人都有一对“钥匙”（数字身份），其中一个只有她/他本人知道（密钥），另一个公开的（公钥）。签名的时候用密钥，验证签名的时候用公钥。又因为任何人都可以落款声称她/他就是你，因此公钥必须向接受者信任的人（身份认证机构）来注册。注册后身份认证机构给你发一数字证书。对文件签名后，你把此数字证书连同文件及签名一起发给接受者，接受者向身份认证机构求证是否真地是用你的密钥签发的文件。在通讯中使用数字签名一般具有以下特点：</p>
+<ul>
+<li>鉴权<br>
+公钥加密系统允许任何人在发送信息时使用私钥进行加密，接收信息时使用公钥解密。当然，接收者不可能百分之百确信发送者的真实身份，而只能在密码系统未被破译的情况下才有理由确信。<br>
+鉴权的重要性在财务数据上表现得尤为突出。举个例子，假设一家银行将指令由它的分行传输到它的中央管理系统，指令的格式是(a，b)，其中a是账户的账号，而b是账户的现有金额。这时一位远程客户可以先存入100元，观察传输的结果，然后接二连三的发送格式为(a，b)的指令。这种方法被称作重放攻击。</li>
+<li>完整性<br>
+<strong>传输数据的双方都总希望确认消息未在传输的过程中被修改</strong>。加密使得第三方想要读取数据十分困难，然而第三方仍然能采取可行的方法在传输的过程中修改数据。一个通俗的例子就是同形攻击：回想一下，还是上面的那家银行从它的分行向它的中央管理系统发送格式为(a，b)的指令，其中a是账号，而b是账户中的金额。一个远程客户可以先存100元，然后拦截传输结果，再传输(a，b)，这样他就立刻变成百万富翁了。</li>
+<li>不可抵赖<br>
+在密文背景下，抵赖这个词指的是不承认与消息有关的举动（即声称消息来自第三方）。消息的接收方可以通过数字签名来防止所有后续的抵赖行为，因为接收方可以出示签名给别人看来证明信息的来源。</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311102123819.webp" alt></p>
+<p>发送报文时，发送方用一个哈希函数从报文文本中生成报文摘要，然后用发送方的私钥对这个摘要进行加密，这个加密后的摘要将作为报文的数字签名和报文一起发送给接收方，接收方首先用与发送方一样的哈希函数从接收到的原始报文中计算出报文摘要，接着再公钥来对报文附加的数字签名进行解密，如果这两个摘要相同、那么接收方就能确认该报文是发送方的。</p>
+<p>数字签名有两种作用：一是能确定消息确实是由发送方签名并发出来的，因为别人假冒不了发送方的签名。二是数字签名能确定消息的完整性。因为数字签名的特点是它代表了文件的特征，文件如果发生改变，数字摘要的值也将发生变化。不同的文件将得到不同的数字摘要。一次数字签名涉及到一个哈希函数、接收者的公钥、发送方的私钥。</p>
+<p>签名流程</p>
+<ul>
+<li>发送者对消息计算摘要值</li>
+<li>发送者用私钥对摘要值进行签名得到签名值</li>
+<li>发送者将原始消息和签名值一同发给接收者<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311102124898.webp" alt></li>
+</ul>
+<p>验签流程</p>
+<ul>
+<li>接收者接到消息后，拆分出消息和消息签名值A</li>
+<li>接收者使用公钥对消息进行运算得到摘要值B</li>
+<li>接收者对摘要值B和签名值A进行比较，如果相同表示签名验证成功，否则就是验证失败</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202311102124458.webp" alt></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301242359645.webp" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301242359645.webp" title="头像" alt="头像"></a><div class="post-copyright__author_name">Prong</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://prong879.ltd/posts/9ac414bb.html">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://prong879.ltd/posts/9ac414bb.html')">中央银行学数字货币的技术基础</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/mm_facetoface_collect_qrcode_1730547752845.webp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/mm_facetoface_collect_qrcode_1730547752845.webp" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/1730547802675.webp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/1730547802675.webp" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://prong879.ltd/posts/9ac414bb.html"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=中央银行学数字货币的技术基础&amp;url=https://prong879.ltd/posts/9ac414bb.html&amp;pic=https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411091905190.webp" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://prong879.ltd" target="_blank">prong的魔法地下室</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>📓学习笔记<span class="tagsPageCount">45</span></a><a class="post-meta__box__tags" href="/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>数字货币<span class="tagsPageCount">1</span></a><a class="post-meta__box__tags" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>密码学<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303112139249.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/aade6737.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411071907871.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">商业银行 | 知识体系</div></div></a></div><div class="next-post pull-right"><a href="/posts/b8380377.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202312171655198.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计量经济学 | 时间序列数据</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/posts/e6868ecb.html" title="C++ | 奥赛一本通刷题笔记"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411071945448.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-12-18</div><div class="title">C++ | 奥赛一本通刷题笔记</div></div></a></div><div><a href="/posts/cea7d534.html" title="C++ | 机考参考资料和题目"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411071937360.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-12-18</div><div class="title">C++ | 机考参考资料和题目</div></div></a></div><div><a href="/posts/ad4f1e09.html" title="C++ | 核心知识及语法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411071937360.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-10-25</div><div class="title">C++ | 核心知识及语法</div></div></a></div><div><a href="/posts/9c5b633e.html" title="C语言笔记 | 1.分支语句"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301090027168.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-10-21</div><div class="title">C语言笔记 | 1.分支语句</div></div></a></div><div><a href="/posts/2e989606.html" title="C++ | 经典试题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411071937360.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-10-25</div><div class="title">C++ | 经典试题</div></div></a></div><div><a href="/posts/106b6aed.html" title="C语言 | 2.循环语句"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301142359877.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-01-15</div><div class="title">C语言 | 2.循环语句</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)" style="display: none">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202301242359645.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://emotion.acs.pw/emotion/QQ/154.gif" alt="status"/></div></div><div class="author-info__description">这是尖头叉子在霍格沃茨的休息室~</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">Prong</h1><div class="author-info__desc"></div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/37924260/" target="_blank" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="social-icon faa-parent animated-hover" href="/atom.xml" target="_blank" title="RSS订阅"><i class="anzhiyufont anzhiyu-icon-rss"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">学习记录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">DCEP信息加密技术导入</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%84%E7%AE%97%E6%B3%95%EF%BC%88%E5%AF%B9%E7%A7%B0%E7%AE%97%E6%B3%95%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">常规算法（对称算法）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%EF%BC%88%E9%9D%9E%E5%AF%B9%E7%A7%B0%E7%AE%97%E6%B3%95%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">公钥加密算法（非对称算法）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E3%80%81%E7%A7%81%E9%92%A5"><span class="toc-number">2.2.1.</span> <span class="toc-text">公钥、私钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SM2%E5%9B%BD%E5%AF%86%E7%AE%97%E6%B3%95"><span class="toc-number">2.2.2.</span> <span class="toc-text">SM2国密算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81"><span class="toc-number">2.3.</span> <span class="toc-text">数字货币</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%B7%E6%BA%90"><span class="toc-number">2.3.1.</span> <span class="toc-text">起源</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">数字签名</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/fa6ae62a.html" title="概率论与数理统计 | 数三概统知识点整理"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202303112139249.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论与数理统计 | 数三概统知识点整理"/></a><div class="content"><a class="title" href="/posts/fa6ae62a.html" title="概率论与数理统计 | 数三概统知识点整理">概率论与数理统计 | 数三概统知识点整理</a><time datetime="2025-11-12T15:48:05.000Z" title="发表于 2025-11-12 23:48:05">2025-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d900e6d.html" title="线性代数 | 可逆矩阵的极分解定理"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg?_r_=a613699b-63ab-4a80-3216-3a5e11de6163" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数 | 可逆矩阵的极分解定理"/></a><div class="content"><a class="title" href="/posts/d900e6d.html" title="线性代数 | 可逆矩阵的极分解定理">线性代数 | 可逆矩阵的极分解定理</a><time datetime="2025-11-09T11:13:01.000Z" title="发表于 2025-11-09 19:13:01">2025-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ccef6234.html" title="高等数学 | 三函数乘积的积分：表格法推广"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg?_r_=8ea09cde-920b-11b2-e712-63df31e7ae73" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高等数学 | 三函数乘积的积分：表格法推广"/></a><div class="content"><a class="title" href="/posts/ccef6234.html" title="高等数学 | 三函数乘积的积分：表格法推广">高等数学 | 三函数乘积的积分：表格法推广</a><time datetime="2025-11-05T13:00:00.000Z" title="发表于 2025-11-05 21:00:00">2025-11-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2ed9be16.html" title="线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg?_r_=0bb5fd17-907f-a3db-cdca-fb9fe0e5c33e" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析"/></a><div class="content"><a class="title" href="/posts/2ed9be16.html" title="线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析">线性代数 | 二元函数极值、海赛矩阵与李亚普诺夫稳定性分析</a><time datetime="2025-11-05T08:44:05.000Z" title="发表于 2025-11-05 16:44:05">2025-11-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b3d2fee7.html" title="【2025最新】WSL+LaTex+VSCode安装教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202505142157033.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【2025最新】WSL+LaTex+VSCode安装教程"/></a><div class="content"><a class="title" href="/posts/b3d2fee7.html" title="【2025最新】WSL+LaTex+VSCode安装教程">【2025最新】WSL+LaTex+VSCode安装教程</a><time datetime="2025-05-14T21:19:41.000Z" title="发表于 2025-05-15 05:19:41">2025-05-15</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2023 - 2025 By <a class="footer-bar-link" href="/" title="Prong" target="_blank">Prong</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">82</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">68</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">5</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://prong.ltd/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.png" alt="博客"/><span class="back-menu-item-text">博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://space.bilibili.com/37924260?spm_id_from=333.1007.0.0" title="B站"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://prong-1316442664.cos.ap-nanjing.myqcloud.com/picgo/202411082120808.webp" alt="B站"/><span class="back-menu-item-text">B站</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="fa-solid fa-timeline faa-tada"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="fas fa-tags faa-tada"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="fas fa-folder-open faa-tada"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/messageboard/"><i class="fa fa-comments faa-tada"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 修仙</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/books/"><i class="fa-solid fa-book-open-reader faa-tada"></i><span> 书单</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="fa-solid fa-film faa-tada"></i><span> 电影</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="fa-brands fa-xbox faa-tada"></i><span> 游戏</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="fa-brands fa-bilibili faa-tada"></i><span> 番剧</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/cinemas/"><i class="fa-brands fa-bilibili faa-tada"></i><span> B站追剧</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/update/"><i class="fa-solid fa-file-pen faa-tada"></i><span> 更新手账</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="fa-solid fa-person-through-window faa-tada"></i><span> 关于自己</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 0.88rem;">C++<sup>4</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">C语言<sup>5</sup></a><a href="/tags/MySQL/" style="font-size: 0.88rem;">MySQL<sup>1</sup></a><a href="/tags/PPT/" style="font-size: 0.88rem;">PPT<sup>1</sup></a><a href="/tags/Python/" style="font-size: 0.88rem;">Python<sup>2</sup></a><a href="/tags/Zerotier/" style="font-size: 0.88rem;">Zerotier<sup>1</sup></a><a href="/tags/hexo/" style="font-size: 0.88rem;">hexo<sup>3</sup></a><a href="/tags/%E2%9C%92%EF%B8%8F%E9%9A%8F%E7%AC%94/" style="font-size: 0.88rem;">✒️随笔<sup>13</sup></a><a href="/tags/%E4%B8%89%E4%B8%8B%E4%B9%A1/" style="font-size: 0.88rem;">三下乡<sup>1</sup></a><a href="/tags/%E4%BF%9D%E9%99%A9%E5%AD%A6/" style="font-size: 0.88rem;">保险学<sup>1</sup></a><a href="/tags/%E5%95%86%E4%B8%9A%E9%93%B6%E8%A1%8C/" style="font-size: 0.88rem;">商业银行<sup>1</sup></a><a href="/tags/%E5%9B%BD%E5%80%BA/" style="font-size: 0.88rem;">国债<sup>1</sup></a><a href="/tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 0.88rem;">国际贸易<sup>1</sup></a><a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 0.88rem;">密码学<sup>1</sup></a><a href="/tags/%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 0.88rem;">微软输入法<sup>1</sup></a><a href="/tags/%E6%91%84%E5%BD%B1/" style="font-size: 0.88rem;">摄影<sup>1</sup></a><a href="/tags/%E6%94%AF%E6%95%99%E6%97%A5%E8%AE%B0/" style="font-size: 0.88rem;">支教日记<sup>4</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 0.88rem;">教程<sup>7</sup></a><a href="/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/" style="font-size: 0.88rem;">数字货币<sup>1</sup></a><a href="/tags/%E7%B2%AE%E9%A3%9F%E5%8D%B1%E6%9C%BA/" style="font-size: 0.88rem;">粮食危机<sup>1</sup></a><a href="/tags/%E7%BE%8E%E5%8C%96/" style="font-size: 0.88rem;">美化<sup>1</sup></a><a href="/tags/%E8%8C%85%E5%8F%B0/" style="font-size: 0.88rem;">茅台<sup>1</sup></a><a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 0.88rem;">论文<sup>7</sup></a><a href="/tags/%E9%AB%98%E7%B2%B1/" style="font-size: 0.88rem;">高粱<sup>1</sup></a><a href="/tags/%E9%AD%94%E6%94%B9/" style="font-size: 0.88rem;">魔改<sup>2</sup></a><a href="/tags/%F0%9F%92%B0%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 0.88rem;">💰微观经济学<sup>1</sup></a><a href="/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">📓学习笔记<sup>45</sup></a><a href="/tags/%F0%9F%94%A0LaTeX/" style="font-size: 0.88rem;">🔠LaTeX<sup>1</sup></a><a href="/tags/%F0%9F%94%A0MarkDown/" style="font-size: 0.88rem;">🔠MarkDown<sup>1</sup></a><a href="/tags/%F0%9F%A6%8Bbutterfly/" style="font-size: 0.88rem;">🦋butterfly<sup>3</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2023 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Prong 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.cbd.int/katex@0.16.0/dist/katex.min.css"><script src="https://cdn.cbd.int/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    anzhiyu.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.cbd.int/mermaid@10.2.4/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  anzhiyu.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-snowy-two.vercel.app/',
+      region: '',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.39/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-snowy-two.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo-snowy-two.vercel.app/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.39/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
