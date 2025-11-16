@@ -6,7 +6,7 @@
   <link href="https://prong879.ltd/atom.xml" rel="self"/>
   
   <link href="https://prong879.ltd/"/>
-  <updated>2025-11-12T15:48:05.000Z</updated>
+  <updated>2025-11-15T16:00:00.000Z</updated>
   <id>https://prong879.ltd/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线性代数 | 二次型与矩阵谱分解：基于2013年考研数学真题的分析</title>
+    <link href="https://prong879.ltd/posts/d6b69e89.html"/>
+    <id>https://prong879.ltd/posts/d6b69e89.html</id>
+    <published>2025-11-15T16:00:00.000Z</published>
+    <updated>2025-11-15T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1&gt;二次型与矩阵谱分解：基于2013年考研数学真题的分析&lt;/h1&gt;
+&lt;p&gt;本文将详细解答2013年考研数学中的一道线性代数题目，并深入探讨其背后涉及的矩阵分解理论。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="线性代数" scheme="https://prong879.ltd/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+      <category term="谱分解" scheme="https://prong879.ltd/tags/%E8%B0%B1%E5%88%86%E8%A7%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>概率论与数理统计 | 数三概统知识点整理</title>
@@ -1742,39 +1776,6 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
       <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
       <category term="🔠英语语法" scheme="https://prong879.ltd/tags/%F0%9F%94%A0%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言 | 4.函数</title>
-    <link href="https://prong879.ltd/posts/4458362e.html"/>
-    <id>https://prong879.ltd/posts/4458362e.html</id>
-    <published>2023-01-15T15:31:43.000Z</published>
-    <updated>2023-01-15T15:31:43.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;主要掌握函数的基本使用和递归&lt;br&gt;
-[toc]&lt;/p&gt;
-&lt;h1&gt;函数是什么&lt;/h1&gt;
-&lt;p&gt;==子程序==，负责完成某项特定任务，具备相对独立性。&lt;/p&gt;
-&lt;h2
-        
-      
-    
-    </summary>
-    
-    
-      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="C语言" scheme="https://prong879.ltd/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
