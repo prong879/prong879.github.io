@@ -6,7 +6,7 @@
   <link href="https://prong879.ltd/atom.xml" rel="self"/>
   
   <link href="https://prong879.ltd/"/>
-  <updated>2025-11-15T16:00:00.000Z</updated>
+  <updated>2025-11-12T15:48:05.000Z</updated>
   <id>https://prong879.ltd/</id>
   
   <author>
@@ -15,40 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>线性代数 | 二次型与矩阵谱分解：基于2013年考研数学真题的分析</title>
-    <link href="https://prong879.ltd/posts/d6b69e89.html"/>
-    <id>https://prong879.ltd/posts/d6b69e89.html</id>
-    <published>2025-11-15T16:00:00.000Z</published>
-    <updated>2025-11-15T16:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1&gt;二次型与矩阵谱分解：基于2013年考研数学真题的分析&lt;/h1&gt;
-&lt;p&gt;本文将详细解答2013年考研数学中的一道线性代数题目，并深入探讨其背后涉及的矩阵分解理论。&lt;/p&gt;
-&lt;h2
-        
-      
-    
-    </summary>
-    
-    
-      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="线性代数" scheme="https://prong879.ltd/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
-    
-      <category term="谱分解" scheme="https://prong879.ltd/tags/%E8%B0%B1%E5%88%86%E8%A7%A3/"/>
-    
-  </entry>
   
   <entry>
     <title>概率论与数理统计 | 数三概统知识点整理</title>
@@ -103,6 +69,40 @@
       <category term="线性代数" scheme="https://prong879.ltd/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
     
       <category term="极分解定理" scheme="https://prong879.ltd/tags/%E6%9E%81%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性代数 | 二次型与矩阵谱分解：基于2013年考研数学真题的分析</title>
+    <link href="https://prong879.ltd/posts/d6b69e89.html"/>
+    <id>https://prong879.ltd/posts/d6b69e89.html</id>
+    <published>2025-11-08T16:00:00.000Z</published>
+    <updated>2025-11-15T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1&gt;二次型与矩阵谱分解：基于2013年考研数学真题的分析&lt;/h1&gt;
+&lt;p&gt;本文将详细解答2013年考研数学中的一道线性代数题目，并深入探讨其背后涉及的矩阵分解理论。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="线性代数" scheme="https://prong879.ltd/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+      <category term="谱分解" scheme="https://prong879.ltd/tags/%E8%B0%B1%E5%88%86%E8%A7%A3/"/>
     
   </entry>
   
@@ -1063,6 +1063,36 @@
   </entry>
   
   <entry>
+    <title>读后感 | 荣辱二十年</title>
+    <link href="https://prong879.ltd/posts/4c5553eb.html"/>
+    <id>https://prong879.ltd/posts/4c5553eb.html</id>
+    <published>2023-05-30T21:10:40.000Z</published>
+    <updated>2024-11-09T21:10:40.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本学期我阅读的第三本书是阚治东的《荣辱二十年》。二十年的光阴蹉跎，中国第一代证券先锋阚治东的人生起起落落，看过山巅的风景，也感受过谷底的滋味。阚治东的人生之路，也是中国证券市场发展的一个缩影与见证。&lt;/p&gt;
+&lt;p&gt;泰戈尔曾言：人的记忆力是有限的，不是所有经历过的人和事都能永
+        
+      
+    
+    </summary>
+    
+    
+      <category term="读后感" scheme="https://prong879.ltd/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+    
+      <category term="📚读后感" scheme="https://prong879.ltd/tags/%F0%9F%93%9A%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+      <category term="荣辱二十年" scheme="https://prong879.ltd/tags/%E8%8D%A3%E8%BE%B1%E4%BA%8C%E5%8D%81%E5%B9%B4/"/>
+    
+  </entry>
+  
+  <entry>
     <title>读后感 | 穷人的银行家</title>
     <link href="https://prong879.ltd/posts/9619cbaf.html"/>
     <id>https://prong879.ltd/posts/9619cbaf.html</id>
@@ -1091,36 +1121,6 @@
       <category term="📚读后感" scheme="https://prong879.ltd/tags/%F0%9F%93%9A%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
       <category term="穷人的银行家" scheme="https://prong879.ltd/tags/%E7%A9%B7%E4%BA%BA%E7%9A%84%E9%93%B6%E8%A1%8C%E5%AE%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>读后感 | 荣辱二十年</title>
-    <link href="https://prong879.ltd/posts/4c5553eb.html"/>
-    <id>https://prong879.ltd/posts/4c5553eb.html</id>
-    <published>2023-05-30T21:10:40.000Z</published>
-    <updated>2024-11-09T21:10:40.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本学期我阅读的第三本书是阚治东的《荣辱二十年》。二十年的光阴蹉跎，中国第一代证券先锋阚治东的人生起起落落，看过山巅的风景，也感受过谷底的滋味。阚治东的人生之路，也是中国证券市场发展的一个缩影与见证。&lt;/p&gt;
-&lt;p&gt;泰戈尔曾言：人的记忆力是有限的，不是所有经历过的人和事都能永
-        
-      
-    
-    </summary>
-    
-    
-      <category term="读后感" scheme="https://prong879.ltd/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
-    
-    
-      <category term="📚读后感" scheme="https://prong879.ltd/tags/%F0%9F%93%9A%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
-    
-      <category term="荣辱二十年" scheme="https://prong879.ltd/tags/%E8%8D%A3%E8%BE%B1%E4%BA%8C%E5%8D%81%E5%B9%B4/"/>
     
   </entry>
   
@@ -1616,9 +1616,9 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
     
       <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
-    
       <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
+    
+      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
     
   </entry>
   
@@ -1639,9 +1639,9 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
       <category term="教程" scheme="https://prong879.ltd/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
-    
       <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
+    
+      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
     
       <category term="魔改" scheme="https://prong879.ltd/tags/%E9%AD%94%E6%94%B9/"/>
     
@@ -1677,9 +1677,9 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
     
       <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
-    
       <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
+    
+      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
     
       <category term="魔改" scheme="https://prong879.ltd/tags/%E9%AD%94%E6%94%B9/"/>
     
