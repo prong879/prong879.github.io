@@ -6,7 +6,7 @@
   <link href="https://prong879.ltd/atom.xml" rel="self"/>
   
   <link href="https://prong879.ltd/"/>
-  <updated>2025-11-18T03:26:00.000Z</updated>
+  <updated>2025-11-25T08:16:26.000Z</updated>
   <id>https://prong879.ltd/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>衍生品敏感度指标（希腊字母）</title>
+    <link href="https://prong879.ltd/posts/c62b8ee4.html"/>
+    <id>https://prong879.ltd/posts/c62b8ee4.html</id>
+    <published>2025-11-25T08:16:26.000Z</published>
+    <updated>2025-11-25T08:16:26.000Z</updated>
+    
+    <summary type="html">
+    
+      金融衍生品敏感度指标（希腊字母）的定义与计算方法
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="敏感度分析" scheme="https://prong879.ltd/tags/%E6%95%8F%E6%84%9F%E5%BA%A6%E5%88%86%E6%9E%90/"/>
+    
+      <category term="衍生品" scheme="https://prong879.ltd/tags/%E8%A1%8D%E7%94%9F%E5%93%81/"/>
+    
+      <category term="希腊字母" scheme="https://prong879.ltd/tags/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>概率论与数理统计 | 不同类型二维随机变量的分布分析</title>
@@ -1086,35 +1111,6 @@
   </entry>
   
   <entry>
-    <title>读后感 | 金融与好的社会</title>
-    <link href="https://prong879.ltd/posts/7d41e5a7.html"/>
-    <id>https://prong879.ltd/posts/7d41e5a7.html</id>
-    <published>2023-05-30T21:10:40.000Z</published>
-    <updated>2024-11-09T21:10:40.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本学期我阅读的第二部书，是罗伯特希勒的《金融与好的社会》。有人如是说：总的来说，这本书似乎是对于某一终极问题或命题——“这个世界会好吗”——的另一种回答或者是“金融版”回答。梁漱溟先生的《这个世界会好吗》、爱因斯坦的《人类的未来会好吗》都尝试回答了这个问题，一个是文化的角度
-        
-      
-    
-    </summary>
-    
-    
-      <category term="读后感" scheme="https://prong879.ltd/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
-    
-    
-      <category term="📚读后感" scheme="https://prong879.ltd/tags/%F0%9F%93%9A%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
-    
-      <category term="金融与好的社会" scheme="https://prong879.ltd/tags/%E9%87%91%E8%9E%8D%E4%B8%8E%E5%A5%BD%E7%9A%84%E7%A4%BE%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
     <title>读后感 | 穷人的银行家</title>
     <link href="https://prong879.ltd/posts/9619cbaf.html"/>
     <id>https://prong879.ltd/posts/9619cbaf.html</id>
@@ -1173,6 +1169,35 @@
       <category term="📚读后感" scheme="https://prong879.ltd/tags/%F0%9F%93%9A%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
       <category term="荣辱二十年" scheme="https://prong879.ltd/tags/%E8%8D%A3%E8%BE%B1%E4%BA%8C%E5%8D%81%E5%B9%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读后感 | 金融与好的社会</title>
+    <link href="https://prong879.ltd/posts/7d41e5a7.html"/>
+    <id>https://prong879.ltd/posts/7d41e5a7.html</id>
+    <published>2023-05-30T21:10:40.000Z</published>
+    <updated>2024-11-09T21:10:40.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本学期我阅读的第二部书，是罗伯特希勒的《金融与好的社会》。有人如是说：总的来说，这本书似乎是对于某一终极问题或命题——“这个世界会好吗”——的另一种回答或者是“金融版”回答。梁漱溟先生的《这个世界会好吗》、爱因斯坦的《人类的未来会好吗》都尝试回答了这个问题，一个是文化的角度
+        
+      
+    
+    </summary>
+    
+    
+      <category term="读后感" scheme="https://prong879.ltd/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+    
+      <category term="📚读后感" scheme="https://prong879.ltd/tags/%F0%9F%93%9A%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+      <category term="金融与好的社会" scheme="https://prong879.ltd/tags/%E9%87%91%E8%9E%8D%E4%B8%8E%E5%A5%BD%E7%9A%84%E7%A4%BE%E4%BC%9A/"/>
     
   </entry>
   
@@ -1639,9 +1664,9 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
     
       <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
-    
       <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
+    
+      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
     
   </entry>
   
@@ -1662,9 +1687,9 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
       <category term="教程" scheme="https://prong879.ltd/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
-    
       <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
+    
+      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
     
       <category term="魔改" scheme="https://prong879.ltd/tags/%E9%AD%94%E6%94%B9/"/>
     
@@ -1700,9 +1725,9 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
     
       <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
-    
       <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
+    
+      <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
     
       <category term="魔改" scheme="https://prong879.ltd/tags/%E9%AD%94%E6%94%B9/"/>
     
@@ -1718,39 +1743,6 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
     <summary type="html">
     
       本文章介绍了名词性从句的分类、引导词的使用方法
-    
-    </summary>
-    
-    
-      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="🔠英语语法" scheme="https://prong879.ltd/tags/%F0%9F%94%A0%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语语法| 2. 并列句</title>
-    <link href="https://prong879.ltd/posts/4de84589.html"/>
-    <id>https://prong879.ltd/posts/4de84589.html</id>
-    <published>2023-01-17T22:13:55.000Z</published>
-    <updated>2023-01-17T22:13:55.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1&gt;并列句&lt;/h1&gt;
-&lt;h2 id=&quot;什么是并列句&quot;&gt;什么是并列句&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;用连词连接两个句子&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;I love you, you love the
-        
-      
     
     </summary>
     
