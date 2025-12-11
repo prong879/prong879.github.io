@@ -6,7 +6,7 @@
   <link href="https://prong879.ltd/atom.xml" rel="self"/>
   
   <link href="https://prong879.ltd/"/>
-  <updated>2025-11-25T08:16:26.000Z</updated>
+  <updated>2025-12-11T04:08:00.000Z</updated>
   <id>https://prong879.ltd/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>考研英语作文 | 能写、会写、写的牛逼</title>
+    <link href="https://prong879.ltd/posts/e636ce64.html"/>
+    <id>https://prong879.ltd/posts/e636ce64.html</id>
+    <published>2025-12-11T04:08:00.000Z</published>
+    <updated>2025-12-11T04:08:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;考研英语作文：能写、会写、写的牛逼&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大小作文都是&lt;strong&gt;三段式&lt;/strong&gt;，无论大小作文，关键都是组织第二段的句子，第一段和第三段都是套话。首尾重在记体裁特征，中间段重在梳理逻辑链接词/句的顺序。自己数数句子词数，实
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="考研英语作文模板" scheme="https://prong879.ltd/tags/%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E4%BD%9C%E6%96%87%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>衍生品敏感度指标（希腊字母）</title>
@@ -1664,9 +1693,9 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
     
       <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
-    
       <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
+    
+      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
     
   </entry>
   
@@ -1687,9 +1716,9 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
       <category term="教程" scheme="https://prong879.ltd/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
-    
       <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
+    
+      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
     
       <category term="魔改" scheme="https://prong879.ltd/tags/%E9%AD%94%E6%94%B9/"/>
     
@@ -1725,34 +1754,11 @@ int CountX(LNode* HL,ElemType x)&lt;/p&gt;
     
       <category term="教程" scheme="https://prong879.ltd/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
-    
       <category term="hexo" scheme="https://prong879.ltd/tags/hexo/"/>
     
+      <category term="🦋butterfly" scheme="https://prong879.ltd/tags/%F0%9F%A6%8Bbutterfly/"/>
+    
       <category term="魔改" scheme="https://prong879.ltd/tags/%E9%AD%94%E6%94%B9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语语法 | 3.名词性从句</title>
-    <link href="https://prong879.ltd/posts/62884ef2.html"/>
-    <id>https://prong879.ltd/posts/62884ef2.html</id>
-    <published>2023-01-22T23:15:49.000Z</published>
-    <updated>2023-03-07T23:15:49.000Z</updated>
-    
-    <summary type="html">
-    
-      本文章介绍了名词性从句的分类、引导词的使用方法
-    
-    </summary>
-    
-    
-      <category term="学习笔记" scheme="https://prong879.ltd/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="📓学习笔记" scheme="https://prong879.ltd/tags/%F0%9F%93%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="🔠英语语法" scheme="https://prong879.ltd/tags/%F0%9F%94%A0%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
